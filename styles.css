@@ -1,0 +1,522 @@
+/* Minimalist CSS following first principles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6;
+  color: #1f1f1f;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: left; /* Center content horizontally */
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  font-style: italic;
+}
+
+/* Italic styling */
+.italic {
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Header */
+header {
+  padding: 1.5rem 1.5rem; /* 1.5rem */
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  background: #fff;
+  z-index: 100;
+  max-width: 1000px;
+}
+
+header .container {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  font-size: 1.5rem; /* 1.5rem */
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.logo a {
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
+  padding: 0.25rem 0; /* 0.25rem */
+}
+
+.logo a:hover {
+  transform: translateY(-2px);
+}
+
+.logo a:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #333;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: bottom right;
+}
+
+.logo a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 1.5rem; /* 1.5rem */
+}
+
+.nav-links a {
+  position: relative;
+  font-weight: 400;
+}
+
+.nav-links a:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #333;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover:after {
+  width: 100%;
+}
+
+.menu-btn {
+  display: none;
+  font-size: 1.5rem; /* 1.5rem */
+  cursor: pointer;
+}
+
+/* Hook Section */
+#hook {
+  padding: 1.5rem 1.5rem; /* 1.5rem */
+}
+
+/* Experience Section */
+#experience {
+  padding: 1.5rem 1.5rem; /* 1.5rem */
+}
+
+.section-title {
+  font-size: 1.25rem; /* 2rem */
+  margin-bottom: 24px; /* 3rem */
+  text-align: left;
+  letter-spacing: -0.5px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0; /* Add padding for better spacing */
+}
+
+.timeline-item {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between content and project folder */
+  align-items: center; /* Center items vertically */
+  margin: 1.5rem 0; /* Space between items */
+  padding: 1.5rem 1.5rem; /* Padding inside each item */
+  background: #f9f9f9; /* Light background for items */
+  border-radius: 4px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for text color and box shadow */
+}
+
+.timeline-item:hover {
+  transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+/* Specific hover colors for each organization */
+.timeline-item:nth-child(1):hover {
+  box-shadow: 0 4px 0px rgba(124, 82, 255, 0.8); /* Dialpad color */
+  color: #7c52ff; /* Change text color to Dialpad brand color */
+}
+
+.timeline-item:nth-child(1):hover .timeline-company,
+.timeline-item:nth-child(1):hover .timeline-date {
+  color: #7c52ff; /* Change company and date color to Dialpad brand color */
+}
+
+.timeline-item:nth-child(2):hover {
+  box-shadow: 0 4px 0px rgba(230, 0, 0, 0.8); /* Airtel color */
+  color: #e60000; /* Change text color to Airtel brand color */
+}
+
+.timeline-item:nth-child(2):hover .timeline-company,
+.timeline-item:nth-child(2):hover .timeline-date {
+  color: #e60000; /* Change company and date color to Airtel brand color */
+}
+
+.timeline-item:nth-child(3):hover {
+  box-shadow: 0 4px 0px rgba(255, 0, 0, 0.8); /* Verizon color */
+  color: #f00; /* Change text color to Verizon brand color */
+}
+
+.timeline-item:nth-child(3):hover .timeline-company,
+.timeline-item:nth-child(3):hover .timeline-date {
+  color: #f00; /* Change company and date color to Verizon brand color */
+}
+
+.timeline-item:nth-child(4):hover {
+  box-shadow: 0 4px 0px rgba(255, 87, 51, 0.8); /* OneCulture color */
+  color: #ff5733; /* Change text color to OneCulture brand color */
+}
+
+.timeline-item:nth-child(4):hover .timeline-company,
+.timeline-item:nth-child(4):hover .timeline-date {
+  color: #ff5733; /* Change company and date color to OneCulture brand color */
+}
+
+.timeline-item:nth-child(5):hover {
+  box-shadow: 0 4px 0px rgba(58, 29, 149, 0.8); /* Grant Thornton color */
+  color: #3a1d95; /* Change text color to Grant Thornton brand color */
+}
+
+.timeline-item:nth-child(5):hover .timeline-company,
+.timeline-item:nth-child(5):hover .timeline-date {
+  color: #3a1d95; /* Change company and date color to Grant Thornton brand color */
+}
+
+.timeline-item:nth-child(6):hover {
+  box-shadow: 0 4px 0px rgba(255, 95, 45, 0.8); /* GlobalLogic color */
+  color: #ff5f2d; /* Change text color to GlobalLogic brand color */
+}
+
+.timeline-item:nth-child(6):hover .timeline-company,
+.timeline-item:nth-child(6):hover .timeline-date {
+  color: #ff5f2d; /* Change company and date color to GlobalLogic brand color */
+}
+
+.timeline-title {
+  font-size: 1.5rem; /* Larger title font */
+  margin-bottom: 4px; /* Space below title */
+  font-weight: 600; /* Bold for emphasis */
+}
+
+.timeline-date {
+  font-style: italic; /* Italic style for date */
+  color: #666; /* Darker color for date */
+}
+
+.timeline-company {
+  font-size: 1.2rem; /* Slightly smaller than title */
+  font-weight: 500; /* Medium weight for organization name */
+  color: #555; /* Muted color for organization name */
+  margin-bottom: 4px; /* Space below organization name */
+}
+
+.timeline-location {
+  font-size: 0.9rem; /* Smaller font for location */
+  color: #777; /* Gray color */
+}
+
+.timeline-description {
+  font-size: 0.9rem; /* Description font size */
+  line-height: 1.5; /* Line height for readability */
+  width: 100%;
+}
+
+.timeline-content {
+  flex: 1; /* Allow content to take available space */
+}
+
+/* Optional: Add a scrollbar style for better appearance */
+.timeline::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.timeline::-webkit-scrollbar-thumb {
+  background: #ccc; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+.timeline::-webkit-scrollbar-thumb:hover {
+  background: #aaa; /* Darker color on hover */
+}
+
+/* Footer */
+footer {
+  padding: 1.5rem 1.5rem; /* 1.5rem */
+  text-align: center;
+  border-top: 1px solid #eee;
+  width: 100%;
+  background: #fff;
+  font-size: 0.9rem; /* 0.9rem */
+  max-width: 1000px;
+}
+
+.social-links {
+  margin-top: 10px; /* Space above the links */
+}
+
+.social-links a {
+  color: #000; /* Default color for links */
+  text-decoration: none; /* Remove underline */
+  margin: 0 10px; /* Space between links */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Default hover color for social links */
+.social-links a:hover {
+  color: #0072c6; /* Default hover color for other links */
+}
+
+/* Specific hover colors for each link */
+.social-links a[href*="instagram"]:hover {
+  color: #e1306c; /* Instagram hover color */
+}
+
+.social-links a[href*="linkedin"]:hover {
+  color: #0077b5; /* LinkedIn hover color */
+}
+
+.social-links a[href*="dribbble"]:hover {
+  color: #e94e77; /* Dribbble hover color */
+}
+
+.social-links a[href*="behance"]:hover {
+  color: #1769ff; /* Behance hover color */
+}
+
+.social-links a[href*="github"]:hover {
+  color: #333; /* GitHub hover color */
+}
+
+.social-links a[href*="discord"]:hover {
+  color: #7289da; /* Discord hover color */
+}
+
+.social-links a[href*="spotify"]:hover {
+  color: #1db954; /* Spotify hover color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+    z-index: 100;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 0.75rem 0; /* 0.75rem */
+  }
+
+  #hook h1 {
+    font-size: 2.5rem; /* 2.5rem */
+  }
+
+  #hook p {
+    font-size: 1.1rem; /* 1.1rem */
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  /* Timeline responsive */
+  .timeline::before {
+    left: 40px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .timeline-item:nth-child(odd) {
+    text-align: left;
+  }
+
+  .timeline-item:nth-child(even) {
+    left: 0;
+  }
+
+  .timeline-dot {
+    left: 34px;
+    right: auto;
+  }
+
+  .timeline-item:nth-child(even) .timeline-header {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 480px) {
+  #hook {
+    padding: 4rem 0; /* 4rem */
+  }
+
+  #hook h1 {
+    font-size: 2rem; /* 2rem */
+  }
+
+  #hook p {
+    font-size: 1rem; /* 1rem */
+  }
+
+  .logo {
+    font-size: 1.5rem; /* 1.5rem */
+  }
+
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeline-item:nth-child(even) .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeline-location {
+    margin-top: 5px;
+  }
+}
+
+.project-folder {
+  margin-left: 20px; /* Space between content and project folder */
+  display: none; /* Hide by default */
+  font-size: 1rem; /* Font size for the link */
+  color: #0072c6; /* Color for the link */
+  text-decoration: none; /* Remove underline */
+  transition: opacity 0.3s ease; /* Smooth transition for visibility */
+}
+
+.timeline-item:hover .project-folder {
+  display: block; /* Show on hover */
+}
+
+/* Projects Section */
+.projects {
+  display: flex; /* Use flexbox layout */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  gap: 20px; /* Space between items */
+  margin-bottom: 20px; /* Reduced margin to create less space between project rows */
+}
+
+.project-item {
+  flex: 1 1 300px; /* Allow items to grow and shrink, with a base width of 300px */
+  background: #f9f9f9; /* Light background for items */
+  border-radius: 4px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 20px; /* Padding inside each item */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.project-item:hover {
+  transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+.project-item a {
+  display: block; /* Make the anchor tag a block element */
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color from parent */
+}
+
+.company-logo {
+  width: 18px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 4px;
+  margin-bottom: 4px; /* Space between logo and text */
+  vertical-align: middle; /* Align logo with text */
+}
+
+.title-container {
+  display: flex; /* Use flexbox layout */
+  justify-content: space-between; /* Space between title and badge */
+  align-items: center; /* Center items vertically */
+}
+
+.badge {
+  background-color: #d37509; /* Badge background color */
+  color: rgb(255, 255, 255); /* Text color */
+  padding: 5px 10px; /* Padding around the text */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 0.8rem; /* Font size */
+  font-style: normal;
+  margin-left: 10px; /* Space between title and badge */
+  vertical-align: middle; /* Align with text */
+}
