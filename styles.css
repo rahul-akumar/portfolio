@@ -15,7 +15,7 @@ body {
   font-weight: 400;
   font-style: normal;
   line-height: 1.6;
-  color: #1f1f1f;
+  color: #000000;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -175,13 +175,13 @@ nav {
   margin: 1.5rem 0; /* Space between items */
   padding: 1.5rem 1.5rem; /* Padding inside each item */
   background: #f9f9f9; /* Light background for items */
-  border-radius: 4px; /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 2px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   transition: color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for text color and box shadow */
 }
 
 .timeline-item:hover {
-  transform: scale(1.02); /* Slightly enlarge on hover */
+  transform: scale(1.01); /* Slightly enlarge on hover */
 }
 
 /* Specific hover colors for each organization */
@@ -253,7 +253,7 @@ nav {
 
 .timeline-date {
   font-style: italic; /* Italic style for date */
-  color: #666; /* Darker color for date */
+  color: #696969; /* Darker color for date */
 }
 
 .timeline-company {
@@ -265,13 +265,13 @@ nav {
 
 .timeline-location {
   font-size: 0.9rem; /* Smaller font for location */
-  color: #777; /* Gray color */
+  color: #555; /* Gray color */
 }
 
 .timeline-description {
   font-size: 0.9rem; /* Description font size */
   line-height: 1.5; /* Line height for readability */
-  width: 100%;
+  width: 70%;
 }
 
 .timeline-content {
@@ -402,8 +402,8 @@ footer {
 
   .timeline-item {
     width: 100%;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .timeline-item:nth-child(odd) {
