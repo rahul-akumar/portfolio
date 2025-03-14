@@ -186,7 +186,7 @@ nav {
 
 /* Specific hover colors for each organization */
 .timeline-item:nth-child(1):hover {
-  box-shadow: 0 4px 0px rgba(124, 82, 255, 0.8); /* Dialpad color */
+  box-shadow: 8px 8px 0px rgba(124, 82, 255, 0.8); /* Dialpad color */
   color: #7c52ff; /* Change text color to Dialpad brand color */
 }
 
@@ -196,7 +196,7 @@ nav {
 }
 
 .timeline-item:nth-child(2):hover {
-  box-shadow: 0 4px 0px rgba(230, 0, 0, 0.8); /* Airtel color */
+  box-shadow: 8px 8px 0px rgba(230, 0, 0, 0.8); /* Airtel color */
   color: #e60000; /* Change text color to Airtel brand color */
 }
 
@@ -206,7 +206,7 @@ nav {
 }
 
 .timeline-item:nth-child(3):hover {
-  box-shadow: 0 4px 0px rgba(255, 0, 0, 0.8); /* Verizon color */
+  box-shadow: 8px 8px 0px rgba(255, 0, 0, 0.8); /* Verizon color */
   color: #f00; /* Change text color to Verizon brand color */
 }
 
@@ -216,7 +216,7 @@ nav {
 }
 
 .timeline-item:nth-child(4):hover {
-  box-shadow: 0 4px 0px rgba(255, 87, 51, 0.8); /* OneCulture color */
+  box-shadow: 8px 8px 0px rgba(255, 87, 51, 0.8); /* OneCulture color */
   color: #ff5733; /* Change text color to OneCulture brand color */
 }
 
@@ -226,7 +226,7 @@ nav {
 }
 
 .timeline-item:nth-child(5):hover {
-  box-shadow: 0 4px 0px rgba(58, 29, 149, 0.8); /* Grant Thornton color */
+  box-shadow: 8px 8px 0px rgba(58, 29, 149, 0.8); /* Grant Thornton color */
   color: #3a1d95; /* Change text color to Grant Thornton brand color */
 }
 
@@ -236,7 +236,7 @@ nav {
 }
 
 .timeline-item:nth-child(6):hover {
-  box-shadow: 0 4px 0px rgba(255, 95, 45, 0.8); /* GlobalLogic color */
+  box-shadow: 8px 8px 0px rgba(255, 95, 45, 0.8); /* GlobalLogic color */
   color: #ff5f2d; /* Change text color to GlobalLogic brand color */
 }
 
