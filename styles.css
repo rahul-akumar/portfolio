@@ -174,18 +174,21 @@ nav {
   margin: 1.5rem 0; /* Space between items */
   padding: 1.5rem 1.5rem; /* Padding inside each item */
   background: #f9f9f9; /* Light background for items */
-  border-radius: 2px; /* Rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 4px; /* Rounded corners */
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 1); /* Subtle shadow */
   transition: color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for text color and box shadow */
+  border-color: #000;
+  border: 0.1rem solid;
 }
 
 .timeline-item:hover {
-  transform: scale(1.01); /* Slightly enlarge on hover */
+  transform: scale(1); /* Slightly enlarge on hover */
+  transform: rotate(1deg);
 }
 
 /* Specific hover colors for each organization */
 .timeline-item:nth-child(1):hover {
-  box-shadow: -4px 0px 0px rgba(124, 82, 255, 1); /* Dialpad color */
+  box-shadow: 12px 12px 0 rgba(124, 82, 255, 1); /* Dialpad color */
   color: #7c52ff; /* Change text color to Dialpad brand color */
 }
 
@@ -195,7 +198,7 @@ nav {
 }
 
 .timeline-item:nth-child(2):hover {
-  box-shadow: -4px 0px 0px rgba(230, 0, 0, 1); /* Airtel color */
+  box-shadow: 12px 12px 0 rgba(230, 0, 0, 1); /* Airtel color */
   color: #e60000; /* Change text color to Airtel brand color */
 }
 
@@ -205,7 +208,7 @@ nav {
 }
 
 .timeline-item:nth-child(3):hover {
-  box-shadow: -4px 0px 0px rgba(255, 0, 0, 1); /* Verizon color */
+  box-shadow: 12px 12px 0 rgba(255, 0, 0, 1); /* Verizon color */
   color: #f00; /* Change text color to Verizon brand color */
 }
 
@@ -215,7 +218,7 @@ nav {
 }
 
 .timeline-item:nth-child(4):hover {
-  box-shadow: -4px 0px 0px rgba(255, 87, 51, 1); /* OneCulture color */
+  box-shadow: 12px 12px 0 rgba(255, 87, 51, 1); /* OneCulture color */
   color: #ff5733; /* Change text color to OneCulture brand color */
 }
 
@@ -225,7 +228,7 @@ nav {
 }
 
 .timeline-item:nth-child(5):hover {
-  box-shadow: -4px 0px 0px rgba(58, 29, 149, 1); /* Grant Thornton color */
+  box-shadow: 12px 12px 0 rgba(58, 29, 149, 1); /* Grant Thornton color */
   color: #3a1d95; /* Change text color to Grant Thornton brand color */
 }
 
@@ -235,7 +238,7 @@ nav {
 }
 
 .timeline-item:nth-child(6):hover {
-  box-shadow: -4px 0px 0px rgba(255, 95, 45, 1); /* GlobalLogic color */
+  box-shadow: 12px 12px 0 rgba(255, 95, 45, 1); /* GlobalLogic color */
   color: #ff5f2d; /* Change text color to GlobalLogic brand color */
 }
 
@@ -513,20 +516,20 @@ footer {
 }
 
 .badge {
-  background-color: #d37509; /* Badge background color */
-  color: rgb(255, 255, 255); /* Text color */
-  padding: 5px 10px; /* Padding around the text */
-  border-radius: 2px; /* Rounded corners */
+  background-color: #1cec09; /* Badge background color */
+  color: rgb(0, 0, 0); /* Text color */
+  padding: 0.3rem 1.5rem; /* Padding around the text */
+  border-radius: 4px; /* Rounded corners */
   font-size: 0.8rem; /* Font size */
   font-style: normal;
-  margin-left: 10px; /* Space between title and badge */
+  margin-left: 1rem; /* Space between title and badge */
   vertical-align: middle; /* Align with text */
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 1);
+  border: 1.5px solid black;
 }
 
 .badge:hover {
-  background-color: #d37509; /* Badge background color */
-  color: rgb(255, 255, 255); /* Text color */
-  box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.9);
+  box-shadow: 12px 12px 0px rgba(0, 0, 0, 1);
 }
 
 .custom-bullets {
