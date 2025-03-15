@@ -57,7 +57,6 @@ header {
   padding: 1.5rem 1.5rem; /* 1.5rem */
   border-bottom: 1px solid #eee;
   width: 100%;
-  background: #fff;
   z-index: 100;
   max-width: 1000px;
 }
@@ -254,6 +253,7 @@ nav {
 .timeline-date {
   font-style: italic; /* Italic style for date */
   color: #696969; /* Darker color for date */
+  margin-bottom: 4px;
 }
 
 .timeline-company {
@@ -527,4 +527,16 @@ footer {
   background-color: #d37509; /* Badge background color */
   color: rgb(255, 255, 255); /* Text color */
   box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.9);
+}
+
+.custom-bullets {
+  list-style: disc; /* Remove default bullets */
+  padding-left: 1rem; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.custom-bullets li {
+  position: relative; /* Position for custom bullet */
+  padding-left: 0.5rem; /* Space for custom bullet */
+  margin-bottom: 0.5rem; /* Space between list items */
 }
