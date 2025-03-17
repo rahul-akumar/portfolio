@@ -174,7 +174,7 @@ nav {
   margin: 1.5rem 0; /* Space between items */
   padding: 1.5rem 1.5rem; /* Padding inside each item */
   background: #f9f9f9; /* Light background for items */
-  border-radius: 4px; /* Rounded corners */
+  border-radius: 16px; /* Rounded corners */
   box-shadow: 3px 3px 0px rgba(0, 0, 0, 1); /* Subtle shadow */
   transition: color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for text color and box shadow */
   border-color: #000;
@@ -183,7 +183,6 @@ nav {
 
 .timeline-item:hover {
   transform: scale(1); /* Slightly enlarge on hover */
-  transform: rotate(1deg);
 }
 
 /* Specific hover colors for each organization */
@@ -247,13 +246,25 @@ nav {
   color: #ff5f2d; /* Change company and date color to GlobalLogic brand color */
 }
 
+.timeline-header {
+  display: flex; /* Enable flexbox */
+  justify-content: space-between; /* Align items to opposite sides */
+  align-items: center; /* Center items vertically (optional) */
+}
+
 .timeline-title {
   font-size: 1.5rem; /* Larger title font */
-  margin-bottom: 4px; /* Space below title */
-  font-weight: 600; /* Bold for emphasis */
+  font-weight: 700; /* Bold for emphasis */
+  height: auto;
+}
+
+.case-study-link a {
+  text-decoration: none; /* Remove underline from link */
+  color: #0072c6; /* Change color as needed */
 }
 
 .timeline-date {
+  font-size: 0.9rem;
   font-style: italic; /* Italic style for date */
   color: #696969; /* Darker color for date */
   margin-bottom: 4px;
@@ -272,8 +283,8 @@ nav {
 }
 
 .timeline-description {
-  font-size: 0.9rem; /* Description font size */
-  line-height: 1.5; /* Line height for readability */
+  font-size: 1rem; /* Description font size */
+  line-height: 1.6; /* Line height for readability */
   width: 100%;
 }
 
@@ -429,7 +440,7 @@ footer {
 
 @media (max-width: 480px) {
   #hook {
-    padding: 4rem 0; /* 4rem */
+    padding: 1.5rem 1.5rem; /* 4rem */
   }
 
   #hook h1 {
