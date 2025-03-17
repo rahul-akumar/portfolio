@@ -553,3 +553,71 @@ footer {
   padding-left: 0.5rem; /* Space for custom bullet */
   margin-bottom: 0.5rem; /* Space between list items */
 }
+
+.blog-container {
+  padding: 1.5rem;
+}
+
+.blog-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 1.5rem 1.5rem 1.5rem; /* Padding inside each item */ /* Adjust padding as needed */
+  background: #f9f9f9; /* Light background for the blog section */
+  border-radius: 6px; /* Rounded corners */
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 1); /* Subtle shadow */
+  margin-top: 1.5rem; /* Space above the blog section */
+  border: 1.5px solid black;
+  transition: color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for text color and box shadow */
+}
+
+.blog-post:hover {
+  background-color: #9ef500; /* Badge background color */
+  box-shadow: 12px 12px 0;
+}
+
+.blog-header {
+  display: flex; /* Enable flexbox for header */
+  justify-content: space-between; /* Space between title and thumbnail */
+  align-items: center; /* Center items vertically */
+}
+
+.blog-title {
+  flex: 1; /* Allow title to take available space */
+  margin-right: 1rem; /* Space between title and thumbnail */
+}
+
+.blog-thumbnail {
+  width: auto; /* Set width for thumbnail */
+  height: auto; /* Set height for thumbnail */
+  overflow: hidden; /* Hide overflow */
+  align-items: center;
+}
+
+.blog-thumbnail img {
+  width: auto; /* Make image responsive */
+  height: 100%; /* Maintain aspect ratio */
+}
+
+.blog-subtitle {
+  margin: 0rem 0; /* Space above and below subtitle */
+}
+
+.blog-footer {
+  display: flex; /* Enable flexbox for footer */
+  justify-content: space-between; /* Space between date and keywords */
+  margin-top: 0rem; /* Space above footer */
+}
+
+.blog-date,
+.blog-keywords {
+  font-size: 0.9rem; /* Smaller font size for date and keywords */
+  color: #666; /* Gray color for text */
+}
+.blog-link {
+  text-decoration: none; /* Remove underline from link */
+  color: inherit; /* Inherit text color from parent */
+  display: block; /* Make the anchor tag a block element */
+  border-radius: 6px; /* Optional rounded corners */
+  transition: background 0.3s; /* Smooth transition for hover effect */
+}
