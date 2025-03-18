@@ -146,6 +146,9 @@ nav {
 /* Hook Section */
 #hook {
   padding: 1.5rem 1.5rem; /* 1.5rem */
+  font-size: 1.33rem;
+  font-weight: 700;
+  margin: 1.5rem 0;
 }
 
 /* Experience Section */
@@ -177,73 +180,44 @@ nav {
   box-shadow: 3px 3px 0px rgba(0, 0, 0, 1); /* Subtle shadow */
   transition: color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for text color and box shadow */
   border-color: #000;
-  border: 0.1rem solid;
+  border: 0.15rem solid;
 }
 
 .timeline-item:hover {
   transform: scale(1); /* Slightly enlarge on hover */
+  box-shadow: 12px 12px 0px rgba(0, 0, 0, 1); /* Subtle shadow */
 }
 
 /* Specific hover colors for each organization */
 .timeline-item:nth-child(1):hover {
-  box-shadow: 12px 12px 0 rgba(124, 82, 255, 1); /* Dialpad color */
-  color: #7c52ff; /* Change text color to Dialpad brand color */
-}
-
-.timeline-item:nth-child(1):hover .timeline-company,
-.timeline-item:nth-child(1):hover .timeline-date {
-  color: #7c52ff; /* Change company and date color to Dialpad brand color */
+  background-color: rgba(124, 82, 255, 0.5);
 }
 
 .timeline-item:nth-child(2):hover {
-  box-shadow: 12px 12px 0 rgba(230, 0, 0, 1); /* Airtel color */
-  color: #e60000; /* Change text color to Airtel brand color */
-}
-
-.timeline-item:nth-child(2):hover .timeline-company,
-.timeline-item:nth-child(2):hover .timeline-date {
-  color: #e60000; /* Change company and date color to Airtel brand color */
+  background-color: rgba(230, 0, 0, 0.5);
 }
 
 .timeline-item:nth-child(3):hover {
-  box-shadow: 12px 12px 0 rgba(255, 0, 0, 1); /* Verizon color */
-  color: #f00; /* Change text color to Verizon brand color */
-}
-
-.timeline-item:nth-child(3):hover .timeline-company,
-.timeline-item:nth-child(3):hover .timeline-date {
-  color: #f00; /* Change company and date color to Verizon brand color */
+  background-color: rgba(255, 0, 0, 0.5);
 }
 
 .timeline-item:nth-child(4):hover {
-  box-shadow: 12px 12px 0 rgba(255, 87, 51, 1); /* OneCulture color */
-  color: #ff5733; /* Change text color to OneCulture brand color */
-}
-
-.timeline-item:nth-child(4):hover .timeline-company,
-.timeline-item:nth-child(4):hover .timeline-date {
-  color: #ff5733; /* Change company and date color to OneCulture brand color */
+  background-color: rgba(255, 87, 5, 0.5);
 }
 
 .timeline-item:nth-child(5):hover {
-  box-shadow: 12px 12px 0 rgba(58, 29, 149, 1); /* Grant Thornton color */
-  color: #3a1d95; /* Change text color to Grant Thornton brand color */
-}
-
-.timeline-item:nth-child(5):hover .timeline-company,
-.timeline-item:nth-child(5):hover .timeline-date {
-  color: #3a1d95; /* Change company and date color to Grant Thornton brand color */
+  background-color: rgba(58, 29, 149, 0.5);
 }
 
 .timeline-item:nth-child(6):hover {
-  box-shadow: 12px 12px 0 rgba(255, 95, 45, 1); /* GlobalLogic color */
-  color: #ff5f2d; /* Change text color to GlobalLogic brand color */
+  background-color: rgba(255, 95, 45, 0.5);
 }
 
+/* just for reference
 .timeline-item:nth-child(6):hover .timeline-company,
 .timeline-item:nth-child(6):hover .timeline-date {
-  color: #ff5f2d; /* Change company and date color to GlobalLogic brand color */
-}
+  color: #ff5f2d; /* Change company and date color to GlobalLogic brand color }
+  */
 
 .timeline-header {
   display: flex; /* Enable flexbox */
@@ -263,16 +237,16 @@ nav {
 }
 
 .timeline-date {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-style: italic; /* Italic style for date */
-  color: #696969; /* Darker color for date */
+  color: #4b4b4b; /* Darker color for date */
   margin-bottom: 4px;
 }
 
 .timeline-company {
-  font-size: 1.2rem; /* Slightly smaller than title */
+  font-size: 1.25rem; /* Slightly smaller than title */
   font-weight: 500; /* Medium weight for organization name */
-  color: #555; /* Muted color for organization name */
+  color: #444444; /* Muted color for organization name */
   margin-bottom: 4px; /* Space below organization name */
 }
 
