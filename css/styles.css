@@ -11,8 +11,7 @@ body {
 }
 
 body {
-  font-family: "IBM Plex Mono", monospace;
-  font-weight: 400;
+  font-family: "JetBrains Mono", monospace;
   font-style: normal;
   line-height: 1.6;
   color: #141414;
@@ -37,19 +36,14 @@ body {
 
 /* Links */
 a {
+  font-weight: 300;
   text-decoration: none;
   color: #333;
   transition: all 0.3s ease;
 }
 
 a:hover {
-  font-style: italic;
-}
-
-/* Italic styling */
-.italic {
-  font-style: italic;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 /* Header */
@@ -119,7 +113,6 @@ nav {
 
 .nav-links a {
   position: relative;
-  font-weight: 400;
 }
 
 .nav-links a:after {
@@ -146,9 +139,11 @@ nav {
 /* Hook Section */
 #hook {
   padding: 1.5rem 1.5rem; /* 1.5rem */
-  font-size: 1.33rem;
-  font-weight: 700;
   margin: 1.5rem 0;
+}
+
+#hook h1 {
+  font-size: 2rem;
 }
 
 /* Experience Section */
@@ -186,6 +181,9 @@ nav {
 .timeline-item:hover {
   transform: scale(1); /* Slightly enlarge on hover */
   box-shadow: 12px 12px 0px rgba(0, 0, 0, 1); /* Subtle shadow */
+  box-shadow: inset 12px 12px 0px rgba(0, 0, 0, 0.2); /* Inner shadow */
+  box-shadow: 12px 12px 0px rgba(0, 0, 0, 1),
+    inset 3px 3px 0 rgba(255, 255, 255, 0.5); /* Outer and inner shadows */
 }
 
 /* Specific hover colors for each organization */
@@ -364,7 +362,7 @@ footer {
   }
 
   #hook h1 {
-    font-size: 2.5rem; /* 2.5rem */
+    font-size: 2rem; /* 2.5rem */
   }
 
   #hook p {
