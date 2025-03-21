@@ -57,12 +57,6 @@ function createBlogPostElement(post) {
   const article = document.createElement("div");
   article.className = "blog-post";
 
-  // Create the keyword string if keywords exist
-  const keywordsHtml =
-    post.keywords && post.keywords.length
-      ? `<div class="blog-keywords">Keywords: ${post.keywords.join(", ")}</div>`
-      : "";
-
   article.innerHTML = `
     <a href="${
       baseUrl ? baseUrl.replace(/\/$/, "") : ""
@@ -75,9 +69,6 @@ function createBlogPostElement(post) {
           <div class="blog-date">${formatDate(post.date)}</div>
         </div>
         ${post.subtitle ? `<p class="blog-subtitle">${post.subtitle}</p>` : ""}
-        <div class="blog-footer">
-          ${keywordsHtml}
-        </div>
       </article>
     </a>
   `;
