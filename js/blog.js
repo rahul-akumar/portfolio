@@ -61,7 +61,7 @@ function createBlogPostElement(post) {
   article.innerHTML = `
     <a href="blog-post.html?post=${encodeURIComponent(
       post.filename
-    )}" class="blog-link">
+    )}&path=${encodeURIComponent(post.path)}" class="blog-link">
       <article>
         <div class="blog-header">
           <h2 class="blog-title">${post.title}</h2>

@@ -95,16 +95,24 @@
           // Get the post filename from the URL
           const urlParams = new URLSearchParams(window.location.search);
           const postFilename = urlParams.get("post");
+          const postPath = urlParams.get("path");
 
           if (!postFilename) {
             throw new Error("No post specified");
           }
 
-          // Try to fetch the markdown file directly
+          // Try to fetch the markdown file directly using path if available
           let mdContent;
-          let response = await fetch(`blogs/${postFilename}.md`);
+          let response;
 
-          // If direct fetch fails, try getting from index.json
+          if (postPath) {
+            // Use the exact path if provided in URL
+            response = await fetch(postPath);
+          } else {
+            // Try direct fetch from root blogs folder as fallback
+            response = await fetch(`blogs/${postFilename}.md`);
+          }
+
           if (!response.ok) {
             const indexResponse = await fetch("blogs/index.json");
             if (!indexResponse.ok) {
