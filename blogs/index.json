@@ -1,0 +1,40 @@
+[
+  {
+    "title": "Breaking the Glass Ceiling: Women Discrimination in the Workplace",
+    "subtitle": "Examining ongoing challenges and pathways to equality in professional environments",
+    "date": "2024-05-15",
+    "keywords": [
+      "Gender Equality",
+      "Workplace Discrimination",
+      "Women in Business",
+      "Gender Pay Gap",
+      "Professional Development"
+    ],
+    "filename": "2024-05-15-women-discrimination-workplace",
+    "path": "blogs/2024-05-15-women-discrimination-workplace.md"
+  },
+  {
+    "title": "Newest Blog Post",
+    "subtitle": "This post should appear at the top of the list",
+    "date": "2024-04-15",
+    "keywords": ["New", "Latest", "Test"],
+    "filename": "2024-04-15-newest-blog-post",
+    "path": "blogs/2024-04-15-newest-blog-post.md"
+  },
+  {
+    "title": "Testing the Blog System",
+    "subtitle": "This is a test post to verify our client-side Markdown rendering",
+    "date": "2023-11-20",
+    "keywords": ["Test", "Blog", "Markdown", "Client-side"],
+    "filename": "2023-11-20-testing-the-blog-system",
+    "path": "blogs/2023-11-20-testing-the-blog-system.md"
+  },
+  {
+    "title": "Sample Blog Post",
+    "subtitle": "This is an example of how to format your blog posts",
+    "date": "2023-10-15",
+    "keywords": ["Sample", "Markdown", "Tutorial"],
+    "filename": "2023-10-15-sample-blog-post",
+    "path": "blogs/2023-10-15-sample-blog-post.md"
+  }
+]

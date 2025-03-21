@@ -100,13 +100,34 @@
             throw new Error("No post specified");
           }
 
-          // Fetch the markdown file
-          const response = await fetch(`blogs/${postFilename}.md`);
+          // Try to fetch the markdown file directly
+          let mdContent;
+          let response = await fetch(`blogs/${postFilename}.md`);
+
+          // If direct fetch fails, try getting from index.json
           if (!response.ok) {
-            throw new Error("Failed to load blog post");
+            const indexResponse = await fetch("blogs/index.json");
+            if (!indexResponse.ok) {
+              throw new Error("Failed to load blog post and index");
+            }
+
+            const blogPosts = await indexResponse.json();
+            const post = blogPosts.find((p) => p.filename === postFilename);
+
+            if (!post) {
+              throw new Error("Blog post not found in index");
+            }
+
+            // Get the actual path from the index if available, otherwise use default
+            const postPath = post.path || `blogs/${postFilename}.md`;
+            response = await fetch(postPath);
+
+            if (!response.ok) {
+              throw new Error("Failed to load blog post using path from index");
+            }
           }
 
-          const mdContent = await response.text();
+          mdContent = await response.text();
 
           // Extract frontmatter
           const frontmatterMatch = mdContent.match(/^---\s*([\s\S]*?)\s*---/);

@@ -4,114 +4,28 @@ document.addEventListener("DOMContentLoaded", async function () {
   const postsContainer = document.getElementById("blog-posts-container");
 
   try {
-    // Fetch the list of markdown files from the blogs directory
-    const response = await fetch("blogs/");
-    if (!response.ok) {
-      throw new Error("Failed to load blog directory");
-    }
-
-    const html = await response.text();
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, "text/html");
-
-    // Extract markdown files from directory listing
-    const mdFiles = Array.from(doc.querySelectorAll("a"))
-      .filter((a) => a.href.endsWith(".md"))
-      .map((a) => a.href.split("/").pop());
-
-    // Clear the sample post
-    postsContainer.innerHTML = "";
-
-    if (mdFiles.length === 0) {
-      postsContainer.innerHTML = "<p class='no-posts'>No blog posts found.</p>";
-      return;
-    }
-
     // Show loading indicator
     postsContainer.innerHTML =
       "<div class='loading-posts'>Loading blog posts...</div>";
 
-    // Process each markdown file
-    const blogPosts = [];
-
-    for (const mdFile of mdFiles) {
-      if (!mdFile.endsWith(".md") || mdFile === "README.md") continue;
-
-      const mdResponse = await fetch(`blogs/${mdFile}`);
-      if (!mdResponse.ok) continue;
-
-      const mdContent = await mdResponse.text();
-
-      // Extract frontmatter
-      const frontmatterMatch = mdContent.match(/^---\s*([\s\S]*?)\s*---/);
-      if (!frontmatterMatch) continue;
-
-      const frontmatterText = frontmatterMatch[1];
-      const frontmatter = {};
-
-      // Parse frontmatter
-      frontmatterText.split("\n").forEach((line) => {
-        if (!line.trim()) return;
-
-        const colonIndex = line.indexOf(":");
-        if (colonIndex === -1) return;
-
-        const key = line.substring(0, colonIndex).trim();
-        let value = line.substring(colonIndex + 1).trim();
-
-        // Remove quotes if present
-        if (value.startsWith('"') && value.endsWith('"')) {
-          value = value.substring(1, value.length - 1);
-        }
-
-        // Handle arrays (keywords)
-        if (
-          key === "keywords" &&
-          value.startsWith("[") &&
-          value.endsWith("]")
-        ) {
-          try {
-            // Try to parse as JSON
-            value = JSON.parse(value);
-          } catch (e) {
-            // Fallback to simple parsing
-            value = value
-              .substring(1, value.length - 1)
-              .split(",")
-              .map((k) => k.trim().replace(/"/g, "").replace(/'/g, ""));
-          }
-        }
-
-        frontmatter[key] = value;
-      });
-
-      // Skip if missing required fields
-      if (!frontmatter.title || !frontmatter.date) continue;
-
-      // Extract content
-      const content = mdContent.replace(/^---\s*[\s\S]*?\s*---/, "").trim();
-
-      const filename = mdFile.replace(".md", "");
-
-      blogPosts.push({
-        title: frontmatter.title,
-        subtitle: frontmatter.subtitle || "",
-        date: frontmatter.date,
-        keywords: Array.isArray(frontmatter.keywords)
-          ? frontmatter.keywords
-          : [],
-        filename: filename,
-        content: content,
-      });
+    // Fetch the blog index.json instead of directory listing
+    const response = await fetch("blogs/index.json");
+    if (!response.ok) {
+      throw new Error("Failed to load blog index");
     }
+
+    // Parse the JSON
+    const blogPosts = await response.json();
 
     // Clear loading indicator
     postsContainer.innerHTML = "";
 
-    // Sort blog posts by date (newest first)
-    blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+    if (blogPosts.length === 0) {
+      postsContainer.innerHTML = "<p class='no-posts'>No blog posts found.</p>";
+      return;
+    }
 
-    // Render blog posts
+    // Render blog posts (already sorted by date in the index)
     for (const post of blogPosts) {
       const postElement = createBlogPostElement(post);
       postsContainer.appendChild(postElement);
@@ -119,6 +33,18 @@ document.addEventListener("DOMContentLoaded", async function () {
   } catch (error) {
     console.error("Error loading blog posts:", error);
     postsContainer.innerHTML = `<p class="error">Failed to load blog posts: ${error.message}</p>`;
+
+    // Show instructions for fixing the issue
+    postsContainer.innerHTML += `
+      <div class="error-help">
+        <p>This error likely occurs because you need to generate the index.json file.</p>
+        <p>If you're using GitHub Pages:</p>
+        <ol>
+          <li>Create a simple blogs/index.json file with your blog posts</li>
+          <li>The GitHub Action will update it when you add new posts</li>
+        </ol>
+      </div>
+    `;
   }
 });
 
