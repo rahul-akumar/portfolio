@@ -5,21 +5,42 @@ const path = require("path");
 const BLOGS_DIR = path.join(__dirname, "../../blogs");
 const OUTPUT_FILE = path.join(BLOGS_DIR, "index.json");
 
+// Get all markdown files recursively
+function findMarkdownFiles(dir, fileList = []) {
+  const files = fs.readdirSync(dir);
+
+  files.forEach((file) => {
+    const filePath = path.join(dir, file);
+    const stat = fs.statSync(filePath);
+
+    if (stat.isDirectory()) {
+      // Recursively scan subdirectories
+      findMarkdownFiles(filePath, fileList);
+    } else if (file.endsWith(".md") && file !== "README.md") {
+      // Only add markdown files that aren't README
+      fileList.push(filePath);
+    }
+  });
+
+  return fileList;
+}
+
 // Get all markdown files
 function generateBlogIndex() {
   console.log("Generating blog index...");
 
-  // Read all markdown files in the blogs directory
-  const blogFiles = fs
-    .readdirSync(BLOGS_DIR)
-    .filter((file) => file.endsWith(".md") && file !== "README.md");
-
+  // Find all markdown files in blogs directory and its subdirectories
+  const markdownFiles = findMarkdownFiles(BLOGS_DIR);
   const blogPosts = [];
 
   // Process each markdown file
-  blogFiles.forEach((file) => {
-    const filePath = path.join(BLOGS_DIR, file);
+  markdownFiles.forEach((filePath) => {
     const fileContent = fs.readFileSync(filePath, "utf8");
+
+    // Get the path relative to the blogs directory
+    const relativePath = path.relative(BLOGS_DIR, filePath);
+    // Get just the filename without extension
+    const filename = path.basename(filePath, ".md");
 
     // Extract frontmatter
     const frontmatterMatch = fileContent.match(/^---\s*([\s\S]*?)\s*---/);
@@ -61,8 +82,6 @@ function generateBlogIndex() {
     // Skip if missing required fields
     if (!frontmatter.title || !frontmatter.date) return;
 
-    const filename = file.replace(".md", "");
-
     // Add to blog posts array
     blogPosts.push({
       title: frontmatter.title,
@@ -70,7 +89,7 @@ function generateBlogIndex() {
       date: frontmatter.date,
       keywords: Array.isArray(frontmatter.keywords) ? frontmatter.keywords : [],
       filename: filename,
-      path: `blogs/${file}`,
+      path: `blogs/${relativePath.replace(/\\/g, "/")}`, // Ensure forward slashes for web paths
     });
   });
 

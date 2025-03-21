@@ -118,9 +118,13 @@
               throw new Error("Blog post not found in index");
             }
 
-            // Get the actual path from the index if available, otherwise use default
-            const postPath = post.path || `blogs/${postFilename}.md`;
-            response = await fetch(postPath);
+            // Use the exact path from the index.json file
+            if (post.path) {
+              response = await fetch(post.path);
+            } else {
+              // Fallback to default path if not specified
+              response = await fetch(`blogs/${postFilename}.md`);
+            }
 
             if (!response.ok) {
               throw new Error("Failed to load blog post using path from index");

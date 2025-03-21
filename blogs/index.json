@@ -1,5 +1,19 @@
 [
   {
+    "title": "The Future of AI Ethics: Navigating the Next Decade",
+    "subtitle": "Exploring the ethical implications of advanced artificial intelligence systems in the coming years",
+    "date": "2025-01-15",
+    "keywords": [
+      "AI Ethics",
+      "Future Technology",
+      "Machine Learning",
+      "Responsible AI",
+      "Tech Policy"
+    ],
+    "filename": "2025-01-15-future-of-ai-ethics",
+    "path": "blogs/2025/2025-01-15-future-of-ai-ethics.md"
+  },
+  {
     "title": "Breaking the Glass Ceiling: Women Discrimination in the Workplace",
     "subtitle": "Examining ongoing challenges and pathways to equality in professional environments",
     "date": "2024-05-15",
@@ -11,7 +25,7 @@
       "Professional Development"
     ],
     "filename": "2024-05-15-women-discrimination-workplace",
-    "path": "blogs/2024-05-15-women-discrimination-workplace.md"
+    "path": "blogs/2024/2024-05-15-women-discrimination-workplace.md"
   },
   {
     "title": "Newest Blog Post",
@@ -19,7 +33,7 @@
     "date": "2024-04-15",
     "keywords": ["New", "Latest", "Test"],
     "filename": "2024-04-15-newest-blog-post",
-    "path": "blogs/2024-04-15-newest-blog-post.md"
+    "path": "blogs/2024/2024-04-15-newest-blog-post.md"
   },
   {
     "title": "Testing the Blog System",
@@ -27,7 +41,7 @@
     "date": "2023-11-20",
     "keywords": ["Test", "Blog", "Markdown", "Client-side"],
     "filename": "2023-11-20-testing-the-blog-system",
-    "path": "blogs/2023-11-20-testing-the-blog-system.md"
+    "path": "blogs/2023/2023-11-20-testing-the-blog-system.md"
   },
   {
     "title": "Sample Blog Post",
@@ -35,6 +49,6 @@
     "date": "2023-10-15",
     "keywords": ["Sample", "Markdown", "Tutorial"],
     "filename": "2023-10-15-sample-blog-post",
-    "path": "blogs/2023-10-15-sample-blog-post.md"
+    "path": "blogs/2023/2023-10-15-sample-blog-post.md"
   }
 ]
