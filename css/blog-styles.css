@@ -1,0 +1,307 @@
+/* Font definitions */
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("https://api.fontshare.com/v2/css?f[]=jet-brains-mono@400,700,500,300&display=swap");
+  font-display: swap;
+}
+
+/* Blog List Styles */
+.blog-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: "jet-brains-mono", "JetBrainsMono", monospace !important;
+}
+
+/* Direct targeting of all elements within the blog container */
+.blog-container * {
+  font-family: "jet-brains-mono", "JetBrainsMono", monospace !important;
+}
+
+/* Target individual elements to ensure they inherit the font */
+.blog-container h1,
+.blog-container h2,
+.blog-container h3,
+.blog-container h4,
+.blog-container h5,
+.blog-container h6,
+.blog-container p,
+.blog-container li,
+.blog-container a,
+.blog-container span,
+.blog-container div {
+  font-family: "jet-brains-mono", "JetBrainsMono", monospace !important;
+}
+
+.blog-container h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #333;
+}
+
+.blog-intro {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  color: #555;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.blog-post {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 2rem;
+  transition: transform 0.2s ease;
+}
+
+.blog-post:hover {
+  transform: translateY(-3px);
+}
+
+.blog-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.blog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.blog-title {
+  margin: 0;
+  font-size: 1.75rem;
+  color: #222;
+}
+
+.blog-date {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+.blog-subtitle {
+  margin: 0.5rem 0 1rem;
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.blog-footer {
+  margin-top: 1rem;
+}
+
+.blog-keywords {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.loading-posts {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-style: italic;
+}
+
+.error {
+  color: #d32f2f;
+  padding: 1rem;
+  background-color: #ffebee;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+.no-posts {
+  text-align: center;
+  padding: 2rem;
+  color: #555;
+  font-style: italic;
+}
+
+/* Individual Blog Post Styles */
+.blog-post-content {
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem;
+  font-family: "jet-brains-mono", "JetBrainsMono", monospace !important;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* Force the font on all children of blog post content */
+.blog-post-content * {
+  font-family: "jet-brains-mono", "JetBrainsMono", monospace !important;
+}
+
+.blog-post-content article {
+  background-color: #fff;
+}
+
+.blog-post-content h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #222;
+  line-height: 1.3;
+}
+
+.blog-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.blog-content {
+  margin-top: 2rem;
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-family: "jet-brains-mono", "JetBrainsMono", monospace !important;
+}
+
+.blog-content h2 {
+  font-size: 1.8rem;
+}
+
+.blog-content h3 {
+  font-size: 1.5rem;
+}
+
+.blog-content p {
+  margin-bottom: 1.5rem;
+  font-family: "jet-brains-mono", "JetBrainsMono", monospace !important;
+}
+
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 2rem auto;
+}
+
+.blog-content a {
+  color: #0066cc;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+  font-family: "jet-brains-mono", "JetBrainsMono", monospace !important;
+}
+
+.blog-content a:hover {
+  border-bottom-color: #0066cc;
+}
+
+.blog-content blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  border: 1.5px solid black;
+  border-radius: 0.75rem;
+  background-color: #f8f9fa;
+  font-style: italic;
+  color: #555;
+  font-family: "jet-brains-mono", "JetBrainsMono", monospace !important;
+}
+
+.blog-content pre {
+  background-color: #f6f8fa;
+  border-radius: 4px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  font-family: "jet-brains-mono", "JetBrainsMono", monospace !important;
+}
+
+.blog-content code {
+  font-family: "jet-brains-mono", "JetBrainsMono", monospace !important;
+  font-size: 0.9em;
+  background-color: #f6f8fa;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+.blog-content pre code {
+  padding: 0;
+  background-color: transparent;
+}
+
+.blog-content ul,
+.blog-content ol {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+  font-family: "jet-brains-mono", "JetBrainsMono", monospace !important;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+  font-family: "jet-brains-mono", "JetBrainsMono", monospace !important;
+}
+
+.blog-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-family: "jet-brains-mono", "JetBrainsMono", monospace !important;
+}
+
+.blog-content th,
+.blog-content td {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  font-family: "jet-brains-mono", "JetBrainsMono", monospace !important;
+}
+
+.blog-content th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+}
+
+.blog-content tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .blog-post-content article {
+    padding: 1.5rem;
+  }
+
+  .blog-content h1 {
+    font-size: 2rem;
+  }
+
+  .blog-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .blog-content h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .blog-date {
+    margin-top: 0.5rem;
+  }
+}

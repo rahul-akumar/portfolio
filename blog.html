@@ -5,7 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog - Rahul Kumar Portfolio</title>
     <link rel="stylesheet" href="font/ibm-plex-sans-all.css" />
+    <!-- JetBrains Mono font from Font Share -->
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=jet-brains-mono@101,200,201,300,301,400,401,500,501,600,601,700,701,800,801&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/blog-styles.css" />
+    <!-- Font reset to ensure JetBrains Mono is used everywhere -->
+    <link rel="stylesheet" href="css/font-reset.css" />
+    <!-- Inline font fix for blog content -->
+    <style>
+      /* Global blog font override */
+      body {
+        font-family: "jet-brains-mono", monospace;
+      }
+
+      /* Force font application on all relevant elements */
+      .blog-container,
+      .blog-container *,
+      .blog-post-content,
+      .blog-post-content * {
+        font-family: "jet-brains-mono", monospace !important;
+      }
+
+      /* Explicit font for text elements */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      a,
+      span,
+      div,
+      li,
+      blockquote,
+      time,
+      code,
+      pre {
+        font-family: "jet-brains-mono", monospace !important;
+      }
+    </style>
+    <script src="js/blog.js" defer></script>
   </head>
   <body>
     <header>
@@ -23,26 +66,23 @@
     <section id="blog-posts">
       <div class="blog-container">
         <h1>My Blog</h1>
-        <div class="blog-post">
-          <a href="" class="blog-link">
+        <p class="blog-intro">
+          Thoughts, ideas, and reflections on design, technology, and
+          creativity.
+        </p>
+        <div id="blog-posts-container">
+          <!-- Blog posts will be loaded dynamically from JavaScript -->
+          <div class="blog-post">
             <article>
               <div class="blog-header">
-                <h2 class="blog-title">Blog Post Title</h2>
-                <div class="blog-date">Oct 1, 2023</div>
+                <h2 class="blog-title">Loading blog posts...</h2>
+                <div class="blog-date"></div>
               </div>
-              <p class="blog-subtitle">Summary or excerpt of the blog post.</p>
-              <div class="blog-footer">
-                <div class="blog-keywords">Keywords: Design, UX, Portfolio</div>
-              </div>
+              <p class="blog-subtitle">
+                Please wait while blog posts are loaded.
+              </p>
             </article>
-          </a>
-          <!-- <div class="blog-thumbnail">
-          <img
-            src="://miro.medium.com/v2/resize:fit:2000/format:webp/1*70BR2BRbeG7s4obU8rUALw.png"
-            alt="Thumbnail"
-          />
-        </div> -->
-          <!-- Repeat for more blog posts -->
+          </div>
         </div>
       </div>
     </section>

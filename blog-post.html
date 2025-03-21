@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Post - Rahul Kumar Portfolio</title>
+    <link rel="stylesheet" href="font/ibm-plex-sans-all.css" />
+    <!-- JetBrains Mono font from Font Share -->
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=jet-brains-mono@101,200,201,300,301,400,401,500,501,600,601,700,701,800,801&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/blog-styles.css" />
+    <!-- Font reset to ensure JetBrains Mono is used everywhere -->
+    <link rel="stylesheet" href="css/font-reset.css" />
+    <!-- Inline font fix for blog content -->
+    <style>
+      /* Global blog font override */
+      body {
+        font-family: "jet-brains-mono", monospace;
+      }
+
+      /* Force font application on all relevant elements */
+      .blog-container,
+      .blog-container *,
+      .blog-post-content,
+      .blog-post-content * {
+        font-family: "jet-brains-mono", monospace !important;
+      }
+
+      /* Explicit font for text elements */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      a,
+      span,
+      div,
+      li,
+      blockquote,
+      time,
+      code,
+      pre {
+        font-family: "jet-brains-mono", monospace !important;
+      }
+
+      /* Additional specificity for markdown content */
+      #post-content,
+      #post-content * {
+        font-family: "jet-brains-mono", monospace !important;
+      }
+
+      /* Override any fonts that might be set by Prism */
+      pre[class*="language-"],
+      code[class*="language-"] {
+        font-family: "jet-brains-mono", monospace !important;
+      }
+    </style>
+    <!-- Prism CSS for syntax highlighting -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css"
+      integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Add Markdown rendering library -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Prism JS for syntax highlighting -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js"
+      integrity="sha512-9khQRAUBYEJDCDVP2yw3LRUQvjJ0Pjx0EShmaQjcHa6AXiOv6qHQu9lCAIR8O+/D8FtaCoJ2c0Tf9Xo7hYH01Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js"
+      integrity="sha512-fTl/qcO1VgvKtOMApX2PdZzkziyr2stM65GYPLGuYMnuMm1z2JLJG6XVU7C/mR+E7xBUqCivykuhlzfqxXBXbg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", async function () {
+        const postContainer = document.getElementById("post-container");
+        const postTitle = document.getElementById("post-title");
+        const postDate = document.getElementById("post-date");
+        const postKeywords = document.getElementById("post-keywords");
+        const postContent = document.getElementById("post-content");
+
+        try {
+          // Get the post filename from the URL
+          const urlParams = new URLSearchParams(window.location.search);
+          const postFilename = urlParams.get("post");
+
+          if (!postFilename) {
+            throw new Error("No post specified");
+          }
+
+          // Fetch the markdown file
+          const response = await fetch(`blogs/${postFilename}.md`);
+          if (!response.ok) {
+            throw new Error("Failed to load blog post");
+          }
+
+          const mdContent = await response.text();
+
+          // Extract frontmatter
+          const frontmatterMatch = mdContent.match(/^---\s*([\s\S]*?)\s*---/);
+          if (!frontmatterMatch) {
+            throw new Error("Invalid blog post format");
+          }
+
+          const frontmatterText = frontmatterMatch[1];
+          const frontmatter = {};
+
+          // Parse frontmatter
+          frontmatterText.split("\n").forEach((line) => {
+            if (!line.trim()) return;
+
+            const colonIndex = line.indexOf(":");
+            if (colonIndex === -1) return;
+
+            const key = line.substring(0, colonIndex).trim();
+            let value = line.substring(colonIndex + 1).trim();
+
+            // Remove quotes if present
+            if (value.startsWith('"') && value.endsWith('"')) {
+              value = value.substring(1, value.length - 1);
+            }
+
+            // Handle arrays (keywords)
+            if (
+              key === "keywords" &&
+              value.startsWith("[") &&
+              value.endsWith("]")
+            ) {
+              value = value
+                .substring(1, value.length - 1)
+                .split(",")
+                .map((k) => k.trim().replace(/"/g, "").replace(/'/g, ""));
+            }
+
+            frontmatter[key] = value;
+          });
+
+          // Set document title
+          document.title = `${frontmatter.title} - Rahul Kumar Portfolio`;
+
+          // Set post metadata
+          postTitle.textContent = frontmatter.title;
+          postDate.textContent = formatDate(frontmatter.date);
+
+          if (frontmatter.keywords && frontmatter.keywords.length) {
+            postKeywords.textContent = `Keywords: ${frontmatter.keywords.join(
+              ", "
+            )}`;
+          } else {
+            postKeywords.style.display = "none";
+          }
+
+          // Configure marked for code highlighting
+          marked.setOptions({
+            highlight: function (code, lang) {
+              return `<pre class="language-${lang}"><code class="language-${lang}">${code}</code></pre>`;
+            },
+          });
+
+          // Extract and render content
+          const content = mdContent.replace(/^---\s*[\s\S]*?\s*---/, "").trim();
+          postContent.innerHTML = marked.parse(content);
+
+          // Initialize Prism highlighting after content is loaded
+          if (typeof Prism !== "undefined") {
+            Prism.highlightAll();
+          }
+
+          // Apply font to all generated elements after rendering
+          setTimeout(function () {
+            const allElements = document.querySelectorAll(".blog-content *");
+            allElements.forEach((element) => {
+              element.style.fontFamily = "'jet-brains-mono', monospace";
+            });
+          }, 100);
+        } catch (error) {
+          console.error("Error loading blog post:", error);
+          postContainer.innerHTML = `<p class="error">Failed to load blog post. ${error.message}</p>`;
+        }
+      });
+
+      function formatDate(dateString) {
+        const date = new Date(dateString);
+        const options = { year: "numeric", month: "long", day: "numeric" };
+        return date.toLocaleDateString("en-US", options);
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo"><a href="index.html">rahul kumar</a></div>
+        <ul class="nav-links">
+          <li><a href="work.html">work</a></li>
+          <li><a href="values.html">values</a></li>
+          <li><a href="bio.html">bio</a></li>
+          <li><a href="blog.html">blog</a></li>
+        </ul>
+        <div class="menu-btn">☰</div>
+      </nav>
+    </header>
+
+    <main class="blog-post-content">
+      <div id="post-container">
+        <article>
+          <h1 id="post-title">Loading...</h1>
+          <div class="blog-meta">
+            <time id="post-date"></time>
+            <div id="post-keywords" class="blog-keywords"></div>
+          </div>
+          <div id="post-content" class="blog-content">
+            <p>Loading blog post content...</p>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="social-links">
+          <a href="https://www.instagram.com/rahul_akumar" target="_blank"
+            >Instagram</a
+          >
+          <a href="https://www.linkedin.com/in/rahulakumar/" target="_blank"
+            >LinkedIn</a
+          >
+          <a href="https://dribbble.com/rahul_kumar" target="_blank"
+            >Dribbble</a
+          >
+          <a href="https://www.behance.net/rahul_kumar" target="_blank"
+            >Behance</a
+          >
+          <a href="https://github.com/rahul-akumar" target="_blank">GitHub</a>
+          <a href="https://discord.gg/w35DJpB6" target="_blank">Discord</a>
+          <a
+            href="https://open.spotify.com/album/7KOyCDEUDJ6nuoC7l5Mv1J?si=fd4c5e9eb1d74378"
+            target="_blank"
+            >Spotify</a
+          >
+          <a href="mailto:rahul-akumar@pm.me" target="_blank"
+            >📧 rahul-akumar@pm.me</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
