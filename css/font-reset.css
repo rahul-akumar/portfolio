@@ -3,7 +3,10 @@
 /* Define the font with all possible naming variations */
 @font-face {
   font-family: "CustomJetBrainsMono";
-  src: local("JetBrains Mono"), local("JetBrainsMono"), local("Jet Brains Mono");
+  src: local("jet-brains-mono"), local("JetBrains Mono"), local("JetBrainsMono"),
+    local("Jet Brains Mono"),
+    url("https://api.fontshare.com/v2/css?f[]=jet-brains-mono@400&display=swap")
+      format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -12,7 +15,7 @@
 /* Apply to everything on the blog pages */
 html,
 body {
-  font-family: "JetBrains Mono", "CustomJetBrainsMono", monospace !important;
+  font-family: "CustomJetBrainsMono", "jet-brains-mono", monospace !important;
 }
 
 /* Basic tag reset */
@@ -60,7 +63,7 @@ mark,
 address,
 figure,
 figcaption {
-  font-family: "JetBrains Mono", "CustomJetBrainsMono", monospace !important;
+  font-family: "CustomJetBrainsMono", "jet-brains-mono", monospace !important;
 }
 
 /* Class-specific overrides */
@@ -70,17 +73,17 @@ figcaption {
 .blog-post-content *,
 .blog-content,
 .blog-content * {
-  font-family: "JetBrains Mono", "CustomJetBrainsMono", monospace !important;
+  font-family: "CustomJetBrainsMono", "jet-brains-mono", monospace !important;
 }
 
 /* Prism specific elements */
 code[class*="language-"],
 pre[class*="language-"],
 .token {
-  font-family: "JetBrains Mono", "CustomJetBrainsMono", monospace !important;
+  font-family: "CustomJetBrainsMono", "jet-brains-mono", monospace !important;
 }
 
 /* Override anything with inline style */
 [style*="font-family"] {
-  font-family: "JetBrains Mono", "CustomJetBrainsMono", monospace !important;
+  font-family: "CustomJetBrainsMono", "jet-brains-mono", monospace !important;
 }

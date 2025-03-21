@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog Post - Rahul Kumar Portfolio</title>
     <link rel="stylesheet" href="font/ibm-plex-sans-all.css" />
-    <!-- JetBrains Mono font from Google Fonts (all weights) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- JetBrains Mono font from Font Share -->
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      href="https://api.fontshare.com/v2/css?f[]=jet-brains-mono@101,200,201,300,301,400,401,500,501,600,601,700,701,800,801&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
@@ -20,7 +18,7 @@
     <style>
       /* Global blog font override */
       body {
-        font-family: "JetBrains Mono", monospace;
+        font-family: "jet-brains-mono", monospace;
       }
 
       /* Force font application on all relevant elements */
@@ -28,7 +26,7 @@
       .blog-container *,
       .blog-post-content,
       .blog-post-content * {
-        font-family: "JetBrains Mono", monospace !important;
+        font-family: "jet-brains-mono", monospace !important;
       }
 
       /* Explicit font for text elements */
@@ -47,19 +45,19 @@
       time,
       code,
       pre {
-        font-family: "JetBrains Mono", monospace !important;
+        font-family: "jet-brains-mono", monospace !important;
       }
 
       /* Additional specificity for markdown content */
       #post-content,
       #post-content * {
-        font-family: "JetBrains Mono", monospace !important;
+        font-family: "jet-brains-mono", monospace !important;
       }
 
       /* Override any fonts that might be set by Prism */
       pre[class*="language-"],
       code[class*="language-"] {
-        font-family: "JetBrains Mono", monospace !important;
+        font-family: "jet-brains-mono", monospace !important;
       }
     </style>
     <!-- Prism CSS for syntax highlighting -->
@@ -93,55 +91,22 @@
         const postKeywords = document.getElementById("post-keywords");
         const postContent = document.getElementById("post-content");
 
-        /**
-         * Get the base URL based on the deployment environment
-         */
-        function getBaseUrl() {
-          // Check if we're on GitHub Pages with a repository name in the path
-          const pathSegments = window.location.pathname.split("/");
-          const possibleRepoName = pathSegments[1];
-
-          // If the second segment exists and isn't a file (doesn't contain a dot),
-          // we're probably on GitHub Pages with a repository name
-          if (possibleRepoName && !possibleRepoName.includes(".")) {
-            return `/${possibleRepoName}/`;
-          }
-
-          // Fallback to root for local development or custom domains
-          return "/";
-        }
-
-        // Get base URL for GitHub Pages compatibility
-        const baseUrl = getBaseUrl();
-
         try {
-          // Get the post information from the URL
+          // Get the post filename from the URL
           const urlParams = new URLSearchParams(window.location.search);
           const postFilename = urlParams.get("post");
-          const postPath = urlParams.get("path");
 
           if (!postFilename) {
             throw new Error("No post specified");
           }
 
-          // Get blog post content
-          let response;
+          // Try to fetch the markdown file directly
+          let mdContent;
+          let response = await fetch(`blogs/${postFilename}.md`);
 
-          if (postPath) {
-            // Path parameter provided - use it directly
-            response = await fetch(`${baseUrl}${postPath}`);
-          } else {
-            // Fallback to default location
-            response = await fetch(`${baseUrl}blogs/${postFilename}.md`);
-          }
-
+          // If direct fetch fails, try getting from index.json
           if (!response.ok) {
-            // If direct fetch fails, try finding the post in the index
-            console.log(
-              "Direct fetch failed, trying to find post in index.json..."
-            );
-            const indexResponse = await fetch(`${baseUrl}blogs/index.json`);
-
+            const indexResponse = await fetch("blogs/index.json");
             if (!indexResponse.ok) {
               throw new Error("Failed to load blog post and index");
             }
@@ -153,25 +118,59 @@
               throw new Error("Blog post not found in index");
             }
 
-            // Try fetching with the path from index
-            response = await fetch(`${baseUrl}${post.path}`);
+            // Use the exact path from the index.json file
+            if (post.path) {
+              response = await fetch(post.path);
+            } else {
+              // Fallback to default path if not specified
+              response = await fetch(`blogs/${postFilename}.md`);
+            }
 
             if (!response.ok) {
-              throw new Error("Failed to load blog post");
+              throw new Error("Failed to load blog post using path from index");
             }
           }
 
-          // Read and process the Markdown content
-          const mdContent = await response.text();
+          mdContent = await response.text();
 
           // Extract frontmatter
           const frontmatterMatch = mdContent.match(/^---\s*([\s\S]*?)\s*---/);
           if (!frontmatterMatch) {
-            throw new Error("Invalid blog post format - missing frontmatter");
+            throw new Error("Invalid blog post format");
           }
 
+          const frontmatterText = frontmatterMatch[1];
+          const frontmatter = {};
+
           // Parse frontmatter
-          const frontmatter = parseFrontmatter(frontmatterMatch[1]);
+          frontmatterText.split("\n").forEach((line) => {
+            if (!line.trim()) return;
+
+            const colonIndex = line.indexOf(":");
+            if (colonIndex === -1) return;
+
+            const key = line.substring(0, colonIndex).trim();
+            let value = line.substring(colonIndex + 1).trim();
+
+            // Remove quotes if present
+            if (value.startsWith('"') && value.endsWith('"')) {
+              value = value.substring(1, value.length - 1);
+            }
+
+            // Handle arrays (keywords)
+            if (
+              key === "keywords" &&
+              value.startsWith("[") &&
+              value.endsWith("]")
+            ) {
+              value = value
+                .substring(1, value.length - 1)
+                .split(",")
+                .map((k) => k.trim().replace(/"/g, "").replace(/'/g, ""));
+            }
+
+            frontmatter[key] = value;
+          });
 
           // Set document title
           document.title = `${frontmatter.title} - Rahul Kumar Portfolio`;
@@ -208,7 +207,7 @@
           setTimeout(function () {
             const allElements = document.querySelectorAll(".blog-content *");
             allElements.forEach((element) => {
-              element.style.fontFamily = "'JetBrains Mono', monospace";
+              element.style.fontFamily = "'jet-brains-mono', monospace";
             });
           }, 100);
         } catch (error) {
@@ -217,51 +216,6 @@
         }
       });
 
-      /**
-       * Parse frontmatter content into an object
-       */
-      function parseFrontmatter(frontmatterText) {
-        const frontmatter = {};
-
-        frontmatterText.split("\n").forEach((line) => {
-          if (!line.trim()) return;
-
-          const colonIndex = line.indexOf(":");
-          if (colonIndex === -1) return;
-
-          const key = line.substring(0, colonIndex).trim();
-          let value = line.substring(colonIndex + 1).trim();
-
-          // Remove quotes if present
-          if (value.startsWith('"') && value.endsWith('"')) {
-            value = value.substring(1, value.length - 1);
-          }
-
-          // Handle arrays (keywords)
-          if (
-            key === "keywords" &&
-            value.startsWith("[") &&
-            value.endsWith("]")
-          ) {
-            try {
-              value = JSON.parse(value);
-            } catch (e) {
-              value = value
-                .substring(1, value.length - 1)
-                .split(",")
-                .map((k) => k.trim().replace(/"/g, "").replace(/'/g, ""));
-            }
-          }
-
-          frontmatter[key] = value;
-        });
-
-        return frontmatter;
-      }
-
-      /**
-       * Format date in a readable format
-       */
       function formatDate(dateString) {
         const date = new Date(dateString);
         const options = { year: "numeric", month: "long", day: "numeric" };
