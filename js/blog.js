@@ -1,6 +1,5 @@
 // Blog post loader
 document.addEventListener("DOMContentLoaded", async function () {
-  const blogContainer = document.querySelector(".blog-container");
   const postsContainer = document.getElementById("blog-posts-container");
 
   try {
@@ -8,21 +7,22 @@ document.addEventListener("DOMContentLoaded", async function () {
     postsContainer.innerHTML =
       "<div class='loading-posts'>Loading blog posts...</div>";
 
-    // Get base URL for GitHub Pages compatibility
-    const baseUrl = window.location.pathname.includes("/Portfolio/")
-      ? "/Portfolio/"
-      : "/";
+    // Determine the base URL based on deployment environment
+    const baseUrl = getBaseUrl();
 
-    // Fetch the blog index.json instead of directory listing
+    // Fetch blog index
     const response = await fetch(`${baseUrl}blogs/index.json`);
+
     if (!response.ok) {
-      throw new Error("Failed to load blog index");
+      throw new Error(
+        `Failed to load blog index (${response.status}: ${response.statusText})`
+      );
     }
 
-    // Parse the JSON
+    // Parse JSON
     const blogPosts = await response.json();
 
-    // Clear loading indicator
+    // Clear loading message
     postsContainer.innerHTML = "";
 
     if (blogPosts.length === 0) {
@@ -31,38 +31,35 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     // Render blog posts (already sorted by date in the index)
-    for (const post of blogPosts) {
-      const postElement = createBlogPostElement(post);
+    blogPosts.forEach((post) => {
+      const postElement = createBlogPostElement(post, baseUrl);
       postsContainer.appendChild(postElement);
-    }
+    });
   } catch (error) {
     console.error("Error loading blog posts:", error);
-    postsContainer.innerHTML = `<p class="error">Failed to load blog posts: ${error.message}</p>`;
-
-    // Show instructions for fixing the issue
-    postsContainer.innerHTML += `
+    postsContainer.innerHTML = `
+      <p class="error">Failed to load blog posts: ${error.message}</p>
       <div class="error-help">
-        <p>This error likely occurs because you need to generate the index.json file.</p>
-        <p>If you're using GitHub Pages:</p>
-        <ol>
-          <li>Create a simple blogs/index.json file with your blog posts</li>
-          <li>The GitHub Action will update it when you add new posts</li>
-        </ol>
+        <p>If you're using GitHub Pages, make sure the index.json file exists in the blogs directory.</p>
       </div>
     `;
   }
 });
 
-function createBlogPostElement(post) {
+/**
+ * Create HTML element for a blog post
+ */
+function createBlogPostElement(post, baseUrl) {
   const article = document.createElement("div");
   article.className = "blog-post";
 
-  article.innerHTML = `
-    <a href="${
-      baseUrl ? baseUrl.replace(/\/$/, "") : ""
-    }blog-post.html?post=${encodeURIComponent(
+  // Create link with the post path parameter
+  const postUrl = `${baseUrl}blog-post.html?post=${encodeURIComponent(
     post.filename
-  )}&path=${encodeURIComponent(post.path)}" class="blog-link">
+  )}&path=${encodeURIComponent(post.path)}`;
+
+  article.innerHTML = `
+    <a href="${postUrl}" class="blog-link">
       <article>
         <div class="blog-header">
           <h2 class="blog-title">${post.title}</h2>
@@ -76,8 +73,29 @@ function createBlogPostElement(post) {
   return article;
 }
 
+/**
+ * Format date in a readable format
+ */
 function formatDate(dateString) {
   const date = new Date(dateString);
   const options = { year: "numeric", month: "short", day: "numeric" };
   return date.toLocaleDateString("en-US", options);
+}
+
+/**
+ * Get the base URL based on the deployment environment
+ */
+function getBaseUrl() {
+  // Check if we're on GitHub Pages with a repository name in the path
+  const pathSegments = window.location.pathname.split("/");
+  const possibleRepoName = pathSegments[1];
+
+  // If the second segment exists and isn't a file (doesn't contain a dot),
+  // we're probably on GitHub Pages with a repository name
+  if (possibleRepoName && !possibleRepoName.includes(".")) {
+    return `/${possibleRepoName}/`;
+  }
+
+  // Fallback to root for local development or custom domains
+  return "/";
 }

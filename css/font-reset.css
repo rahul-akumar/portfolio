@@ -3,9 +3,7 @@
 /* Define the font with all possible naming variations */
 @font-face {
   font-family: "CustomJetBrainsMono";
-  src: local("JetBrains Mono"), local("JetBrainsMono"), local("Jet Brains Mono"),
-    url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap")
-      format("woff2");
+  src: local("JetBrains Mono"), local("JetBrainsMono"), local("Jet Brains Mono");
   font-weight: normal;
   font-style: normal;
   font-display: swap;

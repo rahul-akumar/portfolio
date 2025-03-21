@@ -93,13 +93,29 @@
         const postKeywords = document.getElementById("post-keywords");
         const postContent = document.getElementById("post-content");
 
+        /**
+         * Get the base URL based on the deployment environment
+         */
+        function getBaseUrl() {
+          // Check if we're on GitHub Pages with a repository name in the path
+          const pathSegments = window.location.pathname.split("/");
+          const possibleRepoName = pathSegments[1];
+
+          // If the second segment exists and isn't a file (doesn't contain a dot),
+          // we're probably on GitHub Pages with a repository name
+          if (possibleRepoName && !possibleRepoName.includes(".")) {
+            return `/${possibleRepoName}/`;
+          }
+
+          // Fallback to root for local development or custom domains
+          return "/";
+        }
+
         // Get base URL for GitHub Pages compatibility
-        const baseUrl = window.location.pathname.includes("/Portfolio/")
-          ? "/Portfolio/"
-          : "/";
+        const baseUrl = getBaseUrl();
 
         try {
-          // Get the post filename from the URL
+          // Get the post information from the URL
           const urlParams = new URLSearchParams(window.location.search);
           const postFilename = urlParams.get("post");
           const postPath = urlParams.get("path");
@@ -108,24 +124,24 @@
             throw new Error("No post specified");
           }
 
-          // Try to fetch the markdown file directly using path if available
-          let mdContent;
+          // Get blog post content
           let response;
 
           if (postPath) {
-            // Use the exact path if provided in URL, but add baseUrl if path is relative
-            const fullPath = postPath.startsWith("http")
-              ? postPath
-              : `${baseUrl}${postPath}`;
-            response = await fetch(fullPath);
+            // Path parameter provided - use it directly
+            response = await fetch(`${baseUrl}${postPath}`);
           } else {
-            // Try direct fetch from root blogs folder as fallback
+            // Fallback to default location
             response = await fetch(`${baseUrl}blogs/${postFilename}.md`);
           }
 
-          // If direct fetch fails, try getting from index.json
           if (!response.ok) {
+            // If direct fetch fails, try finding the post in the index
+            console.log(
+              "Direct fetch failed, trying to find post in index.json..."
+            );
             const indexResponse = await fetch(`${baseUrl}blogs/index.json`);
+
             if (!indexResponse.ok) {
               throw new Error("Failed to load blog post and index");
             }
@@ -137,62 +153,25 @@
               throw new Error("Blog post not found in index");
             }
 
-            // Use the exact path from the index.json file
-            if (post.path) {
-              const fullPath = post.path.startsWith("http")
-                ? post.path
-                : `${baseUrl}${post.path}`;
-              response = await fetch(fullPath);
-            } else {
-              // Fallback to default path if not specified
-              response = await fetch(`${baseUrl}blogs/${postFilename}.md`);
-            }
+            // Try fetching with the path from index
+            response = await fetch(`${baseUrl}${post.path}`);
 
             if (!response.ok) {
-              throw new Error("Failed to load blog post using path from index");
+              throw new Error("Failed to load blog post");
             }
           }
 
-          mdContent = await response.text();
+          // Read and process the Markdown content
+          const mdContent = await response.text();
 
           // Extract frontmatter
           const frontmatterMatch = mdContent.match(/^---\s*([\s\S]*?)\s*---/);
           if (!frontmatterMatch) {
-            throw new Error("Invalid blog post format");
+            throw new Error("Invalid blog post format - missing frontmatter");
           }
 
-          const frontmatterText = frontmatterMatch[1];
-          const frontmatter = {};
-
           // Parse frontmatter
-          frontmatterText.split("\n").forEach((line) => {
-            if (!line.trim()) return;
-
-            const colonIndex = line.indexOf(":");
-            if (colonIndex === -1) return;
-
-            const key = line.substring(0, colonIndex).trim();
-            let value = line.substring(colonIndex + 1).trim();
-
-            // Remove quotes if present
-            if (value.startsWith('"') && value.endsWith('"')) {
-              value = value.substring(1, value.length - 1);
-            }
-
-            // Handle arrays (keywords)
-            if (
-              key === "keywords" &&
-              value.startsWith("[") &&
-              value.endsWith("]")
-            ) {
-              value = value
-                .substring(1, value.length - 1)
-                .split(",")
-                .map((k) => k.trim().replace(/"/g, "").replace(/'/g, ""));
-            }
-
-            frontmatter[key] = value;
-          });
+          const frontmatter = parseFrontmatter(frontmatterMatch[1]);
 
           // Set document title
           document.title = `${frontmatter.title} - Rahul Kumar Portfolio`;
@@ -238,6 +217,51 @@
         }
       });
 
+      /**
+       * Parse frontmatter content into an object
+       */
+      function parseFrontmatter(frontmatterText) {
+        const frontmatter = {};
+
+        frontmatterText.split("\n").forEach((line) => {
+          if (!line.trim()) return;
+
+          const colonIndex = line.indexOf(":");
+          if (colonIndex === -1) return;
+
+          const key = line.substring(0, colonIndex).trim();
+          let value = line.substring(colonIndex + 1).trim();
+
+          // Remove quotes if present
+          if (value.startsWith('"') && value.endsWith('"')) {
+            value = value.substring(1, value.length - 1);
+          }
+
+          // Handle arrays (keywords)
+          if (
+            key === "keywords" &&
+            value.startsWith("[") &&
+            value.endsWith("]")
+          ) {
+            try {
+              value = JSON.parse(value);
+            } catch (e) {
+              value = value
+                .substring(1, value.length - 1)
+                .split(",")
+                .map((k) => k.trim().replace(/"/g, "").replace(/'/g, ""));
+            }
+          }
+
+          frontmatter[key] = value;
+        });
+
+        return frontmatter;
+      }
+
+      /**
+       * Format date in a readable format
+       */
       function formatDate(dateString) {
         const date = new Date(dateString);
         const options = { year: "numeric", month: "long", day: "numeric" };
