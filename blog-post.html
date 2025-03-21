@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog Post - Rahul Kumar Portfolio</title>
     <link rel="stylesheet" href="font/ibm-plex-sans-all.css" />
-    <!-- JetBrains Mono font from Font Share -->
+    <!-- JetBrains Mono font from Google Fonts (all weights) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://api.fontshare.com/v2/css?f[]=jet-brains-mono@101,200,201,300,301,400,401,500,501,600,601,700,701,800,801&display=swap&host=rahul-akumar.github.io"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
@@ -18,7 +20,7 @@
     <style>
       /* Global blog font override */
       body {
-        font-family: "jet-brains-mono", monospace;
+        font-family: "JetBrains Mono", monospace;
       }
 
       /* Force font application on all relevant elements */
@@ -26,7 +28,7 @@
       .blog-container *,
       .blog-post-content,
       .blog-post-content * {
-        font-family: "jet-brains-mono", monospace !important;
+        font-family: "JetBrains Mono", monospace !important;
       }
 
       /* Explicit font for text elements */
@@ -45,19 +47,19 @@
       time,
       code,
       pre {
-        font-family: "jet-brains-mono", monospace !important;
+        font-family: "JetBrains Mono", monospace !important;
       }
 
       /* Additional specificity for markdown content */
       #post-content,
       #post-content * {
-        font-family: "jet-brains-mono", monospace !important;
+        font-family: "JetBrains Mono", monospace !important;
       }
 
       /* Override any fonts that might be set by Prism */
       pre[class*="language-"],
       code[class*="language-"] {
-        font-family: "jet-brains-mono", monospace !important;
+        font-family: "JetBrains Mono", monospace !important;
       }
     </style>
     <!-- Prism CSS for syntax highlighting -->
@@ -227,7 +229,7 @@
           setTimeout(function () {
             const allElements = document.querySelectorAll(".blog-content *");
             allElements.forEach((element) => {
-              element.style.fontFamily = "'jet-brains-mono', monospace";
+              element.style.fontFamily = "'JetBrains Mono', monospace";
             });
           }, 100);
         } catch (error) {
