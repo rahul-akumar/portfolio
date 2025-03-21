@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="font/ibm-plex-sans-all.css" />
     <!-- JetBrains Mono font from Font Share -->
     <link
-      href="https://api.fontshare.com/v2/css?f[]=jet-brains-mono@101,200,201,300,301,400,401,500,501,600,601,700,701,800,801&display=swap"
+      href="https://api.fontshare.com/v2/css?f[]=jet-brains-mono@101,200,201,300,301,400,401,500,501,600,601,700,701,800,801&display=swap&host=rahul-akumar.github.io"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
@@ -91,6 +91,11 @@
         const postKeywords = document.getElementById("post-keywords");
         const postContent = document.getElementById("post-content");
 
+        // Get base URL for GitHub Pages compatibility
+        const baseUrl = window.location.pathname.includes("/Portfolio/")
+          ? "/Portfolio/"
+          : "/";
+
         try {
           // Get the post filename from the URL
           const urlParams = new URLSearchParams(window.location.search);
@@ -106,15 +111,19 @@
           let response;
 
           if (postPath) {
-            // Use the exact path if provided in URL
-            response = await fetch(postPath);
+            // Use the exact path if provided in URL, but add baseUrl if path is relative
+            const fullPath = postPath.startsWith("http")
+              ? postPath
+              : `${baseUrl}${postPath}`;
+            response = await fetch(fullPath);
           } else {
             // Try direct fetch from root blogs folder as fallback
-            response = await fetch(`blogs/${postFilename}.md`);
+            response = await fetch(`${baseUrl}blogs/${postFilename}.md`);
           }
 
+          // If direct fetch fails, try getting from index.json
           if (!response.ok) {
-            const indexResponse = await fetch("blogs/index.json");
+            const indexResponse = await fetch(`${baseUrl}blogs/index.json`);
             if (!indexResponse.ok) {
               throw new Error("Failed to load blog post and index");
             }
@@ -128,10 +137,13 @@
 
             // Use the exact path from the index.json file
             if (post.path) {
-              response = await fetch(post.path);
+              const fullPath = post.path.startsWith("http")
+                ? post.path
+                : `${baseUrl}${post.path}`;
+              response = await fetch(fullPath);
             } else {
               // Fallback to default path if not specified
-              response = await fetch(`blogs/${postFilename}.md`);
+              response = await fetch(`${baseUrl}blogs/${postFilename}.md`);
             }
 
             if (!response.ok) {

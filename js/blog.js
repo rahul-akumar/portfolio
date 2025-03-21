@@ -8,8 +8,13 @@ document.addEventListener("DOMContentLoaded", async function () {
     postsContainer.innerHTML =
       "<div class='loading-posts'>Loading blog posts...</div>";
 
+    // Get base URL for GitHub Pages compatibility
+    const baseUrl = window.location.pathname.includes("/Portfolio/")
+      ? "/Portfolio/"
+      : "/";
+
     // Fetch the blog index.json instead of directory listing
-    const response = await fetch("blogs/index.json");
+    const response = await fetch(`${baseUrl}blogs/index.json`);
     if (!response.ok) {
       throw new Error("Failed to load blog index");
     }
@@ -59,9 +64,11 @@ function createBlogPostElement(post) {
       : "";
 
   article.innerHTML = `
-    <a href="blog-post.html?post=${encodeURIComponent(
-      post.filename
-    )}&path=${encodeURIComponent(post.path)}" class="blog-link">
+    <a href="${
+      baseUrl ? baseUrl.replace(/\/$/, "") : ""
+    }blog-post.html?post=${encodeURIComponent(
+    post.filename
+  )}&path=${encodeURIComponent(post.path)}" class="blog-link">
       <article>
         <div class="blog-header">
           <h2 class="blog-title">${post.title}</h2>
