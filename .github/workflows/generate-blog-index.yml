@@ -1,5 +1,9 @@
 name: Generate Blog Index
 
+# Add permissions to allow workflow to push changes
+permissions:
+  contents: write
+
 on:
   push:
     paths:

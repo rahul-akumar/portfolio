@@ -1,15 +1,25 @@
 [
   {
+    "title": "The Rise of Multi-Sensory Digital Interfaces in Product Design",
+    "subtitle": "How designers are creating more immersive and inclusive user experiences through multi-sensory engagement",
+    "date": "2025-03-22",
+    "keywords": [
+      "multi-sensory design",
+      "haptic feedback",
+      "voice interfaces",
+      "accessibility",
+      "digital product design",
+      "UX trends",
+      "inclusive design"
+    ],
+    "filename": "2025-03-22-rise-of-multi-sensory-digital-interfaces",
+    "path": "blogs/2025/2025-03-22-rise-of-multi-sensory-digital-interfaces.md"
+  },
+  {
     "title": "The Future of AI Ethics: Navigating the Next Decade",
     "subtitle": "Exploring the ethical implications of advanced artificial intelligence systems in the coming years",
     "date": "2025-01-15",
-    "keywords": [
-      "AI Ethics",
-      "Future Technology",
-      "Machine Learning",
-      "Responsible AI",
-      "Tech Policy"
-    ],
+    "keywords": [],
     "filename": "2025-01-15-future-of-ai-ethics",
     "path": "blogs/2025/2025-01-15-future-of-ai-ethics.md"
   },
@@ -17,7 +27,11 @@
     "title": "Newest Blog Post",
     "subtitle": "This post should appear at the top of the list",
     "date": "2024-04-15",
-    "keywords": ["New", "Latest", "Test"],
+    "keywords": [
+      "New",
+      "Latest",
+      "Test"
+    ],
     "filename": "2024-04-15-newest-blog-post",
     "path": "blogs/2024/2024-04-15-newest-blog-post.md"
   },
@@ -25,7 +39,12 @@
     "title": "Testing the Blog System",
     "subtitle": "This is a test post to verify our client-side Markdown rendering",
     "date": "2023-11-20",
-    "keywords": ["Test", "Blog", "Markdown", "Client-side"],
+    "keywords": [
+      "Test",
+      "Blog",
+      "Markdown",
+      "Client-side"
+    ],
     "filename": "2023-11-20-testing-the-blog-system",
     "path": "blogs/2023/2023-11-20-testing-the-blog-system.md"
   },
@@ -33,8 +52,24 @@
     "title": "Sample Blog Post",
     "subtitle": "This is an example of how to format your blog posts",
     "date": "2023-10-15",
-    "keywords": ["Sample", "Markdown", "Tutorial"],
+    "keywords": [
+      "Sample",
+      "Markdown",
+      "Tutorial"
+    ],
     "filename": "2023-10-15-sample-blog-post",
     "path": "blogs/2023/2023-10-15-sample-blog-post.md"
+  },
+  {
+    "title": "Testing GitHub Actions Permissions",
+    "subtitle": "Verifying our workflow fix",
+    "date": "2023-06-15",
+    "keywords": [
+      "test",
+      "github-actions",
+      "permissions"
+    ],
+    "filename": "test-github-actions",
+    "path": "blogs/test-github-actions.md"
   }
 ]
