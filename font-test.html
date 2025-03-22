@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JetBrains Mono Font Test</title>
+    <!-- We'll replace this with Google Fonts link -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Test cases for font verification */
+      body {
+        font-family: "JetBrains Mono", monospace;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .test-case {
+        margin-bottom: 30px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .test-weight {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .weight-example {
+        width: 45%;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      .font-name {
+        font-size: 12px;
+        color: #666;
+        margin-bottom: 5px;
+      }
+
+      .code-sample {
+        background: #f5f5f5;
+        padding: 15px;
+        border-radius: 4px;
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .fallback-test {
+        font-family: "NonExistentFont", "JetBrains Mono", monospace;
+      }
+
+      button {
+        font-family: "JetBrains Mono", monospace;
+        padding: 8px 16px;
+      }
+
+      input {
+        font-family: "JetBrains Mono", monospace;
+        padding: 8px;
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JetBrains Mono Font Test</h1>
+    <p>
+      This page tests if JetBrains Mono is properly applied throughout the
+      website.
+    </p>
+
+    <div class="test-case">
+      <h2>Basic Text Rendering</h2>
+      <p>
+        This paragraph should be rendered in JetBrains Mono. It includes some
+        <strong>bold text</strong>, <em>italic text</em>, and
+        <code>inline code</code>.
+      </p>
+    </div>
+
+    <div class="test-case">
+      <h2>Font Weight Test</h2>
+      <div class="test-weight">
+        <div class="weight-example">
+          <div class="font-name">100 (Thin)</div>
+          <div style="font-weight: 100">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </div>
+        <div class="weight-example">
+          <div class="font-name">200 (Extra Light)</div>
+          <div style="font-weight: 200">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </div>
+        <div class="weight-example">
+          <div class="font-name">300 (Light)</div>
+          <div style="font-weight: 300">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </div>
+        <div class="weight-example">
+          <div class="font-name">400 (Regular)</div>
+          <div style="font-weight: 400">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </div>
+        <div class="weight-example">
+          <div class="font-name">500 (Medium)</div>
+          <div style="font-weight: 500">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </div>
+        <div class="weight-example">
+          <div class="font-name">600 (Semi Bold)</div>
+          <div style="font-weight: 600">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </div>
+        <div class="weight-example">
+          <div class="font-name">700 (Bold)</div>
+          <div style="font-weight: 700">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </div>
+        <div class="weight-example">
+          <div class="font-name">800 (Extra Bold)</div>
+          <div style="font-weight: 800">
+            The quick brown fox jumps over the lazy dog.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="test-case">
+      <h2>Code Readability</h2>
+      <div class="code-sample">
+        <pre><code>function testJetBrainsMono() {
+  // This should be clearly readable in JetBrains Mono
+  const testArray = [1, 2, 3, 4, 5];
+  const result = testArray.map(item => item * 2);
+  console.log(`The result is: ${result}`);
+  return result.reduce((a, b) => a + b, 0);
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="test-case">
+      <h2>Form Elements Test</h2>
+      <p>Form elements should also use JetBrains Mono:</p>
+      <input type="text" placeholder="This input should use JetBrains Mono" />
+      <br /><br />
+      <button>This Button Should Use JetBrains Mono</button>
+    </div>
+
+    <div class="test-case">
+      <h2>Fallback Test</h2>
+      <p class="fallback-test">
+        This text uses a fallback mechanism and should still display in
+        JetBrains Mono.
+      </p>
+    </div>
+
+    <script>
+      // Function to check if a font is loaded
+      function checkFontLoaded() {
+        const testElement = document.createElement("span");
+        testElement.style.fontFamily = "JetBrains Mono, monospace";
+        testElement.style.fontSize = "72px";
+        testElement.innerHTML = "Test Font";
+
+        document.body.appendChild(testElement);
+
+        // Force layout calculation
+        testElement.getBoundingClientRect();
+
+        const result = document.createElement("div");
+        result.style.padding = "20px";
+        result.style.marginTop = "20px";
+        result.style.backgroundColor = "#f0f0f0";
+        result.style.borderRadius = "4px";
+
+        // Simple width-based check (not foolproof but indicative)
+        if (testElement.offsetWidth !== 0) {
+          result.innerHTML =
+            "✅ JetBrains Mono appears to be loaded correctly.";
+          result.style.color = "green";
+        } else {
+          result.innerHTML = "❌ JetBrains Mono may not be loading correctly.";
+          result.style.color = "red";
+        }
+
+        document.body.appendChild(result);
+        document.body.removeChild(testElement);
+      }
+
+      // Run test when page loads
+      window.addEventListener("load", checkFontLoaded);
+    </script>
+  </body>
+</html>

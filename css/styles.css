@@ -173,7 +173,7 @@ nav {
   background: #f9f9f9; /* Light background for items */
   border-radius: 6px; /* Rounded corners */
   box-shadow: 3px 3px 0px rgba(0, 0, 0, 1); /* Subtle shadow */
-  transition: color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for text color and box shadow */
+  transition: color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for text color and box shadow */
   border-color: #000;
   border: 0.15rem solid;
 }
@@ -184,6 +184,7 @@ nav {
   box-shadow: inset 12px 12px 0px rgba(0, 0, 0, 0.2); /* Inner shadow */
   box-shadow: 12px 12px 0px rgba(0, 0, 0, 1),
     inset 3px 3px 0 rgba(255, 255, 255, 0.5); /* Outer and inner shadows */
+  transform: translateY(-6px);
 }
 
 /* Specific hover colors for each organization */
@@ -532,20 +533,22 @@ footer {
 
 .blog-post {
   display: flex;
+  font-weight: 100;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1rem 1.5rem 1.5rem 1.5rem; /* Padding inside each item */ /* Adjust padding as needed */
+  padding: 1.5rem 1.5rem; /* Padding inside each item */ /* Adjust padding as needed */
   background: #f9f9f9; /* Light background for the blog section */
   border-radius: 6px; /* Rounded corners */
   box-shadow: 3px 3px 0px rgba(0, 0, 0, 1); /* Subtle shadow */
   margin-top: 1.5rem; /* Space above the blog section */
   border: 1.5px solid black;
-  transition: color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for text color and box shadow */
+  transition: color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for text color and box shadow */
 }
 
 .blog-post:hover {
   background-color: #9ef500; /* Badge background color */
   box-shadow: 12px 12px 0;
+  transform: translateY(-6px);
 }
 
 .blog-header {
@@ -556,7 +559,6 @@ footer {
 
 .blog-title {
   flex: 1; /* Allow title to take available space */
-  margin-right: 1rem; /* Space between title and thumbnail */
 }
 
 .blog-thumbnail {
@@ -576,9 +578,7 @@ footer {
 }
 
 .blog-footer {
-  display: flex; /* Enable flexbox for footer */
-  justify-content: space-between; /* Space between date and keywords */
-  margin-top: 0rem; /* Space above footer */
+  display: none;
 }
 
 .blog-date,

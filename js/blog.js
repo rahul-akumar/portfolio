@@ -52,26 +52,22 @@ function createBlogPostElement(post) {
   const article = document.createElement("div");
   article.className = "blog-post";
 
-  // Create the keyword string if keywords exist
-  const keywordsHtml =
-    post.keywords && post.keywords.length
-      ? `<div class="blog-keywords">Keywords: ${post.keywords.join(", ")}</div>`
-      : "";
+  // Create the keyword string if keywords exist but don't display it
+  // We keep this code for reference but don't use it in the HTML
+  const keywordsHtml = "";
 
   article.innerHTML = `
     <a href="blog-post.html?post=${encodeURIComponent(
       post.filename
     )}" class="blog-link">
-      <article>
-        <div class="blog-header">
-          <h2 class="blog-title">${post.title}</h2>
-          <div class="blog-date">${formatDate(post.date)}</div>
-        </div>
-        ${post.subtitle ? `<p class="blog-subtitle">${post.subtitle}</p>` : ""}
-        <div class="blog-footer">
-          ${keywordsHtml}
-        </div>
-      </article>
+      <div class="blog-header">
+        <h2 class="blog-title">${post.title}</h2>
+        <div class="blog-date">${formatDate(post.date)}</div>
+      </div>
+      <!-- Subtitle removed from display -->
+      <div class="blog-footer">
+        <!-- Keywords removed from display -->
+      </div>
     </a>
   `;
 
