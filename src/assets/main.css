@@ -17,6 +17,5 @@ body a {
 }
 
 h1 {
-  font-size: 13rem;
   line-height: var(--leading-relaxed);
 }
