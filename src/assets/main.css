@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+body {
+  font-family: "JetBrains Mono Variable", monospace;
+  background-color:darkblue;
+  color: white;
+}
+
+body a {
+  cursor: ne-resize;
+}
+
+::selection {
+  background-color: var(--color-amber-500);
+  color: var(--color-black);
+}
+
+h1 {
+  font-size: 13rem;
+  line-height: var(--leading-relaxed);
+}
