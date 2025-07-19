@@ -3,7 +3,7 @@ import { Github, Linkedin, Instagram, Twitter, Mail } from "lucide-vue-next";
 </script>
 
 <template>
-  <header class="pl-16">
+  <header class="pl-12">
     <h1 class="indent-0 font-medium tracking-tight text-white">
       Rahul is building <br />
       <a
@@ -16,10 +16,12 @@ import { Github, Linkedin, Instagram, Twitter, Mail } from "lucide-vue-next";
     </h1>
   </header>
 
-  <main class="pl-16 pt-48 flex gap-48 h-full">
-    <section class="flex">
+  <main class="pl-16 pt-32 flex flex-col gap-24 h-full">
+    <p class="text-lg tracking-widest text-stone-300 uppercase">Super IC • Full stack • Software builder</p>
+    <div class="flex gap-48">
+    <section>
       <ul class="flex list-outside list-disc flex-col gap-12">
-        <header class="tracking-widest">IMPORTANT LINKS</header>
+        <header class="tracking-widest text-stone-300">IMPORTANT LINKS</header>
         <li>
           <a
             class="section-link"
@@ -40,12 +42,21 @@ import { Github, Linkedin, Instagram, Twitter, Mail } from "lucide-vue-next";
             Resume
           </a>
         </li>
-        <li><a class="section-link" href="">Blog</a></li>
+        <li>
+          <a 
+            class="section-link" 
+            href="https://rahulkumar.notion.site/Publication-7b38e95cc3f84f6c8bdbec401996065d?source=copy_link" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            Blog
+          </a>
+        </li>
       </ul>
     </section>
-    <section class="flex">
+    <section>
       <ul class="flex list-none gap-12">
-        <li class="tracking-widest">PAST WORK</li>
+        <li class="tracking-widest text-stone-300">PAST WORK</li>
         <li>
           <a
             class="section-link"
@@ -58,7 +69,7 @@ import { Github, Linkedin, Instagram, Twitter, Mail } from "lucide-vue-next";
         <li>
           <a
             class="section-link"
-            href="https://www.airtel.in/bank/"
+            href="https://www.airtel.in/b2b/"
             target="_blank"
             rel="noopener noreferrer"
             >Airtel</a
@@ -75,12 +86,13 @@ import { Github, Linkedin, Instagram, Twitter, Mail } from "lucide-vue-next";
         </li>
       </ul>
     </section>
+    </div>
   </main>
 
   <footer class="pl-152">
     <div class="flex gap-24">
       <div class="flex gap-2 items-center">
-        <Github size="18" />
+        <Github size="18" class="text-stone-300" />
         <a
         href="https://github.com/rahul-akumar"
         target="_blank"
@@ -88,7 +100,7 @@ import { Github, Linkedin, Instagram, Twitter, Mail } from "lucide-vue-next";
         class="footer-link"
         >GH</a></div>
       <div class="flex gap-2 items-center"> 
-        <Instagram size="18" />
+        <Instagram size="18" class="text-stone-300" />
         <a
         href="https://www.instagram.com/rahul_akumar/"
         target="_blank"
@@ -97,7 +109,7 @@ import { Github, Linkedin, Instagram, Twitter, Mail } from "lucide-vue-next";
         >IG</a
       ></div>
       <div class="flex gap-2 items-center">
-        <Twitter size="18" />
+        <Twitter size="18" class="text-stone-300" />
         <a
         href="https://x.com/rahul_akumar"
         target="_blank"
@@ -106,7 +118,7 @@ import { Github, Linkedin, Instagram, Twitter, Mail } from "lucide-vue-next";
         >X</a
       ></div>
       <div class="flex gap-2 items-center">
-        <Mail size="18" clas/>
+        <Mail size="18" class="text-stone-300"/>
         <a
         href="mailto:rahulakumar93@gmail.com"
         target="_blank"
