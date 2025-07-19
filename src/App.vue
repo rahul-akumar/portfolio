@@ -1,19 +1,20 @@
 <script setup>
 import { Github, Linkedin, Instagram, Twitter, Mail } from "lucide-vue-next";
 
-// Organized utility classes - much cleaner than inline
+// Organized utility classes
 const styles = {
-  header: 'pl-0 md:pl-12',
-  title: 'indent-0 font-medium tracking-tight text-white text-6xl md:text-6xl lg:text-7xl xl:text-[12rem]',
-  main: 'px-4 pt-8 md:pl-16 md:pt-32 flex flex-col gap-8 md:gap-24 h-full',
-  subtitle: 'text-sm md:text-lg tracking-widest text-stone-300 uppercase',
-  sections: 'flex flex-row md:flex-row gap-16 md:gap-48',
-  linksList: 'flex list-outside list-disc flex-col gap-4 md:gap-12',
-  sectionHeader: 'tracking-widest text-stone-300 text-sm md:text-base',
-  workList: 'flex flex-col md:flex-row list-none gap-4 md:gap-12',
-  workHeader: 'tracking-widest text-stone-300 text-sm md:text-base mb-2 md:mb-0',
-  footer: 'pb-16 md:pl-88 pt-16 md:pt-0',
-  footerGrid: 'grid grid-cols-2 md:flex gap-4 md:gap-24'
+  header: "pl-3 md:pl-12",
+  title:
+    "indent-0 font-medium tracking-tight text-white text-7xl md:text-7xl lg:text-8xl xl:text-[12rem]",
+  main: "px-4 pt-8 md:pl-16 md:pt-32 flex flex-col gap-8 md:gap-24 h-full",
+  subtitle: "text-sm md:text-lg tracking-wide text-stone-300 uppercase",
+  sections: "flex flex-row md:flex-row gap-16 md:gap-48",
+  linksList: "flex list-outside list-none flex-col gap-4 md:gap-12",
+  sectionHeader: "tracking-wider text-stone-300 text-sm md:text-base",
+  workList: "flex flex-col md:flex-row list-none gap-4 md:gap-12",
+  workHeader: "tracking-wider text-stone-300 text-sm md:text-base md:mb-0",
+  footer: "pb-16 pl-3.5 md:pl-88 pt-16 md:pt-0",
+  footerGrid: "flex gap-10 md:flex gap-4 md:gap-24",
 };
 </script>
 
@@ -25,15 +26,17 @@ const styles = {
         href="https://www.dialpad.com/"
         target="_blank"
         rel="noopener noreferrer"
-        class="underline decoration-stone-600 decoration-2 underline-offset-24 md:underline-offset-80 focus:ring-4"
+        class="underline decoration-stone-600 decoration-2 underline-offset-24 focus:ring-4 md:underline-offset-80"
         >Dialpad</a
       >.
     </h1>
   </header>
 
   <main :class="styles.main">
-    <p :class="styles.subtitle">Full stack • Systems first • Software builder</p>
-    
+    <p :class="styles.subtitle">
+      Full stack • Systems first • Software builder
+    </p>
+
     <div :class="styles.sections">
       <section>
         <ul :class="styles.linksList">
@@ -59,10 +62,10 @@ const styles = {
             </a>
           </li>
           <li>
-            <a 
-              class="section-link" 
-              href="https://rahulkumar.notion.site/Publication-7b38e95cc3f84f6c8bdbec401996065d?source=copy_link" 
-              target="_blank" 
+            <a
+              class="section-link"
+              href="https://rahulkumar.notion.site/Publication-7b38e95cc3f84f6c8bdbec401996065d?source=copy_link"
+              target="_blank"
               rel="noopener noreferrer"
             >
               Blog
@@ -70,7 +73,7 @@ const styles = {
           </li>
         </ul>
       </section>
-      
+
       <section>
         <ul :class="styles.workList">
           <li :class="styles.workHeader">PAST WORK</li>
@@ -101,6 +104,15 @@ const styles = {
               >Verizon</a
             >
           </li>
+          <li>
+            <a
+              class="section-link"
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              >More</a
+            >
+          </li>
         </ul>
       </section>
     </div>
@@ -108,41 +120,46 @@ const styles = {
 
   <footer :class="styles.footer">
     <div :class="styles.footerGrid">
-      <div class="flex gap-2 items-center">
+      <div class="flex items-center gap-2">
         <Github size="18" class="text-stone-300" />
         <a
-        href="https://github.com/rahul-akumar"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="footer-link"
-        >GH</a></div>
-      <div class="flex gap-2 items-center"> 
+          href="https://github.com/rahul-akumar"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer-link"
+          >GH</a
+        >
+      </div>
+      <div class="flex items-center gap-2">
         <Instagram size="18" class="text-stone-300" />
         <a
-        href="https://www.instagram.com/rahul_akumar/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="footer-link"
-        >IG</a
-      ></div>
-      <div class="flex gap-2 items-center">
+          href="https://www.instagram.com/rahul_akumar/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer-link"
+          >IG</a
+        >
+      </div>
+      <div class="flex items-center gap-2">
         <Twitter size="18" class="text-stone-300" />
         <a
-        href="https://x.com/rahul_akumar"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="footer-link"
-        >X</a
-      ></div>
-      <div class="flex gap-2 items-center">
-        <Mail size="18" class="text-stone-300"/>
+          href="https://x.com/rahul_akumar"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer-link"
+          >X</a
+        >
+      </div>
+      <div class="flex items-center gap-2">
+        <Mail size="18" class="text-stone-300" />
         <a
-        href="mailto:rahulakumar93@gmail.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="footer-link"
-        >Get in touch</a
-      > </div>
+          href="mailto:rahulakumar93@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer-link"
+          >Get in touch</a
+        >
+      </div>
     </div>
   </footer>
 </template>
@@ -195,7 +212,8 @@ h1 a:hover::after {
   color: var(--color-amber-500);
 }
 
-.section-link:focus, .footer-link:focus {
-  outline: 1px solid theme('colors.stone.400');
+.section-link:focus,
+.footer-link:focus {
+  outline: 1px solid theme("colors.stone.400");
 }
 </style>
