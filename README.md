@@ -1,5 +1,67 @@
-# Vue 3 + TypeScript + Vite
+# Personal Portfolio Website
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A modern, responsive personal portfolio built with Vue 3, TypeScript, and Vite. This portfolio showcases my professional experience, projects, and contact information with a clean, minimalist design.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Technologies Used
+
+- **Frontend Framework**: Vue 3 with Composition API and `<script setup>` syntax
+- **Type Safety**: TypeScript
+- **Build Tool**: Vite
+- **Styling**: TailwindCSS v4
+- **Icons**: Lucide Vue
+- **Fonts**: JetBrains Mono Variable
+
+## Features
+
+- Responsive design that works on devices of all sizes
+- Modern minimalist UI with carefully crafted typography
+- Social media and professional links
+- Project showcase
+- Contact information
+
+## Development
+
+### Prerequisites
+
+- Node.js (v18 or newer recommended)
+- pnpm package manager
+
+### Getting Started
+
+1. Clone the repository
+
+   ```bash
+   git clone https://github.com/rahul-akumar/portfolio.git
+   cd portfolio
+   ```
+
+2. Install dependencies
+
+   ```bash
+   pnpm install
+   ```
+
+3. Start the development server
+
+   ```bash
+   pnpm dev
+   ```
+
+4. Build for production
+
+   ```bash
+   pnpm build
+   ```
+
+5. Preview the production build
+   ```bash
+   pnpm preview
+   ```
+
+## Deployment
+
+This site can be deployed on any static hosting service such as Vercel, Netlify, or GitHub Pages.
+
+## License
+
+This project is open source and available under the MIT license.

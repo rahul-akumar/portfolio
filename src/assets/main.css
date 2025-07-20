@@ -3,7 +3,7 @@
 
 body {
   font-family: "JetBrains Mono Variable", monospace;
-  background-color:darkblue;
+  background-color: darkblue;
   color: white;
 }
 
@@ -13,7 +13,7 @@ body a {
 
 ::selection {
   background-color: var(--color-amber-500);
-  color: var(--color-black);
+  color: black;
 }
 
 h1 {

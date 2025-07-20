@@ -6,14 +6,14 @@ const styles = {
   header: "pl-3 md:pl-12",
   title:
     "indent-0 font-medium tracking-tight text-white text-7xl md:text-7xl lg:text-8xl xl:text-[12rem]",
-  main: "px-4 pt-8 md:pl-16 md:pt-32 flex flex-col gap-8 md:gap-24 h-full",
-  subtitle: "text-sm md:text-lg tracking-wide text-stone-300 uppercase",
+  main: "p-4 my-4 md:pl-16 md:p-4 md:mt-20 flex flex-col gap-8 md:gap-24 h-full",
+  subtitle: "text-lg text-stone-300 uppercase",
   sections: "flex flex-row md:flex-row gap-16 md:gap-48",
   linksList: "flex list-outside list-none flex-col gap-4 md:gap-12",
-  sectionHeader: "tracking-wider text-stone-300 text-sm md:text-base",
+  sectionHeader: "tracking-wide text-stone-300 text-lg",
   workList: "flex flex-col md:flex-row list-none gap-4 md:gap-12",
-  workHeader: "tracking-wider text-stone-300 text-sm md:text-base md:mb-0",
-  footer: "pb-16 pl-3.5 md:pl-88 pt-16 md:pt-0",
+  workHeader: "tracking-wide text-stone-300 text-lg mb-0",
+  footer: "pb-16 pl-3.5 md:pl-88 pt-2",
   footerGrid: "flex gap-10 md:flex gap-4 md:gap-24",
 };
 </script>
@@ -34,7 +34,7 @@ const styles = {
 
   <main :class="styles.main">
     <p :class="styles.subtitle">
-      Full stack • Systems first • Software builder
+      Full stack • Systems first • Software designer
     </p>
 
     <div :class="styles.sections">
@@ -80,10 +80,10 @@ const styles = {
           <li>
             <a
               class="section-link"
-              href="https://github.com/rahul-akumar/WEGO"
+              href="https://github.com/rahul-akumar/REGO"
               target="_blank"
               rel="noopener noreferrer"
-              >WEGO</a
+              >REGO</a
             >
           </li>
           <li>
@@ -110,7 +110,7 @@ const styles = {
               href=""
               target="_blank"
               rel="noopener noreferrer"
-              >More</a
+              >More soon</a
             >
           </li>
         </ul>
@@ -177,6 +177,7 @@ h1 a:hover::after {
 }
 
 .section-link {
+  font-size: large;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 12px;
@@ -195,6 +196,7 @@ h1 a:hover::after {
 }
 
 .footer-link {
+  font-size: large;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 12px;
