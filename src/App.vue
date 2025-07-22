@@ -104,15 +104,6 @@ const styles = {
               >Verizon</a
             >
           </li>
-          <li>
-            <a
-              class="section-link"
-              href=""
-              target="_blank"
-              rel="noopener noreferrer"
-              >More soon</a
-            >
-          </li>
         </ul>
       </section>
     </div>
