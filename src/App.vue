@@ -86,7 +86,7 @@ const styles = {
           <li>
             <a
               :class="styles.sectionItem"
-              href="https://www.airtel.in/b2b/"
+              href=""
               target="_blank"
               rel="noopener noreferrer"
               >Airtel</a
