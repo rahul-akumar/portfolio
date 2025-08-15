@@ -3,7 +3,7 @@
 
 body {
   font-family: "JetBrains Mono Variable", monospace;
-  background-color: darkblue;
+  background-color: var(--color-black);
   color: white;
 }
 
