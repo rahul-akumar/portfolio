@@ -25,7 +25,7 @@ const styles = {
     </header>
 
     <main class="">
-      <div class="flex flex-col gap-8">
+      <div class="flex flex-col gap-6">
         <div class="gradient-container">
           <div class="running-gradient">
             <div class="gradient-text">
@@ -43,9 +43,7 @@ const styles = {
         </div>
         <div class="flex justify-between px-20">
           <p>Systems—first</p>
-
           <p>Form—second</p>
-
           <p>Software designer</p>
         </div>
       </div>
@@ -79,17 +77,6 @@ const styles = {
       <p>
         <a
           href="https://rahul-akumar.github.io/DRONA/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="underline-offset-8 hover:underline"
-        >
-          Animated gradient builder
-        </a>
-      </p>
-      <p>•</p>
-      <p>
-        <a
-          href="https://rahul-akumar.github.io/gradient/"
           target="_blank"
           rel="noopener noreferrer"
           class="underline-offset-8 hover:underline"
