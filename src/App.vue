@@ -74,16 +74,7 @@ const styles = {
         </a>
       </p>
       <p>•</p>
-      <p>
-        <a
-          href="https://rahul-akumar.github.io/DRONA/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="underline-offset-8 hover:underline"
-        >
-          DRONA
-        </a>
-      </p>
+      <p>More coming soon</p>
     </footer>
   </div>
 </template>
