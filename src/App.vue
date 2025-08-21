@@ -3,153 +3,80 @@ import { Github, Linkedin, Instagram, Twitter, Mail } from "lucide-vue-next";
 
 // Organized utility classes
 const styles = {
-  header: "pl-8 flex flex-col gap-20",
-  title:
-    "indent-0 font-medium tracking-tighter text-white text-7xl md:text-8xl lg:text-9xl xl:text-[12rem]",
-  subtitle: "px-2 text-md lg:text-lg text-white/70 uppercase tracking-widest",
-  main: "pl-6 mt-20 flex flex-col gap-8 md:gap-24",
-  section: "flex pl-4 gap-20 md:gap-40",
-  sectionList: "flex list-none flex-col gap-10 text-md lg:text-lg",
-  sectionHeader: "tracking-widest text-white/70 text-md lg:text-lg",
   sectionItem:
     " text-white underline underline-offset-12 decoration-white/50 hover:decoration-white hover:text-white/80 focus:ring-2 hover:after:content-['_↗'] after:text-amber-500",
-  footer: "py-16 pl-3.5 md:pl-68 pt-2",
-  footerGrid: "flex gap-10 md:flex gap-4 md:gap-24",
 };
 </script>
 
 <template>
-  <header :class="styles.header">
-    <h1 :class="styles.title">
-      Rahul is building <br class="hidden xl:block" />
-      <a
-        href="https://www.dialpad.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="underline decoration-white/70 decoration-2 underline-offset-24 focus:ring-4 md:underline-offset-80"
-        >Dialpad</a
-      >.
-    </h1>
-    <p :class="styles.subtitle">Systems first • Software designer</p>
-  </header>
+  <div class="mx-auto flex h-lvh w-7xl flex-col justify-between py-20">
+    <header class="flex justify-between">
+      <h3 class="text-lg">Rahul</h3>
+      <p>
+        <a
+          href="https://www.linkedin.com/in/rahul-akumar/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline-offset-8 hover:underline"
+        >
+          Get in touch
+        </a>
+      </p>
+    </header>
 
-  <main :class="styles.main">
-    <div :class="styles.section">
-      <section>
-        <ul :class="styles.sectionList">
-          <header :class="styles.sectionHeader">IMPORTANT LINKS</header>
-          <li>
-            <a
-              :class="styles.sectionItem"
-              href="https://rahulkumar.notion.site/2343f4f51b468091ba6ad62b3ac7571d?v=2343f4f51b46801cb30e000cc8007f16&source=copy_link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Portfolio
-            </a>
-          </li>
-          <li>
-            <a
-              :class="styles.sectionItem"
-              href="https://rahulkumar.notion.site/Rahul-s-resume-17a3f4f51b468043b200eef691b438b5?source=copy_link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Resume
-            </a>
-          </li>
-          <li>
-            <a
-              :class="styles.sectionItem"
-              href="https://rahulkumar.notion.site/Publication-7b38e95cc3f84f6c8bdbec401996065d?source=copy_link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Blog
-            </a>
-          </li>
-        </ul>
-      </section>
+    <main class="">
+      <div class="flex flex-col gap-6">
+        <div class="gradient-container">
+          <div class="running-gradient">
+            <div class="gradient-text">
+              Currently designing at
+              <a
+                href="https://www.dialpad.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline-offset-8 hover:underline"
+              >
+                Dialpad</a
+              >.
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-between px-20">
+          <p>Systems—first</p>
+          <p>Form—second</p>
+          <p>Software designer</p>
+        </div>
+      </div>
+    </main>
 
-      <section>
-        <ul :class="styles.sectionList" class="flex flex-col sm:flex-row">
-          <li :class="styles.sectionHeader">PAST WORK</li>
-          <li>
-            <a
-              :class="styles.sectionItem"
-              href="https://rahul-akumar.github.io/REGO/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >REGO</a
-            >
-          </li>
-          <li>
-            <a
-              :class="styles.sectionItem"
-              href="https://www.airtel.in/b2b/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Airtel</a
-            >
-          </li>
-          <li>
-            <a
-              :class="styles.sectionItem"
-              href="https://www.verizon.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Verizon</a
-            >
-          </li>
-        </ul>
-      </section>
-    </div>
-  </main>
-
-  <footer :class="styles.footer">
-    <div :class="styles.footerGrid">
-      <div class="flex items-center gap-2">
-        <Github size="18" class="text-stone-300" />
+    <footer class="flex justify-between px-20">
+      <p>Projects</p>
+      <p>-></p>
+      <p>
         <a
-          href="https://github.com/rahul-akumar"
+          href="https://rahul-akumar.github.io/webintosh/"
           target="_blank"
           rel="noopener noreferrer"
-          class="footer-link"
-          >GH</a
+          class="underline-offset-8 hover:underline"
         >
-      </div>
-      <div class="flex items-center gap-2">
-        <Instagram size="18" class="text-stone-300" />
+          Webintosh
+        </a>
+      </p>
+      <p>•</p>
+      <p>
         <a
-          href="https://www.instagram.com/rahul_akumar/"
+          href="https://rahul-akumar.github.io/REGO/"
           target="_blank"
           rel="noopener noreferrer"
-          class="footer-link"
-          >IG</a
+          class="underline-offset-8 hover:underline"
         >
-      </div>
-      <div class="flex items-center gap-2">
-        <Twitter size="18" class="text-stone-300" />
-        <a
-          href="https://x.com/rahul_akumar"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer-link"
-          >X</a
-        >
-      </div>
-      <div class="flex items-center gap-2">
-        <Mail size="18" class="text-stone-300" />
-        <a
-          href="mailto:rahulakumar93@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer-link"
-          >Get in touch</a
-        >
-      </div>
-    </div>
-  </footer>
+          REGO
+        </a>
+      </p>
+      <p>•</p>
+      <p>More coming soon</p>
+    </footer>
+  </div>
 </template>
 
 <style scoped>
@@ -180,5 +107,186 @@ h1 a:hover::after {
 .footer-link:hover::after {
   content: " ↗";
   color: var(--color-amber-500);
+}
+
+.gradient-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  height: 420px;
+  /* box-shadow: 
+  0 30px 60px rgba(0, 0, 0, 0.4),
+  inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  animation: containerPulse 8s ease-in-out infinite; */
+  background: linear-gradient(45deg, #000000, #fecfef, #fecfef);
+}
+
+.running-gradient {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    #ff0080,
+    /* Hot Pink */ #ff4500,
+    /* Orange Red */ #00ffff,
+    /* Cyan */ #9400d3,
+    /* Violet */ #00ff00,
+    /* Lime */ #ff1493,
+    /* Deep Pink */ #1e90ff,
+    /* Dodger Blue */ #ffd700,
+    /* Gold */ #ff6347,
+    /* Tomato */ #00fa9a,
+    /* Medium Spring Green */ #ff0080 /* Back to Hot Pink */
+  );
+  background-size: 600% 600%;
+  animation:
+    gradientShift 48s ease-in-out infinite,
+    gradientRotate 3s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  /* text-shadow: 
+                2px 2px 4px rgba(0, 0, 0, 0.8),
+                0 0 20px rgba(255, 255, 255, 0.3); */
+  position: relative;
+}
+
+/* Multiple gradient layers for depth */
+.running-gradient::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    -45deg,
+    rgba(255, 0, 128, 0.1),
+    rgba(255, 69, 0, 1),
+    rgba(0, 255, 255, 1),
+    rgba(148, 0, 211, 0.1),
+    rgba(0, 255, 0, 1),
+    rgba(255, 20, 147, 1),
+    rgba(30, 144, 255, 0.1),
+    rgba(255, 215, 0, 1)
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 4s ease-in-out infinite reverse;
+  z-index: 1;
+}
+
+.running-gradient::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  animation: shine 3s linear infinite;
+  z-index: 2;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradientRotate {
+  0% {
+    filter: hue-rotate(0deg) saturate(1);
+  }
+  50% {
+    filter: hue-rotate(180deg) saturate(1.2);
+  }
+  100% {
+    filter: hue-rotate(360deg) saturate(1);
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+@keyframes containerPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+/* Enhanced glow effect */
+.gradient-container::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background: linear-gradient(
+    45deg,
+    #9c004e,
+    #a52c00,
+    #009191,
+    #650091,
+    #008b00,
+    #9c0053,
+    #004c97,
+    #978100,
+    #8f0047
+  );
+  background-size: 600% 600%;
+  animation: gradientShift 6s ease-in-out infinite;
+  border-radius: 29px;
+  z-index: -1;
+  filter: blur(15px);
+  opacity: 0.8;
+}
+
+.gradient-text {
+  position: relative;
+  z-index: 3;
+}
+
+@keyframes textGlow {
+  0% {
+    text-shadow:
+      2px 2px 4px rgba(0, 0, 0, 0.8),
+      0 0 20px rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    text-shadow:
+      2px 2px 4px rgba(0, 0, 0, 0.8),
+      0 0 30px rgba(255, 255, 255, 0.6),
+      0 0 40px rgba(255, 255, 255, 0.3);
+  }
 }
 </style>
