@@ -80,44 +80,11 @@ const styles = {
 </template>
 
 <style scoped>
-h1 a:hover {
-  transition: all 0.3s ease-in-out;
-  color: var(--color-stone-300);
-  text-decoration-color: var(--color-stone-100);
-}
-
-h1 a:hover::after {
-  content: " ↗";
-  color: var(--color-amber-500);
-}
-
-.footer-link {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 12px;
-  text-decoration-color: var(--color-stone-600);
-}
-
-.footer-link:hover {
-  transition: all 0.2s ease-in-out;
-  color: var(--color-stone-300);
-  text-decoration-color: var(--color-stone-100);
-}
-
-.footer-link:hover::after {
-  content: " ↗";
-  color: var(--color-amber-500);
-}
-
 .gradient-container {
   position: relative;
   overflow: hidden;
   border-radius: 1.5rem;
   height: 420px;
-  /* box-shadow: 
-  0 30px 60px rgba(0, 0, 0, 0.4),
-  inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  animation: containerPulse 8s ease-in-out infinite; */
   background: linear-gradient(45deg, #000000, #fecfef, #fecfef);
 }
 
