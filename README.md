@@ -85,7 +85,22 @@ Total Contributions: 🎯 1,234 this year
 Longest Streak: ⚡ 87 days
 ```
 
-![Snake animation](https://raw.githubusercontent.com/rahul-akumar/rahul-akumar/output/snake.svg)
+Generates a snake game from a github user contributions graph
+
+<picture>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake-dark.svg"
+  />
+  <source
+    media="(prefers-color-scheme: light)"
+    srcset="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake.svg"
+  />
+  <img
+    alt="github contribution grid snake animation"
+    src="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake.svg"
+  />
+</picture>
 
 ## 🎵 Currently Vibing To
 
