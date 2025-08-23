@@ -9,7 +9,7 @@ const styles = {
 </script>
 
 <template>
-  <div class="mx-auto flex h-lvh w-7xl flex-col justify-between py-20">
+  <div class="mx-auto flex h-lvh w-sm flex-col justify-between py-20 md:w-7xl">
     <header class="flex justify-between">
       <h3 class="text-lg">Rahul</h3>
       <p>
@@ -26,7 +26,7 @@ const styles = {
 
     <main class="">
       <div class="flex flex-col gap-6">
-        <div class="gradient-container">
+        <div class="gradient-container rounded-lg md:rounded-3xl">
           <div class="running-gradient">
             <div class="gradient-text">
               Currently designing at
@@ -41,40 +41,40 @@ const styles = {
             </div>
           </div>
         </div>
-        <div class="flex justify-between px-20">
-          <p>Systems—first</p>
-          <p>Form—second</p>
-          <p>Software designer</p>
+        <div class="flex justify-between md:px-20">
+          <p class="text-xs md:text-lg">Systems—first</p>
+          <p class="text-xs md:text-lg">Form—second</p>
+          <p class="text-xs md:text-lg">Software designer</p>
         </div>
       </div>
     </main>
 
-    <footer class="flex justify-between px-20">
-      <p>Projects</p>
-      <p>-></p>
+    <footer class="flex items-center justify-between md:px-20">
+      <p class="text-xs md:text-lg">Projects</p>
+      <p class="text-xs md:text-lg">-></p>
       <p>
         <a
           href="https://rahul-akumar.github.io/webintosh/"
           target="_blank"
           rel="noopener noreferrer"
-          class="underline-offset-8 hover:underline"
+          class="text-xs underline-offset-8 hover:underline md:text-lg"
         >
           Webintosh
         </a>
       </p>
-      <p>•</p>
+      <p class="text-xs md:text-lg">•</p>
       <p>
         <a
           href="https://rahul-akumar.github.io/REGO/"
           target="_blank"
           rel="noopener noreferrer"
-          class="underline-offset-8 hover:underline"
+          class="text-xs underline-offset-8 hover:underline md:text-lg"
         >
           REGO
         </a>
       </p>
-      <p>•</p>
-      <p>More coming soon</p>
+      <p class="text-xs md:text-lg">•</p>
+      <p class="text-xs md:text-lg">More coming soon</p>
     </footer>
   </div>
 </template>
@@ -83,7 +83,6 @@ const styles = {
 .gradient-container {
   position: relative;
   overflow: hidden;
-  border-radius: 1.5rem;
   height: 420px;
   background: linear-gradient(45deg, #000000, #fecfef, #fecfef);
 }

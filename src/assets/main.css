@@ -11,10 +11,6 @@ body a {
   cursor: pointer;
 }
 
-body p {
-  font-size: 18px;
-}
-
 ::selection {
   background-color: var(--color-amber-500);
   color: black;
