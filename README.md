@@ -85,8 +85,6 @@ Total Contributions: 🎯 1,234 this year
 Longest Streak: ⚡ 87 days
 ```
 
-Generates a snake game from a github user contributions graph
-
 <picture>
   <source
     media="(prefers-color-scheme: dark)"
