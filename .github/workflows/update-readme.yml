@@ -20,13 +20,28 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Update README with recent activity
-        uses: jamesgeorge007/github-activity-readme@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          COMMIT_MSG: "⚡ Update README with recent activity"
-          MAX_LINES: 5
+      - name: Update README with activity
+        on:
+          schedule:
+            # Runs every day at 12:00 UTC
+            - cron: "0 12 * * *"
+          workflow_dispatch: # allow manual runs
+
+        jobs:
+          update-readme:
+          runs-on: ubuntu-latest
+          steps:
+            - uses: jamesgeorge007/github-activity-readme@master
+              with:
+                COMMIT_MSG: ⚡ Update README with recent activity
+                MAX_LINES: 5
+                GH_USERNAME: rahul-akumar
+                COMMIT_NAME: github-actions[bot]
+                COMMIT_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+                TARGET_FILE: README.md
+                EMPTY_COMMIT_MSG: ":memo: empty commit to keep workflow active after 60 days of no activity"
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: generate github-contribution-grid-snake.svg
         uses: Platane/snk/svg-only@v3
