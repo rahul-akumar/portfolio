@@ -28,7 +28,7 @@ const styles = {
       <div class="flex flex-col gap-6">
         <div class="gradient-container rounded-lg md:rounded-3xl">
           <div class="running-gradient">
-            <div class="gradient-text text-xs font-medium md:text-lg">
+            <div class="gradient-text text-xs md:text-lg">
               Currently building integrations at
               <a
                 href="https://www.dialpad.com/"
@@ -57,7 +57,7 @@ const styles = {
           href="https://rahul-akumar.github.io/webintosh/"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-xs underline underline-offset-8 hover:decoration-wavy md:text-lg"
+          class="text-xs underline underline-offset-8 hover:decoration-wavy hover:after:content-['→'] md:text-lg"
         >
           Webintosh
         </a>
