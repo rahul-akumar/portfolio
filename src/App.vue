@@ -9,7 +9,7 @@ const styles = {
 </script>
 
 <template>
-  <div class="mx-auto flex h-lvh w-sm flex-col justify-between py-20 md:w-7xl">
+  <div class="mx-auto flex h-lvh w-sm flex-col justify-between py-20 md:w-6xl">
     <header class="flex justify-between">
       <h3 class="text-lg">Rahul</h3>
       <p>
@@ -17,24 +17,24 @@ const styles = {
           href="https://www.linkedin.com/in/rahul-akumar/"
           target="_blank"
           rel="noopener noreferrer"
-          class="underline-offset-8 hover:underline"
+          class="underline underline-offset-8 hover:decoration-wavy"
         >
           Get in touch
         </a>
       </p>
     </header>
 
-    <main class="">
+    <main class="-top-20">
       <div class="flex flex-col gap-6">
         <div class="gradient-container rounded-lg md:rounded-3xl">
           <div class="running-gradient">
-            <div class="gradient-text">
-              Currently designing at
+            <div class="gradient-text text-xs font-medium md:text-lg">
+              Currently building integrations at
               <a
                 href="https://www.dialpad.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline-offset-8 hover:underline"
+                class="underline underline-offset-8 transition-all hover:decoration-wavy"
               >
                 Dialpad</a
               >.
@@ -42,9 +42,9 @@ const styles = {
           </div>
         </div>
         <div class="flex justify-between md:px-20">
-          <p class="text-xs md:text-lg">Systems—first</p>
-          <p class="text-xs md:text-lg">Form—second</p>
-          <p class="text-xs md:text-lg">Software designer</p>
+          <p class="text-xs text-stone-200 md:text-lg">Systems—first</p>
+          <p class="text-xs text-stone-200 md:text-lg">Form—second</p>
+          <p class="text-xs text-stone-200 md:text-lg">Software builder</p>
         </div>
       </div>
     </main>
@@ -57,7 +57,7 @@ const styles = {
           href="https://rahul-akumar.github.io/webintosh/"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-xs underline-offset-8 hover:underline md:text-lg"
+          class="text-xs underline underline-offset-8 hover:decoration-wavy md:text-lg"
         >
           Webintosh
         </a>
@@ -68,13 +68,13 @@ const styles = {
           href="https://rahul-akumar.github.io/REGO/"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-xs underline-offset-8 hover:underline md:text-lg"
+          class="text-xs underline underline-offset-8 hover:decoration-wavy md:text-lg"
         >
           REGO
         </a>
       </p>
       <p class="text-xs md:text-lg">•</p>
-      <p class="text-xs md:text-lg">More coming soon</p>
+      <p class="text-xs md:text-lg">More soon</p>
     </footer>
   </div>
 </template>

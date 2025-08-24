@@ -1,10 +1,10 @@
-# 🚀 Rahul Kumar - Full Stack Developer
+# 🚀 Rahul Kumar - Software designer
 
 ```ascii
 ╦═╗┌─┐┬ ┬┬ ┬┬    ╦╔═┬ ┬┌┬┐┌─┐┬─┐
 ╠╦╝├─┤├─┤│ ││    ╠╩╗│ ││││├─┤├┬┘
 ╩╚═┴ ┴┴ ┴└─┘┴─┘  ╩ ╩└─┘┴ ┴┴ ┴┴└─
-    Full Stack Developer & Tech Enthusiast
+    Software designer & Tech Enthusiast
 ```
 
 <div align="center">
@@ -100,14 +100,6 @@ Longest Streak: ⚡ 87 days
   />
 </picture>
 
-## 🎵 Currently Vibing To
-
-<div align="center">
-
-[![Spotify](https://spotify-recently-played-readme.vercel.app/api?user=YOUR_SPOTIFY_USER)](https://open.spotify.com/user/YOUR_SPOTIFY_USER)
-
-</div>
-
 ## 🔧 Latest Projects
 
 <div align="center">
@@ -133,33 +125,6 @@ Python       1 hr 45 mins   ███░░░░░░░░░░░░░░�
 CSS          22 mins        █░░░░░░░░░░░░░░░░░░░░░   2.6%
 JSON         1 min          ░░░░░░░░░░░░░░░░░░░░░░   0.1%
 ```
-
-## 🌟 Fun Facts
-
-<div align="center">
-
-```javascript
-const rahul = {
-  code: ["JavaScript", "TypeScript", "Python", "Java"],
-  askMeAbout: ["web dev", "tech", "app dev", "photography"],
-  technologies: {
-    frontEnd: {
-      js: ["React", "Next.js"],
-      css: ["Tailwind", "Bootstrap", "Material-UI"],
-    },
-    backEnd: {
-      js: ["Node", "Express"],
-      python: ["Django", "FastAPI"],
-    },
-    databases: ["MongoDB", "MySQL", "PostgreSQL"],
-    misc: ["Docker", "AWS", "Git"],
-  },
-  currentFocus: "Building scalable web applications",
-  funFact: "I can debug for hours and still enjoy it! ☕",
-};
-```
-
-</div>
 
 ## 📞 Let's Connect!
 
