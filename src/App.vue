@@ -57,7 +57,7 @@ const styles = {
           href="https://rahul-akumar.github.io/webintosh/"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-xs underline underline-offset-8 hover:decoration-wavy hover:after:content-['→'] md:text-lg"
+          class="text-xs underline underline-offset-8 hover:decoration-wavy md:text-lg"
         >
           Webintosh
         </a>
