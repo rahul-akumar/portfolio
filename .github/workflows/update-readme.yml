@@ -16,19 +16,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Update README with activity
-        uses: jamesgeorge007/github-activity-readme@master
-        with:
-          COMMIT_MSG: "chore: update readme with recent activity"
-          MAX_LINES: 5
-          GH_USERNAME: rahul-akumar
-          COMMIT_NAME: github-actions[bot]
-          COMMIT_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
-          TARGET_FILE: README.md
-          EMPTY_COMMIT_MSG: ":memo: empty commit to keep workflow active after 60 days of no activity"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Generate GitHub contribution snake
         uses: Platane/snk/svg-only@v3
         with:
