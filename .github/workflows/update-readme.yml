@@ -19,10 +19,8 @@ jobs:
       - name: Update README with activity
         uses: jamesgeorge007/github-activity-readme@master
         with:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COMMIT_MSG: "chore: update readme with recent activity"
           MAX_LINES: 5
-          BRANCH: "main"
           GH_USERNAME: rahul-akumar
           COMMIT_NAME: github-actions[bot]
           COMMIT_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
