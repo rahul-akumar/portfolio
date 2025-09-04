@@ -9,9 +9,9 @@ const styles = {
 </script>
 
 <template>
-  <div class="mx-auto flex h-lvh w-screen px-10 flex-col justify-between py-16 md:w-screen">
+  <div class="mx-auto flex h-lvh w-screen px-10 flex-col justify-between py-16 md:w-screen lg:w-5xl">
     <header class="flex justify-between">
-      <h3 class="text-md md:text-base">Rahul</h3>
+      <h3 class="text-sm md:text-base">Rahul</h3>
       <p>
         <a
           href="https://www.linkedin.com/in/rahul-akumar/"
