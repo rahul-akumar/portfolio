@@ -50,8 +50,6 @@ const styles = {
     </main>
 
     <footer class="flex items-center justify-between md:px-20">
-      <p class="text-xs md:text-lg">Projects</p>
-      <p class="text-xs md:text-lg">-></p>
       <p>
         <a
           href="https://rahul-akumar.github.io/webintosh/"
@@ -74,9 +72,17 @@ const styles = {
         </a>
       </p>
       <p class="text-xs md:text-lg">•</p>
-      <p class="text-xs md:text-lg"><a href="https://rahulkumar.notion.site/Integrations-in-DP-UCaaS-2643f4f51b46805ca09fc8844782c3ef" target="_blank" rel="noopener noreferrer" class="text-xs underline underline-offset-8 hover:decoration-wavy md:text-lg">
-        Dialpad
-      </a></p>
+      <p class="text-xs md:text-lg">
+        <a href="https://rahulkumar.notion.site/Integrations-in-DP-UCaaS-2643f4f51b46805ca09fc8844782c3ef" target="_blank" rel="noopener noreferrer" class="text-xs underline underline-offset-8 hover:decoration-wavy md:text-lg">
+        Dialpad - UCaaS
+        </a>
+      </p>
+    <p class="text-xs md:text-lg">•</p>
+    <p class="text-xs md:text-lg">
+        <a href="https://www.behance.net/rahul_kumar" target="_blank" rel="noopener noreferrer" class="text-xs underline underline-offset-8 hover:decoration-wavy md:text-lg">
+        Behance
+        </a>
+      </p>
     </footer>
   </div>
 </template>
