@@ -9,15 +9,15 @@ const styles = {
 </script>
 
 <template>
-  <div class="mx-auto flex h-lvh w-sm flex-col justify-between py-20 md:w-6xl">
+  <div class="mx-auto flex h-lvh w-screen px-10 flex-col justify-between py-16 md:w-screen">
     <header class="flex justify-between">
-      <h3 class="text-lg">Rahul</h3>
+      <h3 class="text-md md:text-base">Rahul</h3>
       <p>
         <a
           href="https://www.linkedin.com/in/rahul-akumar/"
           target="_blank"
           rel="noopener noreferrer"
-          class="underline underline-offset-8 hover:decoration-wavy"
+          class="underline underline-offset-8 hover:decoration-wavy text-sm md:text-base"
         >
           Get in touch
         </a>
@@ -25,10 +25,10 @@ const styles = {
     </header>
 
     <main class="-top-20">
-      <div class="flex flex-col gap-6">
+      <div class="flex flex-col gap-4">
         <div class="gradient-container rounded-lg md:rounded-3xl">
           <div class="running-gradient">
-            <div class="gradient-text text-xs md:text-lg">
+            <div class="gradient-text text-sm md:text-lg p-4">
               Currently building integrations at
               <a
                 href="https://www.dialpad.com/"
@@ -41,45 +41,53 @@ const styles = {
             </div>
           </div>
         </div>
-        <div class="flex justify-between md:px-20">
-          <p class="text-xs text-stone-200 md:text-lg">Systems—first</p>
-          <p class="text-xs text-stone-200 md:text-lg">Form—second</p>
-          <p class="text-xs text-stone-200 md:text-lg">Software builder</p>
+        <div class="flex flex-col md:flex-row justify-between md:px-20 gap-4 md:gap-0">
+          <p class="text-xs text-stone-200 md:text-base">Systems—first</p>
+          <p class="text-xs text-stone-200 md:text-base">Form—second</p>
+          <p class="text-xs text-stone-200 md:text-base">Software designer</p>
         </div>
       </div>
     </main>
 
-    <footer class="flex items-center justify-between md:px-20">
+    <footer class="flex flex-col md:flex-row items-start md:items-center justify-between md:px-20 pt-4 md:pt-0 gap-4 md:gap-0">
       <p>
         <a
           href="https://rahul-akumar.github.io/webintosh/"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-xs underline underline-offset-8 hover:decoration-wavy md:text-lg"
+          class="text-xs underline underline-offset-6 hover:decoration-wavy md:text-base"
         >
           Webintosh
         </a>
       </p>
-      <p class="text-xs md:text-lg">•</p>
+      <p class="text-xs md:text-base md:block hidden">•</p>
       <p>
         <a
           href="https://rahul-akumar.github.io/REGO/"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-xs underline underline-offset-8 hover:decoration-wavy md:text-lg"
+          class="text-xs underline underline-offset-6 hover:decoration-wavy md:text-base"
         >
           REGO
         </a>
       </p>
-      <p class="text-xs md:text-lg">•</p>
-      <p class="text-xs md:text-lg">
-        <a href="https://rahulkumar.notion.site/Integrations-in-DP-UCaaS-2643f4f51b46805ca09fc8844782c3ef" target="_blank" rel="noopener noreferrer" class="text-xs underline underline-offset-8 hover:decoration-wavy md:text-lg">
+      <p class="text-xs md:text-base md:block hidden">•</p>
+      <p class="text-xs md:text-base">
+        <a 
+          href="https://rahulkumar.notion.site/Integrations-in-DP-UCaaS-2643f4f51b46805ca09fc8844782c3ef" 
+          target="_blank" 
+        rel="noopener noreferrer" 
+        class="text-xs underline underline-offset-6 hover:decoration-wavy md:text-base">
         Dialpad - UCaaS
         </a>
       </p>
-    <p class="text-xs md:text-lg">•</p>
-    <p class="text-xs md:text-lg">
-        <a href="https://www.behance.net/rahul_kumar" target="_blank" rel="noopener noreferrer" class="text-xs underline underline-offset-8 hover:decoration-wavy md:text-lg">
+    <p class="text-xs md:text-base md:block hidden">•</p>
+    <p class="text-xs md:text-base">
+        <a 
+          href="https://www.behance.net/rahul_kumar" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="text-xs underline underline-offset-8 hover:decoration-wavy md:text-base">
         Behance
         </a>
       </p>
