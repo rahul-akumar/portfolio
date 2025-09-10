@@ -104,17 +104,16 @@ onUnmounted(() => {
 
     <main class="-top-20">
       <div class="flex flex-col gap-4">
-        <div class="gradient-wrapper">
-          <div 
-            ref="gradientContainer"
-            class="gradient-container rounded-lg md:rounded-3xl"
-            @mousemove="handleMouseMove"
-            @mouseenter="handleInteractionStart"
-            @mouseleave="handleInteractionEnd"
-            @touchmove="handleTouchMove"
-            @touchstart="handleInteractionStart"
-            @touchend="handleInteractionEnd"
-          >
+        <div 
+          ref="gradientContainer"
+          class="gradient-container rounded-lg md:rounded-3xl"
+          @mousemove="handleMouseMove"
+          @mouseenter="handleInteractionStart"
+          @mouseleave="handleInteractionEnd"
+          @touchmove="handleTouchMove"
+          @touchstart="handleInteractionStart"
+          @touchend="handleInteractionEnd"
+        >
           <div class="running-gradient" :style="dynamicGradientStyle">
             <div class="gradient-text text-sm md:text-lg p-4">
               Currently building integrations at
@@ -128,7 +127,6 @@ onUnmounted(() => {
               >.
             </div>
           </div>
-        </div>
         </div>
         <div class="flex flex-col md:flex-row justify-between md:px-20 gap-4 md:gap-0">
           <p class="text-xs text-stone-200 md:text-base font-medium tracking-wider">
@@ -202,41 +200,6 @@ onUnmounted(() => {
   z-index: 10;
 }
 
-/* Gradient wrapper for bleed effect */
-.gradient-wrapper {
-  position: relative;
-}
-
-/* Moving gradient background for light bleed effect */
-.gradient-wrapper::before {
-  content: "";
-  position: absolute;
-  top: -60px;
-  left: -60px;
-  right: -60px;
-  bottom: -60px;
-  background: linear-gradient(
-    45deg,
-    rgba(255, 0, 128, 0.15),
-    /* Hot Pink */ rgba(255, 69, 0, 0.15),
-    /* Orange Red */ rgba(0, 255, 255, 0.15),
-    /* Cyan */ rgba(148, 0, 211, 0.15),
-    /* Violet */ rgba(0, 255, 0, 0.15),
-    /* Lime */ rgba(255, 20, 147, 0.15),
-    /* Deep Pink */ rgba(30, 144, 255, 0.15),
-    /* Dodger Blue */ rgba(255, 215, 0, 0.15),
-    /* Gold */ rgba(255, 99, 71, 0.15),
-    /* Tomato */ rgba(0, 250, 154, 0.15),
-    /* Medium Spring Green */ rgba(255, 0, 128, 0.15) /* Back to Hot Pink */
-  );
-  background-size: 600% 600%;
-  animation: backgroundBleed 48s ease-in-out infinite;
-  border-radius: 50px;
-  z-index: 0;
-  filter: blur(30px);
-  will-change: background-position;
-  transform: translateZ(0);
-}
 
 .running-gradient {
   width: 100%;
@@ -349,24 +312,6 @@ onUnmounted(() => {
   }
 }
 
-@keyframes backgroundBleed {
-  0%, 100% {
-    background-position: 0% 0%;
-    opacity: 0.8;
-  }
-  25% {
-    background-position: 100% 0%;
-    opacity: 1.0;
-  }
-  50% {
-    background-position: 100% 100%;
-    opacity: 0.6;
-  }
-  75% {
-    background-position: 0% 100%;
-    opacity: 0.9;
-  }
-}
 
 @keyframes shine {
   0% {
@@ -588,10 +533,6 @@ p {
   
   .gradient-container::before {
     animation: gradientShift 30s ease-in-out infinite;
-  }
-  
-  .gradient-wrapper::before {
-    animation: backgroundBleed 60s ease-in-out infinite;
   }
   
   .gradient-link {
