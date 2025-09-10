@@ -1,4 +1,5 @@
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue';
 import { Github, Linkedin, Instagram, Twitter, Mail } from "lucide-vue-next";
 
 // Organized utility classes
@@ -6,18 +7,95 @@ const styles = {
   sectionItem:
     " text-white underline underline-offset-12 decoration-white/50 hover:decoration-white hover:text-white/80 focus:ring-2 hover:after:content-['_↗'] after:text-amber-500",
 };
+
+// Interactive gradient state
+const gradientContainer = ref(null);
+const mousePosition = ref({ x: 0.5, y: 0.5 });
+const isInteracting = ref(false);
+
+// Mouse and touch interaction handlers
+const handleMouseMove = (event) => {
+  if (!gradientContainer.value) return;
+  
+  const rect = gradientContainer.value.getBoundingClientRect();
+  const x = (event.clientX - rect.left) / rect.width;
+  const y = (event.clientY - rect.top) / rect.height;
+  
+  mousePosition.value = { x: Math.max(0, Math.min(1, x)), y: Math.max(0, Math.min(1, y)) };
+};
+
+const handleTouchMove = (event) => {
+  if (!gradientContainer.value || event.touches.length === 0) return;
+  
+  event.preventDefault();
+  const touch = event.touches[0];
+  const rect = gradientContainer.value.getBoundingClientRect();
+  const x = (touch.clientX - rect.left) / rect.width;
+  const y = (touch.clientY - rect.top) / rect.height;
+  
+  mousePosition.value = { x: Math.max(0, Math.min(1, x)), y: Math.max(0, Math.min(1, y)) };
+};
+
+const handleInteractionStart = () => {
+  isInteracting.value = true;
+};
+
+const handleInteractionEnd = () => {
+  isInteracting.value = false;
+  // Smoothly return to center
+  mousePosition.value = { x: 0.5, y: 0.5 };
+};
+
+// Computed style for dynamic gradient positioning
+const dynamicGradientStyle = ref('');
+
+// Update gradient position based on mouse/touch
+const updateGradientStyle = () => {
+  const { x, y } = mousePosition.value;
+  const intensity = isInteracting.value ? 1.2 : 0.8;
+  
+  // Calculate background position based on interaction
+  const posX = (x * 100);
+  const posY = (y * 100);
+  
+  dynamicGradientStyle.value = `
+    background-position: ${posX}% ${posY}%;
+    filter: hue-rotate(${x * 60 - 30}deg) saturate(${intensity}) brightness(${0.9 + y * 0.2});
+    transform: translateZ(0) scale(${isInteracting.value ? 1.02 : 1});
+    transition: transform 0.3s ease-out, filter 0.2s ease-out;
+  `;
+};
+
+// Watch for position changes and update styles
+const animationFrame = ref(null);
+const updateAnimation = () => {
+  updateGradientStyle();
+  animationFrame.value = requestAnimationFrame(updateAnimation);
+};
+
+onMounted(() => {
+  updateAnimation();
+});
+
+onUnmounted(() => {
+  if (animationFrame.value) {
+    cancelAnimationFrame(animationFrame.value);
+  }
+});
 </script>
 
 <template>
   <div class="mx-auto flex h-lvh w-screen px-10 flex-col justify-between py-16 md:w-screen lg:w-5xl">
-    <header class="flex justify-between">
-      <h3 class="text-sm md:text-base">Rahul</h3>
+    <header class="flex justify-between items-baseline">
+      <h1 class="text-sm md:text-base font-semibold tracking-wide">
+        Rahul
+      </h1>
       <p>
         <a
           href="https://www.linkedin.com/in/rahul-akumar/"
           target="_blank"
           rel="noopener noreferrer"
-          class="underline underline-offset-8 hover:decoration-wavy text-sm md:text-base"
+          class="gradient-link text-sm md:text-base font-medium"
         >
           Get in touch
         </a>
@@ -26,25 +104,42 @@ const styles = {
 
     <main class="-top-20">
       <div class="flex flex-col gap-4">
-        <div class="gradient-container rounded-lg md:rounded-3xl">
-          <div class="running-gradient">
+        <div class="gradient-wrapper">
+          <div 
+            ref="gradientContainer"
+            class="gradient-container rounded-lg md:rounded-3xl"
+            @mousemove="handleMouseMove"
+            @mouseenter="handleInteractionStart"
+            @mouseleave="handleInteractionEnd"
+            @touchmove="handleTouchMove"
+            @touchstart="handleInteractionStart"
+            @touchend="handleInteractionEnd"
+          >
+          <div class="running-gradient" :style="dynamicGradientStyle">
             <div class="gradient-text text-sm md:text-lg p-4">
               Currently building integrations at
               <a
                 href="https://www.dialpad.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="underline underline-offset-8 transition-all hover:decoration-wavy"
+                class="gradient-link"
               >
                 Dialpad</a
               >.
             </div>
           </div>
         </div>
+        </div>
         <div class="flex flex-col md:flex-row justify-between md:px-20 gap-4 md:gap-0">
-          <p class="text-xs text-stone-200 md:text-base">Systems—first</p>
-          <p class="text-xs text-stone-200 md:text-base">Form—second</p>
-          <p class="text-xs text-stone-200 md:text-base">Software designer</p>
+          <p class="text-xs text-stone-200 md:text-base font-medium tracking-wider">
+            Systems—first
+          </p>
+          <p class="text-xs text-stone-200 md:text-base font-medium tracking-wider">
+            Form—second
+          </p>
+          <p class="text-xs text-stone-200 md:text-base font-medium tracking-wider">
+            Software designer
+          </p>
         </div>
       </div>
     </main>
@@ -55,7 +150,7 @@ const styles = {
           href="https://rahul-akumar.github.io/webintosh/"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-xs underline underline-offset-6 hover:decoration-wavy md:text-base"
+          class="gradient-link text-xs md:text-base"
         >
           Webintosh
         </a>
@@ -66,7 +161,7 @@ const styles = {
           href="https://rahul-akumar.github.io/REGO/"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-xs underline underline-offset-6 hover:decoration-wavy md:text-base"
+          class="gradient-link text-xs md:text-base"
         >
           REGO
         </a>
@@ -77,7 +172,7 @@ const styles = {
           href="https://rahulkumar.notion.site/Integrations-in-DP-UCaaS-2643f4f51b46805ca09fc8844782c3ef" 
           target="_blank" 
         rel="noopener noreferrer" 
-        class="text-xs underline underline-offset-6 hover:decoration-wavy md:text-base">
+        class="gradient-link text-xs md:text-base">
         Dialpad - UCaaS
         </a>
       </p>
@@ -87,7 +182,7 @@ const styles = {
           href="https://www.behance.net/rahul_kumar" 
           target="_blank" 
           rel="noopener noreferrer" 
-          class="text-xs underline underline-offset-8 hover:decoration-wavy md:text-base">
+          class="gradient-link text-xs md:text-base">
         Behance
         </a>
       </p>
@@ -96,11 +191,51 @@ const styles = {
 </template>
 
 <style scoped>
+/* Performance optimizations */
 .gradient-container {
   position: relative;
   overflow: hidden;
   height: 420px;
   background: linear-gradient(45deg, #000000, #fecfef, #fecfef);
+  will-change: transform;
+  backface-visibility: hidden;
+  z-index: 10;
+}
+
+/* Gradient wrapper for bleed effect */
+.gradient-wrapper {
+  position: relative;
+}
+
+/* Moving gradient background for light bleed effect */
+.gradient-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  right: -60px;
+  bottom: -60px;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 128, 0.15),
+    /* Hot Pink */ rgba(255, 69, 0, 0.15),
+    /* Orange Red */ rgba(0, 255, 255, 0.15),
+    /* Cyan */ rgba(148, 0, 211, 0.15),
+    /* Violet */ rgba(0, 255, 0, 0.15),
+    /* Lime */ rgba(255, 20, 147, 0.15),
+    /* Deep Pink */ rgba(30, 144, 255, 0.15),
+    /* Dodger Blue */ rgba(255, 215, 0, 0.15),
+    /* Gold */ rgba(255, 99, 71, 0.15),
+    /* Tomato */ rgba(0, 250, 154, 0.15),
+    /* Medium Spring Green */ rgba(255, 0, 128, 0.15) /* Back to Hot Pink */
+  );
+  background-size: 600% 600%;
+  animation: backgroundBleed 48s ease-in-out infinite;
+  border-radius: 50px;
+  z-index: 0;
+  filter: blur(30px);
+  will-change: background-position;
+  transform: translateZ(0);
 }
 
 .running-gradient {
@@ -129,10 +264,12 @@ const styles = {
   align-items: center;
   color: rgb(0, 0, 0);
   font-size: 18px;
-  /* text-shadow: 
-                2px 2px 4px rgba(0, 0, 0, 0.8),
-                0 0 20px rgba(255, 255, 255, 0.3); */
   position: relative;
+  z-index: 10;
+  /* Performance optimizations */
+  will-change: background-position, filter;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 /* Multiple gradient layers for depth */
@@ -156,7 +293,10 @@ const styles = {
   );
   background-size: 400% 400%;
   animation: gradientShift 4s ease-in-out infinite reverse;
-  z-index: 1;
+  z-index: 11;
+  /* Performance optimizations */
+  will-change: background-position;
+  transform: translateZ(0);
 }
 
 .running-gradient::after {
@@ -173,7 +313,10 @@ const styles = {
     transparent 100%
   );
   animation: shine 3s linear infinite;
-  z-index: 2;
+  z-index: 12;
+  /* Performance optimizations */
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 @keyframes gradientShift {
@@ -203,6 +346,25 @@ const styles = {
   }
   100% {
     filter: hue-rotate(360deg) saturate(1);
+  }
+}
+
+@keyframes backgroundBleed {
+  0%, 100% {
+    background-position: 0% 0%;
+    opacity: 0.8;
+  }
+  25% {
+    background-position: 100% 0%;
+    opacity: 1.0;
+  }
+  50% {
+    background-position: 100% 100%;
+    opacity: 0.6;
+  }
+  75% {
+    background-position: 0% 100%;
+    opacity: 0.9;
   }
 }
 
@@ -251,11 +413,14 @@ const styles = {
   z-index: -1;
   filter: blur(15px);
   opacity: 0.8;
+  /* Performance optimizations */
+  will-change: background-position;
+  transform: translateZ(0);
 }
 
 .gradient-text {
   position: relative;
-  z-index: 3;
+  z-index: 15;
 }
 
 @keyframes textGlow {
@@ -269,6 +434,176 @@ const styles = {
       2px 2px 4px rgba(0, 0, 0, 0.8),
       0 0 30px rgba(255, 255, 255, 0.6),
       0 0 40px rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Enhanced Link Micro-interactions */
+.gradient-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+  text-underline-offset: 7px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, text-shadow;
+}
+
+.gradient-link::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    #ff0080,
+    #ff4500,
+    #00ffff,
+    #9400d3,
+    #00ff00
+  );
+  background-size: 200% 100%;
+  animation: gradientFlow 3s linear infinite;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.gradient-link:hover {
+  transform: translateY(-1px);
+  text-decoration-color: rgba(255, 255, 255, 0.8);
+  text-shadow: 
+    0 0 8px rgba(255, 255, 255, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.gradient-link:hover::before {
+  width: 100%;
+}
+
+.gradient-link:hover::after {
+  content: ' ↗';
+  color: #ffd700;
+  animation: bounce 0.8s ease-out;
+  display: inline-block;
+}
+
+/* Gradient link inside the main gradient container */
+.gradient-text .gradient-link {
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+}
+
+.gradient-text .gradient-link:hover {
+  color: rgb(0, 0, 0);
+  text-shadow: 
+    0 0 12px rgba(255, 255, 255, 0.8),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-3px);
+  }
+  60% {
+    transform: translateY(-1px);
+  }
+}
+
+/* Sophisticated Typography */
+.gradient-accent {
+  background: linear-gradient(
+    135deg,
+    #ff0080,
+    #ff4500,
+    #00ffff,
+    #9400d3,
+    #00ff00
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientAccent 6s ease-in-out infinite;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+@keyframes gradientAccent {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Enhanced typography spacing and hierarchy */
+body {
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+h1, h2, h3 {
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.7;
+}
+
+.gradient-text {
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .running-gradient {
+    animation: gradientShift 120s ease-in-out infinite;
+  }
+  
+  .running-gradient::before {
+    animation: gradientShift 24s ease-in-out infinite reverse;
+  }
+  
+  .running-gradient::after {
+    animation: none;
+  }
+  
+  .gradient-container::before {
+    animation: gradientShift 30s ease-in-out infinite;
+  }
+  
+  .gradient-wrapper::before {
+    animation: backgroundBleed 60s ease-in-out infinite;
+  }
+  
+  .gradient-link {
+    transition: none;
+  }
+  
+  .gradient-link::before {
+    animation: none;
+  }
+  
+  .gradient-link:hover::after {
+    animation: none;
   }
 }
 </style>
