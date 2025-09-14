@@ -34,7 +34,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-- name: Approve build scripts
+      - name: Approve build scripts
         run: pnpm approve-builds
 
       - name: Generate static site for GitHub Pages
