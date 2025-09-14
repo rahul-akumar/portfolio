@@ -19,5 +19,13 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/scripts',
     'motion-v/nuxt'
-  ]
+  ],
+
+  scripts: {
+    registry: {
+      googleAnalytics: {
+        id: 'G-7R777BQHDD'
+      }
+    }
+  }
 })
