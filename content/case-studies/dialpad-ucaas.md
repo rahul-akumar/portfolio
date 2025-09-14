@@ -14,7 +14,7 @@ stack: [Figma, Nuxt, Tailwind, Hotjar, Loom, Jira, Excalidraw, Obsidian]
 
 </SectionHeader>
 
-![Integrations hero](/illustrations/image.png)
+<img src="/illustrations/image.png" alt="Integrations hero" />
 
 <div class="flex flex-col">
 

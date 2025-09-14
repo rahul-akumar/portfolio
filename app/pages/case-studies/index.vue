@@ -22,7 +22,7 @@
               class="group rounded-xl border border-white/10 hover:border-white/20 transition-colors p-6 bg-white/5 hover:bg-white/10"
             >
               <div v-if="post.cover" class="mb-4 overflow-hidden rounded-lg">
-                <NuxtImg :src="post.cover" alt="" class="w-full h-48 object-cover group-hover:scale-[1.02] transition-transform" format="webp" />
+<img :src="post.cover" alt="" class="w-full h-48 object-cover group-hover:scale-[1.02] transition-transform" />
               </div>
               <h3 class="text-2xl font-semibold mb-2">{{ post.title }}</h3>
               <p class="text-white/70 line-clamp-2">{{ post.description }}</p>
@@ -40,7 +40,10 @@
 <script setup>
 const { data: items } = await useAsyncData(
   'case-studies-list',
-  () => queryContent('/case-studies').where({ _partial: false }).only(['_path','title','description','date','cover']).sort({ date: -1 }).find()
+  () => queryCollection('caseStudies')
+    .select(['_path', 'title', 'description', 'date', 'cover'])
+    .order('date', 'DESC')
+    .all()
 )
 
 function formatDate(raw) {
