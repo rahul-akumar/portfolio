@@ -11,6 +11,7 @@
         <div class="flex flex-col">
           <HeroSection />
           <ProjectsSection />
+          <ExperienceSection />
           <ToolsSection />
           <WorkSection />
         </div>

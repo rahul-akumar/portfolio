@@ -113,6 +113,16 @@ const tools = ref([
     span: 'md:col-span-3'
   },
   {
+    name: 'Vercel',
+    icon: 'logos:vercel-icon',
+    iconEmoji: '🚀',
+    category: 'Hosting',
+    description: 'Vercel is a platform for static sites and serverless functions.',
+    tags: ['Hosting', 'Serverless'],
+    gradient: 'bg-radial-[at_80%_50%] from-orange-400/35 to-black/10',
+    span: 'md:col-span-3'
+  },
+  {
     name: 'Hotjar',
     icon: 'logos:hotjar-icon',
     iconEmoji: '🔍',
@@ -140,7 +150,7 @@ const tools = ref([
     description: 'Spotify is a music streaming service.',
     tags: ['Music', 'Streaming'],
     gradient: 'bg-radial-[at_80%_50%] from-green-400/35 to-black/10',
-    span: 'md:col-span-6'
+    span: 'md:col-span-3'
   }
 ])
 </script>

@@ -20,6 +20,13 @@
               Case studies
             </a>
             <a 
+              href="/#experience"
+              @click.prevent="go('#experience')"
+              class="text-white/70 hover:text-white transition-colors duration-200 text-sm font-medium"
+            >
+              Experience
+            </a>
+            <a 
               href="/#tools"
               @click.prevent="go('#tools')"
               class="text-white/70 hover:text-white transition-colors duration-200 text-sm font-medium"
@@ -86,6 +93,13 @@
           @click.prevent="go('#case-studies', true)"
         >
           <span>Case studies</span>
+        </a>
+        <a 
+          href="/#experience"
+          class="block text-white/70 hover:text-white transition-colors duration-200 py-2 text-base font-medium"
+          @click.prevent="go('#experience', true)"
+        >
+          <span>Experience</span>
         </a>
         <a 
           href="/#tools"
