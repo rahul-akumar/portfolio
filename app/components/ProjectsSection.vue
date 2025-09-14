@@ -57,7 +57,7 @@ import { ref, computed, onMounted } from 'vue'
 const allProjects = ref([
   {
     id: 1,
-    title: "Improving Integration Adoption in Dialpad ecosystem",
+    title: "Improving integration adoption in Dialpad ecosystem",
     description: "edesigning Dialpad’s sidebar, call pill, and conversation history to surface integrations contextually and increase daily adoption.",
     imageSrc: "/illustrations/integrations.svg",
     technologies: ["Vue.js", "Nuxt", "TypeScript", "Tailwind CSS"],

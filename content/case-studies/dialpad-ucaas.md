@@ -1,5 +1,5 @@
 ---
-title: Improving Integration Adoption in Dialpad ecosystem
+title: Improving integration adoption in Dialpad ecosystem
 description: Redesigning Dialpad’s sidebar, call pill, and conversation history to surface integrations contextually and increase daily adoption.
 problem: Integrations were underutilized due to poor discoverability, buried settings, and lack of contextual entry points in daily workflows.
 solution: We introduced a redesigned sidebar, updated call pill UI, and refreshed conversation history to make integrations visible and actionable where users work most.

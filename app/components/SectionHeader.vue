@@ -23,4 +23,10 @@ const props = defineProps({
 })
 </script>
 
+<style scoped>
+span {
+font-family: 'Lora', serif;
+}
+</style>
+
 

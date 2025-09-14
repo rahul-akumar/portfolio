@@ -8,10 +8,10 @@
       <main class="relative">
         <article class="w-full p-6 sm:w-xl md:w-3xl lg:w-4xl justify-center flex flex-col gap-20 mt-20 mx-auto sm:px-8">
           <header v-if="doc" class="flex flex-col gap-2">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+            <h1 class="text-4xl sm:text-5xl lg:text-5xl font-bold leading-tight mb-4">
               <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-fuchsia-300 to-amber-400">{{ doc.title }}</span>
             </h1>
-            <p v-if="doc.description" class="text-white/70 text-lg max-w-3xl">{{ doc.description }}</p>
+            <p v-if="doc.description" class="text-white/70 text-base leading-relaxed max-w-3xl">{{ doc.description }}</p>
             <div class="mt-4 text-white/50 text-sm" v-if="formattedDate">{{ formattedDate }}</div>
           </header>
 
@@ -85,6 +85,10 @@ const formattedDate = computed(() => {
 </script>
 
 <style scoped>
+span {
+font-family: 'Lora', serif;
+}
+
 .content-body :deep(h1) {
   font-size: 3rem;
   line-height: 2.5rem;

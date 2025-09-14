@@ -23,7 +23,7 @@
           {{ experience.description }}
         </p>
 
-        <ul v-if="Array.isArray(experience.highlights) && experience.highlights.length" class="list-disc list-inside text-white/75 space-y-2 mb-6">
+        <ul v-if="Array.isArray(experience.highlights) && experience.highlights.length" class="list-disc list-outside text-white/75 space-y-2 mb-2 pl-4">
           <li v-for="(point, i) in experience.highlights" :key="i">{{ point }}</li>
         </ul>
 
