@@ -1,0 +1,12 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Redirecting…</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+  (function () {
+    var vercel = 'https://rahul-akumar.vercel.app/'.replace(/\/$/, '');
+    var path = location.pathname.replace(/^\/portfolio/, '');
+    var target = vercel + path + location.search + location.hash;
+    location.replace(target);
+  })();
+</script>
