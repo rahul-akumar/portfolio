@@ -2,87 +2,153 @@
 
 This file provides guidance to WARP (warp.dev) when working with code in this repository.
 
+## Project Overview
+
+This is a personal portfolio website built with Nuxt 4 and Vue 3, showcasing a creative developer's work with beautiful animations and modern web technologies. The site features an interactive blob background animation, smooth scrolling, and a glass morphism design aesthetic.
+
 ## Development Commands
 
-### Core Development
-- `pnpm dev` - Start development server with hot reload
-- `pnpm build` - Build for production (outputs to `dist/`)
-- `pnpm preview` - Preview production build locally
+### Setup and Installation
+```bash
+# Install dependencies (pnpm is preferred due to configuration)
+pnpm install
+
+# Alternative package managers
+npm install
+yarn install
+bun install
+```
+
+### Development Server
+```bash
+# Start development server on http://localhost:3000
+pnpm dev
+
+# Alternative commands
+npm run dev
+yarn dev
+bun run dev
+```
+
+### Build and Deploy
+```bash
+# Build for production
+pnpm build
+
+# Generate static site
+pnpm generate
+
+# Preview production build locally
+pnpm preview
+```
 
 ### Code Quality
-- `npx prettier --write .` - Format code using Prettier with Tailwind CSS plugin
-- `vue-tsc -b` - Type check TypeScript (runs automatically during build)
+```bash
+# Run ESLint (configured via @nuxt/eslint)
+npx eslint .
 
-## Project Architecture
+# ESLint auto-fix
+npx eslint . --fix
+```
 
-### Technology Stack
-- **Framework**: Vue 3 with Composition API (`<script setup>`)
-- **Build Tool**: Vite with Vue plugin
-- **Language**: TypeScript with strict configuration
-- **Styling**: Tailwind CSS v4 with custom CSS animations
-- **Font**: JetBrains Mono Variable (loaded via @fontsource-variable)
-- **Icons**: Lucide Vue Next
-- **Package Manager**: pnpm
+## Architecture Overview
 
-### Application Structure
-This is a **single-page application (SPA)** with a minimalist architecture:
+### Tech Stack
+- **Framework**: Nuxt 4 with Vue 3 Composition API
+- **Styling**: Tailwind CSS 4 with custom animations
+- **Content**: Nuxt Content for markdown processing
+- **Animations**: Motion-v for advanced animations, custom CSS animations
+- **Build Tool**: Vite with Tailwind CSS plugin
+- **Package Manager**: pnpm (with specific built dependencies config)
 
-- **`src/App.vue`**: Main and only component containing the entire portfolio layout
-- **`src/main.ts`**: Application entry point with Vue app initialization
-- **`src/assets/main.css`**: Global styles with Tailwind imports and custom properties
+### Project Structure
+```
+app/
+├── app.vue                 # Root application component with global styles
+├── assets/main.css         # Tailwind CSS imports
+├── components/             # Vue components
+│   ├── BlobBackground.vue  # Complex physics-based blob animation
+│   ├── HeroSection.vue     # Landing hero with ShinyText effects
+│   ├── NavBar.vue         # Navigation component
+│   ├── ShinyText.vue      # Animated text effect component
+│   └── [Other components] # Project cards, sections, tools display
+├── layouts/               # Nuxt layouts
+├── pages/                 # Nuxt pages (file-based routing)
+│   ├── index.vue         # Homepage with sections integration
+│   └── about.vue         # About page
+├── plugins/              # Vue/Nuxt plugins
+│   └── tilt.ts          # Tilt.js integration plugin
+content/                  # Markdown content files
+public/                   # Static assets (images, favicon, etc.)
+```
 
-### Component Architecture
-The application follows a **single-component design pattern** where all functionality is contained within `App.vue`:
+### Key Components Architecture
 
-- **Template**: Semantic HTML5 structure (header, main, footer)
-- **Script**: Composition API with utility style objects and imported icons
-- **Styles**: Scoped CSS with complex gradient animations and keyframe definitions
+#### BlobBackground.vue
+- Physics-based animation system with gravitational forces
+- Multiple gradient-animated blobs with morphing shapes
+- Responsive design with performance optimizations
+- Uses requestAnimationFrame for smooth 60fps animation
+- Complex CSS animations with staggered delays
 
-### Styling Approach
-- **Base Framework**: Tailwind CSS with utility-first approach
-- **Responsive Design**: Mobile-first with `md:` and `lg:` breakpoints
-- **Custom Animations**: Hand-crafted CSS gradients with multiple animation layers:
-  - `gradientShift`: Background position animation (48s duration)
-  - `gradientRotate`: Hue rotation effect (3s duration)
-  - `shine`: Moving highlight overlay
-- **Typography**: Monospace font stack with custom underline effects
+#### Component Composition Pattern
+- All components use Vue 3 Composition API with `<script setup>`
+- Reactive data management with `ref()` and `reactive()`
+- Lifecycle hooks (`onMounted`, `onUnmounted`) for animations
+- Performance-first approach with `will-change` and transform3d
 
-### Key Features
-- **Interactive Gradient Container**: Mouse/touch responsive gradient with real-time color shifts and scaling
-- **Background Light Bleed**: Subtle moving gradient behind main container for depth
-- **Enhanced Link Interactions**: Gradient underline animations with lift effects and bouncing arrows
-- **Performance Optimized**: GPU-accelerated animations with reduced motion support
-- **Responsive Layout**: Flexbox-based layout adapting from mobile to desktop
-- **External Integrations**: Links to Dialpad, LinkedIn, GitHub, Behance, and personal projects
+#### Styling Architecture
+- Tailwind CSS 4 with Vite plugin integration
+- Custom CSS animations alongside Tailwind utilities
+- Glass morphism design with backdrop-blur effects
+- Responsive design with mobile-first approach
+- Custom scrollbar styling for consistent UX
 
-## Deployment
+### Configuration Files
 
-### GitHub Pages
-- **Trigger**: Automatic deployment on push to `main` branch
-- **Build Environment**: Ubuntu with Node.js 20, pnpm 8
-- **Process**: `pnpm install` → `pnpm run build` → deploy `dist/` folder
-- **Base Path**: Configured for `/portfolio/` subpath in `vite.config.ts`
+#### nuxt.config.ts
+- Tailwind CSS Vite plugin configuration
+- Multiple Nuxt modules: content, eslint, fonts, icon, image, scripts, motion-v
+- Compatibility date set for Nuxt 4 features
 
-### Local Preview
-Use `pnpm preview` after building to test the production version locally.
+#### content.config.ts
+- Nuxt Content collection configuration
+- Schema validation with Zod for content structure
 
-## Development Environment
+### Animation System
+- Motion-v integration for complex animations
+- Intersection Observer API for scroll-triggered animations
+- Custom keyframe animations for morphing effects
+- Performance-optimized with hardware acceleration
+- Accessibility-conscious with `prefers-reduced-motion` support
 
-### Prerequisites
-- Node.js 20+
-- pnpm 8+
+### Development Patterns
 
-### VS Code Setup
-- Required extension: Vue.volar (specified in `.vscode/extensions.json`)
-- Prettier configured with Tailwind CSS plugin for optimal formatting
+#### Performance Considerations
+- All animations use transform3d and will-change for GPU acceleration
+- Images are optimized through @nuxt/image module
+- Custom scrollbar implementation for consistent cross-browser experience
+- Reduced motion accessibility support built-in
 
-### TypeScript Configuration
-- **Strict Mode**: Enabled with comprehensive linting rules
-- **Project Structure**: Composite configuration with separate app and node configs
-- **Vue Support**: Uses `@vue/tsconfig` presets for DOM environment
+#### SEO and Meta Management
+- Comprehensive meta tags with Open Graph and Twitter Card support
+- Canonical URLs configuration
+- Structured data ready through Nuxt's head management
 
-### File Structure Notes
-- Static assets in `public/` folder
-- All source code contained in minimal `src/` structure
-- No component organization needed due to single-component architecture
-- CSS animations and styles are co-located with component logic
+#### State Management
+- No external state management (Vuex/Pinia) - uses component-level reactive state
+- Physics simulation state managed within BlobBackground component
+- Smooth scroll behavior implemented via native CSS and JavaScript APIs
+
+## Content Management
+
+The project uses Nuxt Content for markdown processing:
+- Content stored in `content/` directory
+- Schema validation through content.config.ts
+- Currently minimal content structure (expandable for blog/portfolio entries)
+
+## Deployment Notes
+
+- Supports both static generation (`pnpm generate`) and server-side rendering
+- No database dependencies - fully static or SSR capable
+- Optimized for modern browsers with graceful degradation

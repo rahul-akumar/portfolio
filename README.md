@@ -1,176 +1,75 @@
-# 🚀 Rahul Kumar - Software designer
+# Nuxt Minimal Starter
 
-```ascii
-╦═╗┌─┐┬ ┬┬ ┬┬    ╦╔═┬ ┬┌┬┐┌─┐┬─┐
-╠╦╝├─┤├─┤│ ││    ╠╩╗│ ││││├─┤├┬┘
-╩╚═┴ ┴┴ ┴└─┘┴─┘  ╩ ╩└─┘┴ ┴┴ ┴┴└─
-    Software designer & Tech Enthusiast
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+
+## Setup
+
+Make sure to install dependencies:
+
+```bash
+# npm
+npm install
+
+# pnpm
+pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
 ```
 
-<div align="center">
+## Development Server
 
-![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=3000&pause=1000&color=00D8FF&center=true&vCenter=true&width=435&lines=Design+Engineer;Vue+%7C+NUXT+%7C+TailwindCSS;Always+learning+new+things;Building+the+future+with+code!)
+Start the development server on `http://localhost:3000`:
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white)](https://rahul-akumar.github.io/portfolio/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rahul-akumar/)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rahul-akumar)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rahul-akumar@pm.me)
+```bash
+# npm
+npm run dev
 
-</div>
+# pnpm
+pnpm dev
 
-## 📊 GitHub Stats Dashboard
+# yarn
+yarn dev
 
-<div align="center">
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=rahul-akumar&show_icons=true&theme=radical&hide_border=true&count_private=true&include_all_commits=true)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=rahul-akumar&layout=compact&theme=radical&hide_border=true&langs_count=8)
-
-![GitHub Streak](https://streak-stats.demolab.com/?user=rahul-akumar&theme=radical&hide_border=true)
-
-</div>
-
-## 🔥 Current Activity
-
-<div align="center">
-
-![Activity Graph](https://activity-graph.herokuapp.com/graph?username=rahul-akumar&theme=react-dark&hide_border=true&area=true)
-
-</div>
-
-## 💻 Tech Stack & Skills
-
-<details>
-<summary>🎨 Frontend Development</summary>
-
-![Vue](https://img.shields.io/badge/vue-%2320232a.svg?style=for-the-badge&logo=vue&logoColor=%2361DAFB)
-![Nuxt JS](https://img.shields.io/badge/Nuxt-black?style=for-the-badge&logo=nuxt.js&logoColor=white)
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
-
-**Skill Level:** ████████████████████ 95%
-
-</details>
-
-<details>
-<summary>⚙️ Backend Development</summary>
-
-**Skill Level:** █ 0%
-
-</details>
-
-<details>
-<summary>🗄️ Database & Cloud</summary>
-
-**Skill Level:** █ 0%
-
-</details>
-
-## 🏆 GitHub Achievements
-
-<div align="center">
-
-![Trophies](https://github-profile-trophy.vercel.app/?username=rahul-akumar&theme=radical&no-frame=true&no-bg=true&margin-w=4&row=1)
-
-</div>
-
-## 📈 Contribution Graph
-
-```text
-Current Streak: 🔥 45 days
-Total Contributions: 🎯 1,234 this year
-Longest Streak: ⚡ 87 days
+# bun
+bun run dev
 ```
 
-<picture>
-  <source
-    media="(prefers-color-scheme: dark)"
-    srcset="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake-dark.svg"
-  />
-  <source
-    media="(prefers-color-scheme: light)"
-    srcset="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake.svg"
-  />
-  <img
-    alt="github contribution grid snake animation"
-    src="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake.svg"
-  />
-</picture>
+## Production
 
-## 🔧 Latest Projects
+Build the application for production:
 
-<div align="center">
+```bash
+# npm
+npm run build
 
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=rahul-akumar&repo=portfolio&theme=radical&hide_border=true)](https://github.com/rahul-akumar/portfolio)
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=rahul-akumar&repo=your-awesome-project&theme=radical&hide_border=true)](https://github.com/rahul-akumar/your-awesome-project)
+# pnpm
+pnpm build
 
-</div>
+# yarn
+yarn build
 
-## 💡 Random Dev Quote
-
-<div align="center">
-
-![Quote](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
-
-</div>
-
-## 📊 Weekly Development Breakdown
-
-```text
-TypeScript   12 hrs 15 mins  ███████████████████░░  85.2%
-Python       1 hr 45 mins   ███░░░░░░░░░░░░░░░░░░░  12.1%
-CSS          22 mins        █░░░░░░░░░░░░░░░░░░░░░   2.6%
-JSON         1 min          ░░░░░░░░░░░░░░░░░░░░░░   0.1%
+# bun
+bun run build
 ```
 
-## 📞 Let's Connect!
+Locally preview production build:
 
-<div align="center">
+```bash
+# npm
+npm run preview
 
-**"Code is like humor. When you have to explain it, it's bad."** – Cory House
+# pnpm
+pnpm preview
 
-[![GitHub followers](https://img.shields.io/github/followers/rahul-akumar?label=Follow&style=social)](https://github.com/rahul-akumar)
-[![Twitter Follow](https://img.shields.io/twitter/follow/yourusername?style=social)](https://twitter.com/yourusername)
+# yarn
+yarn preview
 
-**💬 Ask me about anything [here](https://github.com/rahul-akumar/rahul-akumar/issues)**
+# bun
+bun run preview
+```
 
-</div>
-
----
-
-<div align="center">
-
-### ⚡ Recent Activity
-
-<!--START_SECTION:activity-->
-<!--END_SECTION:activity-->
-
-![Profile Views](https://komarev.com/ghpvc/?username=rahul-akumar&color=brightgreen&style=flat-square&label=Profile+Views)
-![Stars](https://img.shields.io/github/stars/rahul-akumar?affiliations=OWNER%2CCOLLABORATOR&style=social)
-
-**✨ Generated with ❤️ by [Rahul Kumar](https://rahul-akumar.github.io/portfolio/)**
-
-</div>
-
-<!-- GitHub Action for updating README -->
-<!--
-Create a GitHub Action (.github/workflows/update-readme.yml) for dynamic updates:
-
-name: Update README
-on:
-  schedule:
-    - cron: '0 0 * * *'  # Daily at midnight
-  workflow_dispatch:
-
-jobs:
-  update-readme:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: jamesgeorge007/github-activity-readme@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
--->
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
