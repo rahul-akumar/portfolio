@@ -1,5 +1,5 @@
 <template>
-  <div v-if="resolvedItems.length" class="w-full overflow-x-auto py-4 bg-black/25 backdrop-blur-3xl rounded-2xl">
+  <div v-if="resolvedItems.length" class="w-full overflow-x-auto py-4 bg-black/25 backdrop-blur-xl rounded-2xl">
     <ul class="inline-flex w-full justify-between items-center px-8 py-4">
       <li
         v-for="item in resolvedItems"

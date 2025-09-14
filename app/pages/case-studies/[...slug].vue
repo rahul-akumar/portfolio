@@ -1,12 +1,12 @@
 <template>
-  <div class="min-h-screen bg-black text-white">
+  <div class="h-full bg-black text-white">
     <div class="fixed inset-0 pointer-events-none">
       <GlassBg />
     </div>
     <div class="relative z-10">
       <NavBar />
       <main class="relative">
-        <article class="w-4xl justify-center flex flex-col gap-20 mt-20 mx-auto sm:px-8">
+        <article class="w-full p-6 sm:w-xl md:w-3xl lg:w-4xl justify-center flex flex-col gap-20 mt-20 mx-auto sm:px-8">
           <header v-if="doc" class="flex flex-col gap-2">
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
               <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-fuchsia-300 to-amber-400">{{ doc.title }}</span>
@@ -89,7 +89,6 @@ const formattedDate = computed(() => {
   font-size: 3rem;
   line-height: 2.5rem;
   font-weight: 700;
-  margin-top: 2.5rem;
   margin-bottom: 1rem;
   background: radial-gradient(circle, #38bdf8, #f0abfc, #fbbf24);
   background-clip: text;
@@ -106,13 +105,12 @@ const formattedDate = computed(() => {
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 700;
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .content-body :deep(p) {
   color: rgba(255, 255, 255, 0.8);
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 .content-body :deep(a) {
@@ -121,7 +119,11 @@ const formattedDate = computed(() => {
 
 .content-body :deep(ul),
 .content-body :deep(ol) {
-  margin: 1rem 0 1rem 1.5rem;
+  margin: 1rem 0 1rem 1.25rem;
+  list-style: disc;
+}
+.content-body :deep(li) {
+  margin-bottom: 1rem;
 }
 
 .content-body :deep(code) {

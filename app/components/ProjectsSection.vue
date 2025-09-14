@@ -57,8 +57,8 @@ import { ref, computed, onMounted } from 'vue'
 const allProjects = ref([
   {
     id: 1,
-    title: "Increase integration adoption within Dialpad",
-    description: "With user-centered approach, the goals was to improve the adoption of integrations within Dialpad.",
+    title: "Improving Integration Adoption in Dialpad ecosystem",
+    description: "edesigning Dialpad’s sidebar, call pill, and conversation history to surface integrations contextually and increase daily adoption.",
     imageSrc: "/illustrations/integrations.svg",
     technologies: ["Vue.js", "Nuxt", "TypeScript", "Tailwind CSS"],
     category: "Web App",
@@ -69,57 +69,57 @@ const allProjects = ref([
     link: "/case-studies/dialpad-ucaas",
     metrics: {
       engagement: {
-        label: "Engagement",
-        value: "12 min"
+        label: "Adoption",
+        value: "+ 42%"
       },
       satisfaction: {
-        label: "User Satisfaction",
-        value: "4.5*"
+        label: "NPS",
+        value: "+18"
       }
     }
   },
   {
     id: 2,
     title: "Dialpad CTI",
-    description: "Complete overhaul of a complex analytics dashboard, focusing on data visualization and user experience improvements for enterprise clients.",
+    description: "Complete overhaul of a complex CTI solution, focusing on 2-way sync and user experience improvements for enterprise clients.",
     imageSrc: "/illustrations/cti.svg",
     technologies: ["React", "D3.js", "TypeScript", "Figma"],
-    category: "Dashboard",
+    category: "Web App",
     date: "2023-11-20",
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/yourusername/enterprise-dashboard",
     gradient: "bg-radial-[at_70%_40%] from-sky-400/30 to-indigo-950/20",
-    link: "/case-studies/airtel-wfm",
+    link: "/case-studies/dialpad-cti",
     metrics: {
       engagement: {
-        label: "Load Time",
-        value: "2.1s"
+        label: "2-way sync",
+        value: "100%"
       },
       satisfaction: {
-        label: "Efficiency Boost",
-        value: "40%"
+        label: "User Experience",
+        value: "+20%"
       }
     }
   },
   {
     id: 3,
-    title: "AI-powered content platform",
-    description: "A modern content management system with AI integration for automated content generation and smart categorization workflows.",
-    imageSrc: "/illustrations/integrations-old.svg",
+    title: "Integration installation experience",
+    description: "Redesigning Dialpad’s outdated integration installation experience to improve user discoverability and adoption.",
+    imageSrc: "/illustrations/integ-install.svg",
     technologies: ["Next.js", "OpenAI", "PostgreSQL", "Vercel"],
-    category: "AI Platform",
+    category: "Web App",
     date: "2024-02-10",
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/yourusername/ai-content-platform",
     gradient: "bg-radial-[at_80%_60%] from-amber-400/30 to-pink-900/20",
     metrics: {
       engagement: {
-        label: "Content Generated",
-        value: "10k+"
+        label: "Discoverability",
+        value: "+20%"
       },
       satisfaction: {
-        label: "Time Saved",
-        value: "65%"
+        label: "Adoption",
+        value: "+42%"
       }
     }
   }

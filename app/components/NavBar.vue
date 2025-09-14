@@ -1,5 +1,5 @@
 <template>
-  <nav class="relative sticky mx-auto top-6 w-md md:w-3xl lg:w-5xl z-50 backdrop-blur-lg bg-gradient-to-r from-white/10 via-emerald-500/10 to-fuchsia-600/5 border border-white/10 rounded-full">
+  <nav class="relative sticky mx-auto top-6 w-sm sm:w-md md:w-3xl lg:w-5xl z-50 backdrop-blur-lg bg-gradient-to-r from-white/10 via-emerald-500/10 to-fuchsia-600/5 border border-white/10 rounded-full">
     <div class="pl-8 pr-4">
       <div class="flex items-center justify-between py-3">
         <!-- Logo/Brand -->
