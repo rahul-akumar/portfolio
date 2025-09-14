@@ -19,7 +19,7 @@
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
         <button 
           @click="scrollToSection('case-studies')"
-          class="group inline-flex items-center bg-black/75 backdrop-blur-sm text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 border border-white/10 hover:border-white/20 hover:bg-black/50"
+          class="group inline-flex items-center bg-black/75 hover:bg-black/50 backdrop-blur-sm text-white px-8 py-4 rounded-full text-base font-medium transition-all duration-300 border border-white/10 hover:border-white/20 hover:bg-black/50 hover:cursor-pointer"
         >
           <span class="mr-2">View case studies</span>
           <Icon name="mdi:arrow-down" class="w-6 h-6" />
@@ -27,7 +27,7 @@
         
         <button 
           @click="scrollToSection('footer')"
-          class="group border-2 border-white/30 hover:border-white/50 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:bg-white/5 hover:scale-105"
+          class="group border-2 border-white/30 hover:border-white/50 text-white px-8 py-4 rounded-full text-base font-medium transition-all duration-300 hover:bg-white/5 hover:cursor-pointer"
         >
           Contact creator
         </button>

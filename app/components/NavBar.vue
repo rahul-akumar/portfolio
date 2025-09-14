@@ -44,7 +44,7 @@
           <button 
             href="/#footer" 
             @click.prevent="go('#footer')" 
-            class="bg-black/50 hover:bg-black/50 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 border border-white/10 hover:border-white/20"
+            class="bg-black/75 hover:bg-black/50 hover:cursor-pointer backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 border border-white/10 hover:border-white/20"
           >
             Contact
           </button>

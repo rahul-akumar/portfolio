@@ -8,7 +8,7 @@
         container-classes="mb-16"
       />
 
-      <div class="flex flex-col gap-8 md:gap-10">
+      <div class="flex flex-col gap-8">
         <ExperienceCard
           v-for="(exp, index) in experiences"
           :key="exp.id || index"
@@ -36,7 +36,7 @@ const experiences = ref([
     role: 'Senior Product Designer',
     startDate: '2023-10-01',
     location: 'Remote, USA',
-    description: 'Led design for UCaaS, CTI, and CCaaS products, improving activation, self-serve flows, and developer experience.',
+    description: 'Led design for UCaaS, CTI, and CCaaS products, design system, and developer experience.',
     highlights: [
       'Increased integration adoption with better onboarding and docs',
       'Introduced design system tokens for product consistency',
@@ -53,7 +53,7 @@ const experiences = ref([
     startDate: '2021-08-30',
     endDate: '2023-10-30',
     location: 'Remote, India',
-    description: 'Owned integrations WFM, B2B payments, and CPaaS platform.',
+    description: 'Owned WFM, B2B payments, and CPaaS platform.',
     highlights: [
       'Led design for Airtel Thanks for Business (B2B payments) and Airtel Work (workforce mgmt).',
       'Co-created Airtel IQ, the world’s first telco-integrated CPaaS platform.',

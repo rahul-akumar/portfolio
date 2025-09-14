@@ -1,17 +1,18 @@
 <template>
   <div 
     :class="['group project-card relative border border-white/10 backdrop-blur-3xl rounded-4xl p-12', gradientClasses, { 'animate-fade-in-up': isVisible }]"
+    v-tilt="{ max: 0, scale: 1, shine: true, parallaxStrength: 0, perspective: 900 }"
   >
-    <div class="flex flex-col md:flex-row justify-between">
+    <div class="flex flex-col sm:flex-row justify-between">
       <!-- Left Content -->
-      <div class="flex flex-col gap-4 md:w-lg">
+      <div class="flex flex-col gap-2 md:w-lg">
         <!-- Project Title -->
         <h3 class="text-2xl lg:text-3xl font-medium text-white mb-4 leading-relaxed">
           {{ project.title }}
         </h3>
         
         <!-- Project Description -->
-        <p class="text-white/80 text-base lg:text-base leading-loose mb-8 max-w-lg">
+        <p class="text-white/80 text-sm lg:text-base leading-loose mb-8 max-w-lg">
           {{ project.description }}
         </p>
         

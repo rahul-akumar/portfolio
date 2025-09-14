@@ -6,7 +6,7 @@
         container-classes="mb-16"
         title="Featured" 
         highlight="Case studies"
-        subtitle="A collection of projects that showcase my skills in frontend development, UI/UX design, and creative problem-solving."
+        subtitle="Projects that showcase my skills in creative problem-solving, design and execution."
       />
 
       <!-- Projects Grid with Scroll Stack Effect -->
@@ -58,7 +58,7 @@ const allProjects = ref([
   {
     id: 1,
     title: "Improving integration adoption in Dialpad ecosystem",
-    description: "edesigning Dialpad’s sidebar, call pill, and conversation history to surface integrations contextually and increase daily adoption.",
+    description: "Redesigning Dialpad’s sidebar, call pill, and conversation history to surface integrations contextually and increase daily adoption.",
     imageSrc: "/illustrations/integrations.svg",
     technologies: ["Vue.js", "Nuxt", "TypeScript", "Tailwind CSS"],
     category: "Web App",
@@ -112,6 +112,7 @@ const allProjects = ref([
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/yourusername/ai-content-platform",
     gradient: "bg-radial-[at_80%_60%] from-amber-400/30 to-pink-900/20",
+    link: "/case-studies/dialpad-integ-intsall",
     metrics: {
       engagement: {
         label: "Discoverability",

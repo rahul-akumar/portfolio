@@ -19,13 +19,13 @@
           {{ experience.role }}
         </h3>
 
-        <p v-if="experience.description" class="text-white/80 text-base leading-loose mb-5 line-clamp-3">
+        <p v-if="experience.description" class="text-white/80 text-base leading-loose mb-2 line-clamp-3">
           {{ experience.description }}
         </p>
 
-        <ul v-if="Array.isArray(experience.highlights) && experience.highlights.length" class="list-disc list-outside text-white/75 space-y-2 mb-2 pl-4">
+        <!--<ul v-if="Array.isArray(experience.highlights) && experience.highlights.length" class="list-disc list-outside text-white/75 space-y-2 mb-2 pl-4">
           <li v-for="(point, i) in experience.highlights" :key="i">{{ point }}</li>
-        </ul>
+        </ul>-->
 
         <div class="flex flex-wrap gap-2 mb-6">
           <span 
