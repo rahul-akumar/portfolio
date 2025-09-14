@@ -1,11 +1,12 @@
 <template>
   <NuxtLayout>
+    <Analytics />
     <NuxtPage />
   </NuxtLayout>
 </template>
 
 <script setup>
-// Root shell uses Nuxt layouts and pages
+import { Analytics } from '@vercel/analytics/nuxt';
 </script>
 
 <style>
