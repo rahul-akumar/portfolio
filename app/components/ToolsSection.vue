@@ -99,7 +99,7 @@ const tools = ref([
     category: 'Framework',
     description: 'Nuxt is a powerful framework for building Vue apps.',
     tags: ['Vue', 'Nitro'],
-    gradient: 'bg-radial-[at_80%_50%] from-emerald-400/35 to-black/10',
+    gradient: 'bg-radial-[at_80%_50%] from-green-400/35 to-emerald-950/50',
     span: 'md:col-span-5 row-span-1'
   },
   {
@@ -109,7 +109,7 @@ const tools = ref([
     category: 'CSS',
     description: 'Utility-first CSS framework for rapidly building modern UI.',
     tags: ['Utilities', 'Design System'],
-    gradient: 'bg-radial-[at_80%_50%] from-sky-400/35 to-black/10',
+    gradient: 'bg-radial-[at_80%_50%] from-sky-400/25 to-cyan-950/50',
     span: 'md:col-span-3'
   },
   {
@@ -119,7 +119,7 @@ const tools = ref([
     category: 'Hosting',
     description: 'Vercel is a platform for static sites and serverless functions.',
     tags: ['Hosting', 'Serverless'],
-    gradient: 'bg-radial-[at_80%_50%] from-orange-400/35 to-black/10',
+    gradient: 'bg-radial-[at_80%_50%] from-stone-400/35 to-black/10',
     span: 'md:col-span-3'
   },
   {
@@ -129,7 +129,7 @@ const tools = ref([
     category: 'Analytics',
     description: 'Hotjar is a heatmap and session replay tool for analyzing user behavior.',
     tags: ['Analytics', 'Heatmap', 'Session Replay'],
-    gradient: 'bg-radial-[at_80%_50%] from-orange-400/35 to-black/10',
+    gradient: 'bg-radial-[at_80%_50%] from-orange-400/25 to-orange-900/50',
     span: 'md:col-span-3'
   },
   {
@@ -139,7 +139,7 @@ const tools = ref([
     category: 'Video',
     description: 'Loom is a video recording tool for creating tutorials and demos.',
     tags: ['Video', 'Collaboration'],
-    gradient: 'bg-radial-[at_80%_50%] from-pink-400/35 to-black/10',
+    gradient: 'bg-radial-[at_80%_50%] from-purple-400/35 to-purple-950/50',
     span: 'md:col-span-3'
   },
   {
