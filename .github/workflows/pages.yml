@@ -34,11 +34,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build static site for GitHub Pages
+- name: Approve build scripts
+        run: pnpm approve-builds
+
+      - name: Generate static site for GitHub Pages
         env:
           NITRO_PRESET: github-pages
           NUXT_APP_BASE_URL: /portfolio/
-        run: pnpm build
+        run: pnpm generate
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

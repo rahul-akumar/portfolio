@@ -28,10 +28,11 @@
       <!-- Right Visual Element -->
       <div class="flex flex-col gap-4 md:w-md mt-8 lg:mt-0 ">
         <div class="relative size-fit rounded-4xl overflow-hidden">
-          <img 
+<img 
             :src="imageSrc || '/illustrations/integrations.svg'" 
             :alt="project.title + ' project cover image'"
             class="object-cover"
+            loading="lazy"
           />
         </div>
         

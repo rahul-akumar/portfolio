@@ -16,7 +16,7 @@
           </header>
 
           <div v-if="doc?.cover" class="">
-            <Img :src="doc.cover" alt="" class="w-full lg:h-80 rounded-4xl shadow-lg object-contain" format="webp, svg" />
+<img :src="doc.cover" alt="" class="w-full lg:h-80 rounded-4xl shadow-lg object-contain" />
           </div>
           
           <div v-if="doc?.stack?.length" class="flex flex-col gap-0 w-full">
