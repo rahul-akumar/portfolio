@@ -11,16 +11,6 @@ export default defineNuxtConfig({
     ],
   },
 
-  // Allow base URL and Nitro preset to be controlled by environment
-  // - On GitHub Pages: NUXT_APP_BASE_URL=/portfolio/ and NITRO_PRESET=github-pages
-  // - On Vercel and local: defaults to '/'
-  app: {
-    baseURL: process.env.NUXT_APP_BASE_URL || '/',
-  },
-  nitro: {
-    preset: process.env.NITRO_PRESET,
-  },
-
   modules: [
     '@nuxt/content',
     '@nuxt/eslint',
