@@ -54,7 +54,7 @@ stack: [Figma, Hotjar, Loom, Jira, Excalidraw, Obsidian]
 
 <img src="/case-studies/dialpad-cti/cti-numpad.png" alt="CTI workflow improvements" class="mb-6 rounded-lg"/>
 
-<img src="/case-studies/dialpad-cti/cti-sf-1.png" alt="CTI workflow improvements" class="mb-6 rounded-lg"/>
+<img src="/case-studies/dialpad-cti/cti-sf-1.png" alt="CTI Salesforce integration" class="mb-6 rounded-lg"/>
 
 ### Research & Validation
 * Ran usability tests with **15 sales reps and 10 support agents**.  
@@ -72,7 +72,7 @@ stack: [Figma, Hotjar, Loom, Jira, Excalidraw, Obsidian]
 
 <img src="/case-studies/dialpad-cti/cti-ideation-2.png" alt="CTI component system" class="mb-4 rounded-lg"/>
 
-<img src="/case-studies/dialpad-cti/cti-ideation-3.png" alt="CTI component system" class="mb-4 rounded-lg"/>
+<img src="/case-studies/dialpad-cti/cti-ideation-3.png" alt="CTI component system iterations" class="mb-4 rounded-lg"/>
 
 ### Interviews
 * Sales reps wanted **faster CRM logging with fewer clicks**.  
