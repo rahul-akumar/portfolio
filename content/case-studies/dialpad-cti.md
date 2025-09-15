@@ -70,9 +70,9 @@ stack: [Figma, Hotjar, Loom, Jira, Excalidraw, Obsidian]
 
 <img src="/case-studies/dialpad-cti/cti-ideation-1.png" alt="CTI design iterations" class="mb-4 rounded-lg"/>
 
-<img src="/case-studies/dialpad-cti/cti-ideation-2.png" alt="CTI component system" class="mb-4 rounded-lg"/>
+<img src="/case-studies/dialpad-cti/cti-ideation-2.png" alt="CTI flow iterations" class="mb-4 rounded-lg"/>
 
-<img src="/case-studies/dialpad-cti/cti-ideation-3.png" alt="CTI component system iterations" class="mb-4 rounded-lg"/>
+<img src="/case-studies/dialpad-cti/cti-ideation-3.png" alt="CTI call logging iterations" class="mb-4 rounded-lg"/>
 
 ### Interviews
 * Sales reps wanted **faster CRM logging with fewer clicks**.  
