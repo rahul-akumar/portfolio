@@ -80,8 +80,8 @@ const allProjects = ref([
   },
   {
     id: 2,
-    title: "Dialpad CTI",
-    description: "Complete overhaul of a complex CTI solution, focusing on 2-way sync and user experience improvements for enterprise clients.",
+    title: "Dialpad CTI overhaul",
+    description: "Complete overhaul of Dialpad's CTI solution, focusing on user experience improvements for enterprise clients.",
     imageSrc: "/illustrations/cti.svg",
     technologies: ["React", "D3.js", "TypeScript", "Figma"],
     category: "Web App",
@@ -103,7 +103,7 @@ const allProjects = ref([
   },
   {
     id: 3,
-    title: "Integration installation experience",
+    title: "Improve integration installation experience",
     description: "Redesigning Dialpad’s outdated integration installation experience to improve user discoverability and adoption.",
     imageSrc: "/illustrations/integ-install.svg",
     technologies: ["Next.js", "OpenAI", "PostgreSQL", "Vercel"],

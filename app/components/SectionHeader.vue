@@ -26,6 +26,7 @@ const props = defineProps({
 <style scoped>
 span {
 font-family: 'Lora', serif;
+letter-spacing: 0.1rem;
 }
 </style>
 

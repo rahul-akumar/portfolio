@@ -18,7 +18,6 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxt/scripts',
-    'motion-v/nuxt'
   ],
 
   scripts: {

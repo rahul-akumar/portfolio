@@ -57,7 +57,7 @@ npx eslint . --fix
 - **Framework**: Nuxt 4 with Vue 3 Composition API
 - **Styling**: Tailwind CSS 4 with custom animations
 - **Content**: Nuxt Content for markdown processing
-- **Animations**: Motion-v for advanced animations, custom CSS animations
+- **Animations**: Custom CSS and JavaScript animations (no external motion library)
 - **Build Tool**: Vite with Tailwind CSS plugin
 - **Package Manager**: pnpm (with specific built dependencies config)
 
@@ -108,7 +108,7 @@ public/                   # Static assets (images, favicon, etc.)
 
 #### nuxt.config.ts
 - Tailwind CSS Vite plugin configuration
-- Multiple Nuxt modules: content, eslint, fonts, icon, image, scripts, motion-v
+- Multiple Nuxt modules: content, eslint, fonts, icon, image, scripts
 - Compatibility date set for Nuxt 4 features
 
 #### content.config.ts
@@ -116,7 +116,7 @@ public/                   # Static assets (images, favicon, etc.)
 - Schema validation with Zod for content structure
 
 ### Animation System
-- Motion-v integration for complex animations
+- Native CSS transforms and requestAnimationFrame for complex animations
 - Intersection Observer API for scroll-triggered animations
 - Custom keyframe animations for morphing effects
 - Performance-optimized with hardware acceleration

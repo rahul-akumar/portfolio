@@ -2,7 +2,7 @@
   <div class="min-h-screen bg-black text-white">
     <!-- Local background instead of layout -->
     <div class="fixed inset-0 pointer-events-none">
-      <BlobBackground />
+      <BlobBackground/>
     </div>
 
     <div class="relative z-10">

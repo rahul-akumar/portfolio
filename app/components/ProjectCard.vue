@@ -1,7 +1,6 @@
 <template>
   <div 
     :class="['group project-card relative border border-white/10 backdrop-blur-3xl rounded-4xl p-12', gradientClasses, { 'animate-fade-in-up': isVisible }]"
-    v-tilt="{ max: 0, scale: 1, shine: true, parallaxStrength: 0, perspective: 900 }"
   >
     <div class="flex flex-col sm:flex-row justify-between">
       <!-- Left Content -->

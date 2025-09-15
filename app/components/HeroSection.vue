@@ -24,13 +24,6 @@
           <span class="mr-2">View case studies</span>
           <Icon name="mdi:arrow-down" class="w-6 h-6" />
         </button>
-        
-        <button 
-          @click="scrollToSection('footer')"
-          class="group border-2 border-white/30 hover:border-white/50 text-white px-8 py-4 rounded-full text-base font-medium transition-all duration-300 hover:bg-white/5 hover:cursor-pointer"
-        >
-          Contact creator
-        </button>
       </div>
 
       <!-- Scroll indicator -->

@@ -22,7 +22,7 @@ stack: [Figma, Hotjar, Loom, Jira, Excalidraw, Obsidian]
 * Cluttered controls led to missed or incorrect actions.  
 * No contextual entry points for integrations (CRM logging, notes, etc.).  
 
-<img src="/case-studies/dialpad-cti/cti-before.png" alt="CTI before redesign" />
+<img src="/case-studies/dialpad-cti/cti-before.png" alt="CTI before redesign" class="rounded-lg"/>
 
 </div>
 
@@ -40,7 +40,7 @@ stack: [Figma, Hotjar, Loom, Jira, Excalidraw, Obsidian]
 * **Lightweight, dockable widget** usable inside CRM, browser, or desktop.  
 * Consistent design system for call actions, regardless of platform.  
 
-<img src="/case-studies/dialpad-cti/cti-incoming-call.png" alt="CTI redesigned widget" class="mb-6"/>
+<img src="/case-studies/dialpad-cti/cti-incoming-call.png" alt="CTI redesigned widget" class="mb-6 rounded-lg"/>
 
 ### Contextual Call Controls
 * Added **inline CRM actions** (log call, create task, update record) directly into CTI.  
@@ -52,7 +52,9 @@ stack: [Figma, Hotjar, Loom, Jira, Excalidraw, Obsidian]
 * Unified **search & dial bar** across all platforms.  
 * Added quick actions (mute, transfer, record) with larger touch targets.  
 
-<img src="/case-studies/dialpad-cti/cti-numpad.png" alt="CTI workflow improvements" class="mb-6"/>
+<img src="/case-studies/dialpad-cti/cti-numpad.png" alt="CTI workflow improvements" class="mb-6 rounded-lg"/>
+
+<img src="/case-studies/dialpad-cti/cti-sf-1.png" alt="CTI workflow improvements" class="mb-6 rounded-lg"/>
 
 ### Research & Validation
 * Ran usability tests with **15 sales reps and 10 support agents**.  
@@ -66,9 +68,11 @@ stack: [Figma, Hotjar, Loom, Jira, Excalidraw, Obsidian]
 
 <div class="flex flex-col gap-4">
 
-<img src="/case-studies/dialpad-cti/cti-ideation-1.png" alt="CTI design iterations" class="mb-4"/>
+<img src="/case-studies/dialpad-cti/cti-ideation-1.png" alt="CTI design iterations" class="mb-4 rounded-lg"/>
 
-<img src="/case-studies/dialpad-cti/cti-ideation-2.png" alt="CTI component system" class="mb-4"/>  
+<img src="/case-studies/dialpad-cti/cti-ideation-2.png" alt="CTI component system" class="mb-4 rounded-lg"/>
+
+<img src="/case-studies/dialpad-cti/cti-ideation-3.png" alt="CTI component system" class="mb-4 rounded-lg"/>
 
 ### Interviews
 * Sales reps wanted **faster CRM logging with fewer clicks**.  

@@ -32,13 +32,13 @@
 import { ref, reactive, onMounted, onUnmounted } from 'vue'
 
 // Physics constants
-const GRAVITY_STRENGTH = 0.0001
+const GRAVITY_STRENGTH = 0.00001
 const DAMPING = 0.999
 const MIN_DISTANCE = 100
 const BOUNDARY_FORCE = 0.002
 
 // Blob configuration
-const BLOB_COUNT = 5
+const BLOB_COUNT = 7
 const MIN_SIZE = 200
 const MAX_SIZE = 400
 
@@ -53,7 +53,7 @@ const gradients = [
   'linear-gradient(135deg, #a440d3, #ffff00)',
   'linear-gradient(135deg, #0410b9, #c41681)',
   'linear-gradient(135deg, #45ad45, #a440d3)',
-  'linear-gradient(135deg, #ffff00, #0410b9)'
+  'linear-gradient(135deg, #ffff00, #0410b9)',
 ]
 
 // Initialize blobs with random positions and properties
