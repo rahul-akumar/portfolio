@@ -92,12 +92,12 @@ const allProjects = ref([
     link: "/case-studies/dialpad-cti",
     metrics: {
       engagement: {
-        label: "2-way sync",
-        value: "100%"
+        label: "Adoption",
+        value: "+76%"
       },
       satisfaction: {
-        label: "User Experience",
-        value: "+20%"
+        label: "Task Completion",
+        value: "+31%"
       }
     }
   },

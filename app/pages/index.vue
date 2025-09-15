@@ -39,16 +39,16 @@
 useHead({
   title: 'Rahul — 🦄 Product designer',
   meta: [
-    { name: 'description', content: 'Creative developer portfolio showcasing modern web development projects with beautiful animations and user experiences.' },
-    { name: 'keywords', content: 'developer, portfolio, vue, nuxt, frontend, fullstack, web development' },
-    { property: 'og:title', content: 'Portfolio - Creative Developer' },
-    { property: 'og:description', content: 'Creative developer portfolio showcasing modern web development projects' },
+    { name: 'description', content: 'Rahul Kumar product designer portfolio.' },
+    { name: 'keywords', content: 'designer, product designer, software designer, portfolio, vue, nuxt, frontend, web design, web development, Rahul Kumar' },
+    { property: 'og:title', content: 'Portfolio - Rahul Kumar' },
+    { property: 'og:description', content: 'Rahul Kumar product designer portfolio' },
     { property: 'og:type', content: 'website' },
     { name: 'twitter:card', content: 'summary_large_image' }
   ],
   link: [
     { rel: 'icon', type: 'image/png', href: '/favicon.png' },
-    { rel: 'canonical', href: 'https://yourportfolio.com' }
+    { rel: 'canonical', href: 'https://rahul-akumar.vercel.app/' }
   ]
 })
 

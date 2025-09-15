@@ -1,13 +1,13 @@
+<script setup lang="ts">
+import { Analytics } from '@vercel/analytics/nuxt';
+</script>
+
 <template>
+  <Analytics />
   <NuxtLayout>
-    <Analytics />
     <NuxtPage />
   </NuxtLayout>
 </template>
-
-<script setup>
-import { Analytics } from '@vercel/analytics/nuxt';
-</script>
 
 <style>
 /* Global styles */

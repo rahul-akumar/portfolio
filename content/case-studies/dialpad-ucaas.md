@@ -59,8 +59,6 @@ Existing UI (sidebar, call pill, conversation history) provided no integration v
 - Ran user tests with enterprise and SMB customers.  
 - Iterated on discoverability cues (icons, badges, onboarding tours).  
 
-
-
 </div>
 
 <SectionHeader title="" highlight="Process" subtitle="">

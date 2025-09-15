@@ -1,6 +1,6 @@
-# Nuxt Minimal Starter
+## Project Overview
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is a personal portfolio website built with Nuxt 4 and Vue 3, showcasing a creative developer's work with beautiful animations and modern web technologies. The site features an interactive blob background animation, smooth scrolling, and a glass morphism design aesthetic.
 
 ## Setup
 
