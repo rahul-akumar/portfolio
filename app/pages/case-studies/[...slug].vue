@@ -6,7 +6,7 @@
     <div class="relative z-10">
       <NavBar />
       <main class="relative">
-        <article class="w-full p-6 sm:w-xl md:w-3xl lg:w-4xl justify-center flex flex-col gap-20 mt-20 mx-auto sm:px-8">
+        <article class="w-full p-8 sm:w-xl md:w-2xl lg:w-3xl items-center flex flex-col gap-20 mt-20 mx-auto sm:px-8">
           <header v-if="doc" class="flex flex-col gap-2">
             <h1 class="text-4xl sm:text-5xl lg:text-5xl font-bold leading-tight mb-4">
               <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-fuchsia-300 to-amber-400">{{ doc.title }}</span>
@@ -16,7 +16,7 @@
           </header>
 
           <div v-if="doc?.cover" class="">
-<img :src="doc.cover" alt="" class="w-full lg:h-80 rounded-4xl shadow-lg object-contain" />
+            <ProseImg :src="doc.cover" alt="" class="w-full lg:h-80 rounded-4xl shadow-lg object-contain" />
           </div>
           
           <div v-if="doc?.stack?.length" class="flex flex-col gap-0 w-full">
@@ -33,7 +33,7 @@
           </section>
 
           <div v-if="doc" class="content-body">
-            <ContentRenderer :value="doc"/>
+            <ContentRenderer :value="doc" :components="{ img: 'ProseImg' }"/>
           </div>
 
           <div v-else class="text-center text-white/70 py-20">Loading…</div>

@@ -27,8 +27,10 @@
 
       <!-- Right Visual Element -->
       <div class="flex flex-col gap-4 md:w-md mt-8 lg:mt-0 ">
-        <div class="relative size-fit rounded-4xl overflow-hidden">
-<img 
+        <div class="rounded-4xl overflow-hidden hover:shadow-2xl" :class="[shadowClass]"
+        v-tilt="{ max: 14, scale: 1.01, shine: true, parallaxSelector: '.tilt-parallax', parallaxStrength: 0, parallaxZ: 28, perspective: 900 }"
+        >
+          <img 
             :src="imageSrc || '/illustrations/integrations.svg'" 
             :alt="project.title + ' project cover image'"
             class="object-cover"
@@ -81,6 +83,10 @@ const props = defineProps({
     default: 'Read case study'
   },
   imageSrc: {
+    type: String,
+    default: ''
+  },
+  shadowClass: {
     type: String,
     default: ''
   }
