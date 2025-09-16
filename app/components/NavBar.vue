@@ -1,5 +1,5 @@
 <template>
-  <nav class="relative sticky mx-auto top-6 w-sm sm:w-md md:w-3xl lg:w-5xl z-50 backdrop-blur-lg bg-gradient-to-r from-white/10 via-emerald-500/10 to-fuchsia-600/5 border border-white/10 rounded-full">
+  <nav ref="navEl" class="relative sticky mx-auto top-6 w-sm sm:w-md md:w-3xl lg:w-5xl z-50 backdrop-blur-lg bg-gradient-to-r from-white/10 via-emerald-500/10 to-fuchsia-600/5 border border-white/10 rounded-full">
     <div class="pl-8 pr-4">
       <div class="flex items-center justify-between py-3">
         <!-- Logo/Brand -->
@@ -52,83 +52,91 @@
         </div>
 
         <!-- Mobile menu button -->
-        <div class="md:hidden">
+        <div class="md:hidden pr-2">
           <button 
             @click="toggleMobileMenu"
-            class="text-white hover:text-white/80 focus:outline-none focus:text-white transition-colors"
+            class="flex text-white hover:text-white/80 focus:outline-none focus:text-white transition-colors justify-center items-center"
             aria-label="Toggle mobile menu"
+            aria-controls="mobile-menu"
+            :aria-expanded="isMobileMenuOpen"
           >
-            <svg 
-              :class="{ 'hidden': isMobileMenuOpen, 'block': !isMobileMenuOpen }"
-              class="h-6 w-6" 
-              stroke="currentColor" 
-              fill="none" 
-              viewBox="0 0 24 24"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-            <svg 
-              :class="{ 'block': isMobileMenuOpen, 'hidden': !isMobileMenuOpen }"
-              class="h-6 w-6" 
-              stroke="currentColor" 
-              fill="none" 
-              viewBox="0 0 24 24"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            <Icon :name="isMobileMenuOpen ? 'lucide:x' : 'lucide:menu'" class="h-6 w-6" />
           </button>
         </div>
       </div>
     </div>
 
-    <!-- Mobile Navigation Menu -->
-    <div 
-      :class="{ 'block': isMobileMenuOpen, 'hidden': !isMobileMenuOpen }"
-      class="md:hidden bg-black/40 backdrop-blur-md border-t border-white/10"
-    >
-      <div class="px-6 pt-2 pb-3 space-y-1">
-        <a 
-          href="/#case-studies"
-          class="block text-white/70 hover:text-white transition-colors duration-200 py-2 text-base font-medium"
-          @click.prevent="go('#case-studies', true)"
-        >
-          <span>Case studies</span>
-        </a>
-        <a 
-          href="/#experience"
-          class="block text-white/70 hover:text-white transition-colors duration-200 py-2 text-base font-medium"
-          @click.prevent="go('#experience', true)"
-        >
-          <span>Experience</span>
-        </a>
-        <a 
-          href="/#tools"
-          class="block text-white/70 hover:text-white transition-colors duration-200 py-2 text-base font-medium"
-          @click.prevent="go('#tools', true)"
-        >
-          <span>Tools</span>
-        </a>
-        <a 
-          href="/#community-work"
-          class="block text-white/70 hover:text-white transition-colors duration-200 py-2 text-base font-medium"
-          @click.prevent="go('#community-work', true)"
-        >
-          <span>Community work</span>
-        </a>
-        <button href="/#footer" class="w-fit mt-2 bg-black/75 hover:bg-black/50 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 border border-white/10 hover:border-white/20"
-          @click.prevent="go('#footer', true)"
-        >
-          <span>Contact</span>
-        </button>
-      </div>
-    </div>
+    
+    
   </nav>
+
+  <!-- Teleported anchored dropdown (outside nav to enable backdrop-blur) -->
+  <Teleport to="body">
+    <transition 
+      enter-active-class="transition-transform transition-opacity duration-300 ease-out" 
+      enter-from-class="-translate-y-2 opacity-0" 
+      enter-to-class="translate-y-0 opacity-100" 
+      leave-active-class="transition-transform transition-opacity duration-200 ease-in" 
+      leave-from-class="translate-y-0 opacity-100" 
+      leave-to-class="-translate-y-2 opacity-0"
+    >
+      <div 
+        v-if="isMobileMenuOpen"
+        id="mobile-menu"
+        :style="dropdownStyle"
+        class="fixed z-40 md:hidden"
+        role="menu"
+        aria-label="Mobile navigation"
+        data-anchored-dropdown
+      >
+        <div class="rounded-3xl border border-white/10 bg-black/40 backdrop-blur-md shadow-lg overflow-hidden">
+          <div class="px-6 py-3 space-y-1">
+            <a 
+              href="/#case-studies"
+              class="block text-white/70 hover:text-white transition-colors duration-200 py-2 text-base font-medium"
+              @click.prevent="go('#case-studies', true)"
+            >
+              <span>Case studies</span>
+            </a>
+            <a 
+              href="/#experience"
+              class="block text-white/70 hover:text-white transition-colors duration-200 py-2 text-base font-medium"
+              @click.prevent="go('#experience', true)"
+            >
+              <span>Experience</span>
+            </a>
+            <a 
+              href="/#tools"
+              class="block text-white/70 hover:text-white transition-colors duration-200 py-2 text-base font-medium"
+              @click.prevent="go('#tools', true)"
+            >
+              <span>Tools</span>
+            </a>
+            <a 
+              href="/#community-work"
+              class="block text-white/70 hover:text-white transition-colors duration-200 py-2 text-base font-medium"
+              @click.prevent="go('#community-work', true)"
+            >
+              <span>Community work</span>
+            </a>
+            <button href="/#footer" class="w-fit mt-2 bg-black/75 hover:bg-black/50 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 border border-white/10 hover:border-white/20"
+              @click.prevent="go('#footer', true)"
+            >
+              <span>Contact</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </transition>
+  </Teleport>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, nextTick, watchEffect } from 'vue'
 
 const isMobileMenuOpen = ref(false)
+const navEl = ref(null)
+const dropdownStyle = ref({ left: '0px', top: '0px', width: '0px' })
 const { scrollToHash } = useSmoothScroll()
 const route = useRoute()
 
@@ -150,16 +158,37 @@ const go = async (hash, shouldClose = false) => {
   if (shouldClose) closeMobileMenu()
 }
 
-// Close mobile menu when clicking outside or pressing escape
+// Close mobile menu with Escape and outside click
 if (process.client) {
   const handleEscape = (e) => {
     if (e.key === 'Escape') {
       isMobileMenuOpen.value = false
     }
   }
-  
+
+  const updateDropdownPosition = () => {
+    if (!navEl.value) return
+    const rect = navEl.value.getBoundingClientRect()
+    // place dropdown just under the navbar and match its width
+    dropdownStyle.value = {
+      left: `${rect.left}px`,
+      top: `${rect.bottom + 8}px`,
+      width: `${rect.width}px`
+    }
+  }
+
+  const handleOpenReposition = async () => {
+    await nextTick()
+    updateDropdownPosition()
+  }
+
   const handleClickOutside = (e) => {
-    if (isMobileMenuOpen.value && !e.target.closest('nav')) {
+    const dropdown = document.querySelector('[data-anchored-dropdown]')
+    if (
+      isMobileMenuOpen.value &&
+      !e.target.closest('nav') &&
+      dropdown && !dropdown.contains(e.target)
+    ) {
       isMobileMenuOpen.value = false
     }
   }
@@ -167,11 +196,21 @@ if (process.client) {
   onMounted(() => {
     document.addEventListener('keydown', handleEscape)
     document.addEventListener('click', handleClickOutside)
+    window.addEventListener('scroll', updateDropdownPosition, { passive: true })
+    window.addEventListener('resize', updateDropdownPosition)
+  })
+
+  watchEffect(() => {
+    if (isMobileMenuOpen.value) {
+      handleOpenReposition()
+    }
   })
 
   onUnmounted(() => {
     document.removeEventListener('keydown', handleEscape)
     document.removeEventListener('click', handleClickOutside)
+    window.removeEventListener('scroll', updateDropdownPosition)
+    window.removeEventListener('resize', updateDropdownPosition)
   })
 }
 </script>
