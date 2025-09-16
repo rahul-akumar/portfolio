@@ -40,7 +40,8 @@ const tools = ref([
     description: 'Excalidraw is a free, open-source drawing tool for sketches and diagrams.',
     tags: ['Whiteboard', 'Diagrams'],
     gradient: 'bg-radial-[at_75%_50%] from-purple-400/40 to-sky-900/20',
-    span: 'md:col-span-4'
+    span: 'md:col-span-4',
+    link: 'https://excalidraw.com/'
   },
   {
     name: 'Figma',
@@ -50,7 +51,8 @@ const tools = ref([
     description: 'Figma is a cloud-based design tool for collaboration and prototyping.',
     tags: ['Design', 'Prototype', 'Collaboration'],
     gradient: 'bg-gradient-to-tr from-cyan-400/40 via-purple-400/20 to-red-400/40',
-    span: 'md:col-span-4'
+    span: 'md:col-span-4',
+    link: 'https://www.figma.com/'
   },
   {
     name: 'Obsidian',
@@ -60,7 +62,8 @@ const tools = ref([
     description: 'Obsidian is a modern, fast, and secure note-taking tool for the modern web.',
     tags: ['Note-taking', 'Documentation'],
     gradient: 'bg-radial-[at_80%_60%] from-violet-400/40 to-indigo-900/20',
-    span: 'md:col-span-4'
+    span: 'md:col-span-4',
+    link: 'https://obsidian.md/'
   },
   {
     name: 'Warp',
@@ -70,7 +73,8 @@ const tools = ref([
     description: 'Warp is a modern, GPU-accelerated terminal with AI features.',
     tags: ['Generating Code', 'AI'],
     gradient: 'bg-radial-[at_50%_50%] from-slate-600/40 to-pink-950/20',
-    span: 'md:col-span-2'
+    span: 'md:col-span-2',
+    link: 'https://www.warp.dev/'
   },
   {
     name: 'Cursor',
@@ -80,7 +84,8 @@ const tools = ref([
     description: 'Cursor is an AI-first code editor to accelerate development.',
     tags: ['Design', 'Prototype'],
     gradient: 'bg-radial-[at_75%_60%] from-zinc-400/40 to-slate-900/20',
-    span: 'md:col-span-5'
+    span: 'md:col-span-5',
+    link: 'https://www.cursor.com/'
   },
   {
     name: 'Arc',
@@ -90,7 +95,8 @@ const tools = ref([
     description: 'Arc is a modern, fast, and secure note-taking tool for the modern web.',
     tags: ['Browser', 'Developer Tools'],
     gradient: 'bg-gradient-to-tr from-indigo-500/35 to-rose-500/25',
-    span: 'md:col-span-4 md:row-span-2'
+    span: 'md:col-span-4 md:row-span-2',
+    link: 'https://arc.net/'
   },
   {
     name: 'Nuxt',
@@ -100,7 +106,8 @@ const tools = ref([
     description: 'Nuxt is a powerful framework for building Vue apps.',
     tags: ['Vue', 'Nitro'],
     gradient: 'bg-radial-[at_80%_50%] from-green-400/35 to-emerald-950/50',
-    span: 'md:col-span-5 row-span-1'
+    span: 'md:col-span-5 row-span-1',
+    link: 'https://nuxt.com/'
   },
   {
     name: 'Tailwind',
@@ -110,7 +117,8 @@ const tools = ref([
     description: 'Utility-first CSS framework for rapidly building modern UI.',
     tags: ['Utilities', 'Design System'],
     gradient: 'bg-radial-[at_80%_50%] from-sky-400/25 to-cyan-950/50',
-    span: 'md:col-span-3'
+    span: 'md:col-span-3',
+    link: 'https://tailwindcss.com/'
   },
   {
     name: 'Vercel',
@@ -120,7 +128,8 @@ const tools = ref([
     description: 'Vercel is a platform for static sites and serverless functions.',
     tags: ['Hosting', 'Serverless'],
     gradient: 'bg-radial-[at_80%_50%] from-stone-400/35 to-black/10',
-    span: 'md:col-span-3'
+    span: 'md:col-span-3',
+    link: 'https://vercel.com/'
   },
   {
     name: 'Hotjar',
@@ -130,7 +139,8 @@ const tools = ref([
     description: 'Hotjar is a heatmap and session replay tool for analyzing user behavior.',
     tags: ['Analytics', 'Heatmap', 'Session Replay'],
     gradient: 'bg-radial-[at_80%_50%] from-orange-400/25 to-orange-900/50',
-    span: 'md:col-span-3'
+    span: 'md:col-span-3',
+    link: 'https://www.hotjar.com/'
   },
   {
     name: 'Loom',
@@ -140,7 +150,8 @@ const tools = ref([
     description: 'Loom is a video recording tool for creating tutorials and demos.',
     tags: ['Video', 'Collaboration'],
     gradient: 'bg-radial-[at_80%_50%] from-purple-400/35 to-purple-950/50',
-    span: 'md:col-span-3'
+    span: 'md:col-span-3',
+    link: 'https://www.loom.com/'
   },
   {
     name: 'Spotify',
@@ -150,7 +161,8 @@ const tools = ref([
     description: 'Spotify is a music streaming service.',
     tags: ['Music', 'Streaming'],
     gradient: 'bg-radial-[at_80%_50%] from-green-400/35 to-black/10',
-    span: 'md:col-span-3'
+    span: 'md:col-span-3',
+    link: 'https://www.spotify.com/'
   }
 ])
 </script>

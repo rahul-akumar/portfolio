@@ -20,7 +20,9 @@
 
         <div class="flex min-w-0 flex-col">
           <h3 class="text-xl sm:text-2xl font-semibold text-white leading-relaxed truncate">
-            {{ tool.name }}
+            <a :href="tool.link" target="_blank" class="hover:underline underline-offset-4">
+                {{ tool.name }}
+            </a>
           </h3>
           <p v-if="tool.category" class="text-white/60 text-sm">{{ tool.category }}</p>
         </div>
