@@ -90,7 +90,7 @@ const tools = ref([
     description: 'Arc is a modern, fast, and secure note-taking tool for the modern web.',
     tags: ['Browser', 'Developer Tools'],
     gradient: 'bg-gradient-to-tr from-indigo-500/35 to-rose-500/25',
-    span: 'md:col-span-4 row-span-2'
+    span: 'md:col-span-4 md:row-span-2'
   },
   {
     name: 'Nuxt',
