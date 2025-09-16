@@ -55,12 +55,12 @@
         <div class="md:hidden pr-2">
           <button 
             @click="toggleMobileMenu"
-            class="flex text-white hover:text-white/80 focus:outline-none focus:text-white transition-colors justify-center items-center"
+            class="flex text-white hover:text-white/80 hover:cursor-pointer focus:outline-none focus:text-white transition-colors justify-center items-center"
             aria-label="Toggle mobile menu"
             aria-controls="mobile-menu"
             :aria-expanded="isMobileMenuOpen"
           >
-            <Icon :name="isMobileMenuOpen ? 'lucide:x' : 'lucide:menu'" class="h-6 w-6" />
+            <Icon :name="isMobileMenuOpen ? 'lucide:x' : 'lucide:menu'" size="16" />
           </button>
         </div>
       </div>
