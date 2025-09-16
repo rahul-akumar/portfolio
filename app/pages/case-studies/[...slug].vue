@@ -8,10 +8,10 @@
       <main class="relative">
         <article class="w-full p-8 sm:w-xl md:w-2xl lg:w-3xl items-center flex flex-col gap-20 mt-20 mx-auto sm:px-8">
           <header v-if="doc" class="flex flex-col gap-2">
-            <h1 class="text-4xl sm:text-5xl lg:text-5xl font-bold leading-tight mb-4">
+            <h1 class="text-4xl sm:text-5xl lg:text-5xl font-semibold leading-tight mb-4">
               <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-fuchsia-300 to-amber-400">{{ doc.title }}</span>
             </h1>
-            <p v-if="doc.description" class="text-white/70 text-base leading-relaxed max-w-3xl">{{ doc.description }}</p>
+            <p v-if="doc.description" class="text-white/70 text-base leading-loose max-w-3xl">{{ doc.description }}</p>
             <div class="mt-4 text-white/50 text-sm" v-if="formattedDate">{{ formattedDate }}</div>
           </header>
 
@@ -91,8 +91,6 @@ font-family: 'Lora', serif;
 
 .content-body :deep(h1) {
   font-size: 3rem;
-  line-height: 2.5rem;
-  font-weight: 700;
   margin-bottom: 1rem;
   background: radial-gradient(circle, #38bdf8, #f0abfc, #fbbf24);
   background-clip: text;
@@ -108,8 +106,6 @@ font-family: 'Lora', serif;
 .content-body :deep(h3) {
   font-size: 1.25rem;
   line-height: 1.75rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
 }
 
 .content-body :deep(p) {
@@ -123,8 +119,8 @@ font-family: 'Lora', serif;
 
 .content-body :deep(ul),
 .content-body :deep(ol) {
-  margin: 1rem 0 1rem 1.25rem;
-  list-style: disc;
+  margin: 0rem 0 1rem 0rem;
+  list-style: disc inside;
 }
 .content-body :deep(li) {
   margin-bottom: 1rem;

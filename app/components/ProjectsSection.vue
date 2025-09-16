@@ -67,7 +67,7 @@ const allProjects = ref([
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/yourusername/subscription-platform",
     gradient: "bg-radial-[at_75%_50%] from-fuchsia-400/50 to-emerald-900/20",
-    shadowClass: "hover:shadow-fuchsia-800/50",
+    shadowClass: "hover:shadow-fuchsia-950/50",
     link: "/case-studies/dialpad-ucaas",
     metrics: {
       engagement: {
@@ -91,7 +91,7 @@ const allProjects = ref([
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/yourusername/enterprise-dashboard",
     gradient: "bg-radial-[at_70%_40%] from-sky-400/30 to-indigo-950/20",
-    shadowClass: "hover:shadow-indigo-800/50",
+    shadowClass: "hover:shadow-indigo-950/35",
     link: "/case-studies/dialpad-cti",
     metrics: {
       engagement: {
@@ -115,7 +115,7 @@ const allProjects = ref([
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/yourusername/ai-content-platform",
     gradient: "bg-radial-[at_80%_60%] from-amber-400/30 to-pink-900/20",
-    shadowClass: "hover:shadow-amber-800/50",
+    shadowClass: "hover:shadow-amber-950/35",
     link: "/case-studies/dialpad-integ-intsall",
     metrics: {
       engagement: {

@@ -14,15 +14,19 @@ stack: [Figma, Nuxt, Tailwind, Hotjar, Loom, Jira, Excalidraw, Obsidian]
 
 </SectionHeader>
 
-<div class="flex flex-col">
+<div class="flex flex-col gap-4 tracking-wide">
 
-**Less than 25% of active users engaged with integrations.**  
+**Less than 25% of active users engaged with integrations in the sidebar.**
 
-Integrations were hidden in profile panel, not part of users’ natural workflows.  
+**Over 75% of users preferred to use intgration portal over the sidebar.**
 
-Existing UI (sidebar, call pill, conversation history) provided no integration visibility or context.  
+* Majority of users were not aware of the integrations available to them.
 
-<img src="/case-studies/dialpad-ucaas/integrations-before.png" alt="Integrations hero" class="mt-4" />
+* Integrations were hidden in profile panel, not part of users’ natural workflows.  
+
+* Existing UI (sidebar, call pill, conversation history) provided no integration visibility or context.
+
+<img src="/case-studies/dialpad-ucaas/integrations-before.png" alt="Integrations before" />
 
 </div>
 
@@ -30,30 +34,36 @@ Existing UI (sidebar, call pill, conversation history) provided no integration v
 
 </SectionHeader>
 
-<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-4 tracking-wide">
 
-* Integration adoption grew to **42% of active orgs**.
+* Integration adoption grew to **32% of active users**.
 
 * Daily active integration usage increased **2.5x**.
 
-* Improvements to sidebar, conversation history, and call pill.
+* Improvements to sidebar, conversation history, and call pill increased user satisfaction.
+
+* Design system was updated to include integrations.
+
+* Marketing materials were updated to include new integrations.
 
 ### Sidebar Redesign
 * Created a **dedicated integrations panels** in sidebar.
 
 * Quick access to apps without navigating deep settings.
 
-<img src="/illustrations/image.png" alt="Integrations hero" class="mb-6"/>
+* We piloted the new sidebar for Salesforce with a small group of users to get feedback and iterate on the design.
+
+<img src="/illustrations/image.png" alt="Integrations after" class="mb-6"/>
 
 ### Call Pill Update
 * Added **integration actions directly into the call pill**, making it easy to log calls or push data to CRM in real-time.
 
-<img src="/case-studies/dialpad-ucaas/call-pill.png" alt="Integrations hero" class="mb-6"/>
+<img src="/case-studies/dialpad-ucaas/call-pill.png" alt="Call pill" class="mb-6"/>
 
 ### Conversation History Update
 - Surface **contextual integration data in conversation threads**, reducing the need to switch tools. 
 
-<img src="/case-studies/dialpad-ucaas/conversation-history.png" alt="Integrations hero" class="mb-6"/>
+<img src="/case-studies/dialpad-ucaas/conversation-history.png" alt="Conversation history" class="mb-6"/>
 
 ### Research & Validation
 - Ran user tests with enterprise and SMB customers.  
@@ -65,19 +75,21 @@ Existing UI (sidebar, call pill, conversation history) provided no integration v
 
 </SectionHeader>
 
-<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-6">
 
-<img src="/case-studies/dialpad-ucaas/iterations.png" alt="Integrations hero" class="mb-4"/>
+<img src="/case-studies/dialpad-ucaas/iterations.png" alt="Integration iterations" />
 
-<img src="/case-studies/dialpad-ucaas/component-structure.png" alt="Integrations hero" class="mb-4"/>
+<img src="/case-studies/dialpad-ucaas/component-structure.png" alt="Integration component structure" />
 
-<img src="/case-studies/dialpad-ucaas/call-pill-ideation.png" alt="Integrations hero" class="mb-4"/> 
+<img src="/case-studies/dialpad-ucaas/call-pill-ideation.png" alt="Call pill ideation" /> 
 
 ### Interviews
+
 - Users reported integrations were “finally where they need them.”  
 - Admins gained confidence from improved setup flows & visibility.  
 
 ### Competitive Audit
+
 - Benchmarked Zoom & RingCentral contextual surfaces.
 - Dialpad caught up by surfacing integrations in sidebar and call pill.  
 </div>
