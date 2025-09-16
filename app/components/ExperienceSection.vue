@@ -8,7 +8,9 @@
         container-classes="mb-16"
       />
 
-      <div class="flex flex-col gap-8">
+      <div 
+        class="flex flex-col px-12 py-4 bg-gradient-to-br from-cyan-800/25 via-lime-500/10 to-fuchsia-800/25 rounded-4xl border border-white/10 backdrop-blur-3xl"
+        >
         <ExperienceCard
           v-for="(exp, index) in experiences"
           :key="exp.id || index"
@@ -110,7 +112,6 @@ const experiences = ref([
     companyUrl: 'https://www.globallogic.com/',
     gradient: 'bg-radial-[at_25%_50%] from-orange-400/25 to-green-900/10'
   }
-  
 ])
 </script>
 
