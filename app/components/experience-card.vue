@@ -42,7 +42,7 @@ if (import.meta.client) {
 
 <template>
   <div
-    class="group relative border-b border-white/15 last:border-b-0 sm:py-8 py-8 w-full" :class="[{ 'animate-fade-in-up': isVisible }]"
+    class="group relative border-b border-white/15 last:border-b-0 sm:py-8 py-8 w-full"
     :data-experience-index="index"
   >
     <div class="flex">
@@ -72,20 +72,6 @@ if (import.meta.client) {
 </template>
 
 <style scoped>
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.animate-fade-in-up {
-  animation: fade-in-up 0.8s ease-out forwards;
-}
-
 .line-clamp-3 {
   display: -webkit-box;
   line-clamp: 3;

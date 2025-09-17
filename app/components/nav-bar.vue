@@ -147,7 +147,7 @@ if (import.meta.client) {
             :aria-expanded="isMobileMenuOpen"
             @click="toggleMobileMenu"
           >
-            <Icon :name="isMobileMenuOpen ? 'lucide:x' : 'lucide:menu'" size="16" />
+            <Icon :name="isMobileMenuOpen ? 'lucide:x' : 'lucide:menu'" size="18" class="m-2 transform-gpu" />
           </button>
         </div>
       </div>
