@@ -1,3 +1,40 @@
+<script setup lang="ts">
+defineOptions({ inheritAttrs: false });
+
+const props = defineProps<{
+  src: string;
+  alt?: string;
+  title?: string;
+  width?: number | string;
+  height?: number | string;
+}>();
+
+const { src, alt } = toRefs(props);
+
+const isLightboxOpen = ref(false);
+
+function openLightbox() {
+  isLightboxOpen.value = true;
+}
+
+function closeLightbox() {
+  isLightboxOpen.value = false;
+}
+
+function onKeydown(e: KeyboardEvent) {
+  if (e.key === "Escape")
+    closeLightbox();
+}
+
+onMounted(() => {
+  window.addEventListener("keydown", onKeydown);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("keydown", onKeydown);
+});
+</script>
+
 <template>
   <span class="inline-block relative">
     <NuxtImg
@@ -22,7 +59,7 @@
           class="absolute top-4 right-4 z-20 text-white/80 hover:text-white hover:cursor-pointer focus:outline-none"
           @click="closeLightbox"
         >
-        <Icon name="lucide:x" size="24" />
+          <Icon name="lucide:x" size="24" />
         </button>
 
         <img
@@ -30,7 +67,7 @@
           :alt="alt || ''"
           class="max-h-[90vh] max-w-[90vw] object-contain rounded-xl shadow-2xl select-none"
           @click.stop
-        />
+        >
         <div v-if="alt" class="absolute bottom-4 left-0 right-0 z-20 px-6 text-center text-white/80 text-sm">
           {{ alt }}
         </div>
@@ -38,42 +75,6 @@
     </transition>
   </Teleport>
 </template>
-
-<script setup lang="ts">
-defineOptions({ inheritAttrs: false })
-
-const props = defineProps<{
-  src: string
-  alt?: string
-  title?: string
-  width?: number | string
-  height?: number | string
-}>()
-
-const { src, alt } = toRefs(props)
-
-const isLightboxOpen = ref(false)
-
-function openLightbox() {
-  isLightboxOpen.value = true
-}
-
-function closeLightbox() {
-  isLightboxOpen.value = false
-}
-
-function onKeydown(e: KeyboardEvent) {
-  if (e.key === 'Escape') closeLightbox()
-}
-
-onMounted(() => {
-  window.addEventListener('keydown', onKeydown)
-})
-
-onBeforeUnmount(() => {
-  window.removeEventListener('keydown', onKeydown)
-})
-</script>
 
 <style scoped>
 .fade-enter-active,
@@ -85,5 +86,3 @@ onBeforeUnmount(() => {
   opacity: 0;
 }
 </style>
-
-

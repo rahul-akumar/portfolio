@@ -1,10 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import tailwindcss from '@tailwindcss/vite'
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
+  compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  css: ['~/assets/main.css'],
+  css: ["~/assets/main.css"],
   vite: {
     plugins: [
       tailwindcss(),
@@ -12,19 +12,24 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    '@nuxt/content',
-    '@nuxt/eslint',
-    '@nuxt/fonts',
-    '@nuxt/icon',
-    '@nuxt/image',
-    '@nuxt/scripts',
+    "@nuxt/content",
+    "@nuxt/eslint",
+    "@nuxt/fonts",
+    "@nuxt/icon",
+    "@nuxt/image",
+    "@nuxt/scripts",
   ],
+  eslint: {
+    config: {
+      standalone: false,
+    },
+  },
 
   scripts: {
     registry: {
       googleAnalytics: {
-        id: 'G-7R777BQHDD'
-      }
-    }
-  }
-})
+        id: "G-7R777BQHDD",
+      },
+    },
+  },
+});

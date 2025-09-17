@@ -1,8 +1,36 @@
+<script setup>
+useHead({
+  title: "Rahul — 🦄 Product designer",
+  meta: [
+    { name: "description", content: "Rahul Kumar product designer portfolio." },
+    { name: "keywords", content: "designer, product designer, software designer, portfolio, vue, nuxt, frontend, web design, web development, Rahul Kumar" },
+    { property: "og:title", content: "Portfolio - Rahul Kumar" },
+    { property: "og:description", content: "Rahul Kumar product designer portfolio" },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary_large_image" },
+  ],
+  link: [
+    { rel: "icon", type: "image/png", href: "/favicon.png" },
+    { rel: "canonical", href: "https://rahul-akumar.vercel.app/" },
+  ],
+});
+
+const route = useRoute();
+const { scrollToHash } = useSmoothScroll();
+
+onMounted(() => {
+  if (import.meta.client && route.hash) {
+    // Delay to ensure sections are in DOM
+    requestAnimationFrame(() => scrollToHash(route.hash, { duration: 700, updateHash: true }));
+  }
+});
+</script>
+
 <template>
   <div class="min-h-screen bg-black text-white">
     <!-- Local background instead of layout -->
     <div class="fixed inset-0 pointer-events-none">
-      <BlobBackground/>
+      <BlobBackground />
     </div>
 
     <div class="relative z-10">
@@ -27,7 +55,6 @@
             <a href="https://behance.net/rahul_kumar" target="_blank" rel="noopener noreferrer" class="text-white/75 hover:text-white transition-colors duration-200 text-sm">Behance</a>
             <a href="mailto:rahul-akumar@protonmail.com" class="text-white/75 hover:text-white transition-colors duration-200 text-sm">Mail</a>
             <a href="/rahul-resume.pdf" download class="text-white/75 hover:text-white transition-colors duration-200 text-sm">Resume</a>
-            
           </div>
         </div>
       </footer>
@@ -35,38 +62,8 @@
   </div>
 </template>
 
-<script setup>
-useHead({
-  title: 'Rahul — 🦄 Product designer',
-  meta: [
-    { name: 'description', content: 'Rahul Kumar product designer portfolio.' },
-    { name: 'keywords', content: 'designer, product designer, software designer, portfolio, vue, nuxt, frontend, web design, web development, Rahul Kumar' },
-    { property: 'og:title', content: 'Portfolio - Rahul Kumar' },
-    { property: 'og:description', content: 'Rahul Kumar product designer portfolio' },
-    { property: 'og:type', content: 'website' },
-    { name: 'twitter:card', content: 'summary_large_image' }
-  ],
-  link: [
-    { rel: 'icon', type: 'image/png', href: '/favicon.png' },
-    { rel: 'canonical', href: 'https://rahul-akumar.vercel.app/' }
-  ]
-})
-
-const route = useRoute()
-const { scrollToHash } = useSmoothScroll()
-
-onMounted(() => {
-  if (process.client && route.hash) {
-    // Delay to ensure sections are in DOM
-    requestAnimationFrame(() => scrollToHash(route.hash, { duration: 700, updateHash: true }))
-  }
-})
-</script>
-
 <style>
 :root {
   font-family: Space Grotesk;
 }
 </style>
-
-

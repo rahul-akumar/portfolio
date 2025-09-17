@@ -9,6 +9,7 @@ This is a personal portfolio website built with Nuxt 4 and Vue 3, showcasing a c
 ## Development Commands
 
 ### Setup and Installation
+
 ```bash
 # Install dependencies (pnpm is preferred due to configuration)
 pnpm install
@@ -20,6 +21,7 @@ bun install
 ```
 
 ### Development Server
+
 ```bash
 # Start development server on http://localhost:3000
 pnpm dev
@@ -31,6 +33,7 @@ bun run dev
 ```
 
 ### Build and Deploy
+
 ```bash
 # Build for production
 pnpm build
@@ -43,6 +46,7 @@ pnpm preview
 ```
 
 ### Code Quality
+
 ```bash
 # Run ESLint (configured via @nuxt/eslint)
 npx eslint .
@@ -54,6 +58,7 @@ npx eslint . --fix
 ## Architecture Overview
 
 ### Tech Stack
+
 - **Framework**: Nuxt 4 with Vue 3 Composition API
 - **Styling**: Tailwind CSS 4 with custom animations
 - **Content**: Nuxt Content for markdown processing
@@ -62,6 +67,7 @@ npx eslint . --fix
 - **Package Manager**: pnpm (with specific built dependencies config)
 
 ### Project Structure
+
 ```
 app/
 ├── app.vue                 # Root application component with global styles
@@ -85,6 +91,7 @@ public/                   # Static assets (images, favicon, etc.)
 ### Key Components Architecture
 
 #### BlobBackground.vue
+
 - Physics-based animation system with gravitational forces
 - Multiple gradient-animated blobs with morphing shapes
 - Responsive design with performance optimizations
@@ -92,12 +99,14 @@ public/                   # Static assets (images, favicon, etc.)
 - Complex CSS animations with staggered delays
 
 #### Component Composition Pattern
+
 - All components use Vue 3 Composition API with `<script setup>`
 - Reactive data management with `ref()` and `reactive()`
 - Lifecycle hooks (`onMounted`, `onUnmounted`) for animations
 - Performance-first approach with `will-change` and transform3d
 
 #### Styling Architecture
+
 - Tailwind CSS 4 with Vite plugin integration
 - Custom CSS animations alongside Tailwind utilities
 - Glass morphism design with backdrop-blur effects
@@ -107,15 +116,18 @@ public/                   # Static assets (images, favicon, etc.)
 ### Configuration Files
 
 #### nuxt.config.ts
+
 - Tailwind CSS Vite plugin configuration
 - Multiple Nuxt modules: content, eslint, fonts, icon, image, scripts
 - Compatibility date set for Nuxt 4 features
 
 #### content.config.ts
+
 - Nuxt Content collection configuration
 - Schema validation with Zod for content structure
 
 ### Animation System
+
 - Native CSS transforms and requestAnimationFrame for complex animations
 - Intersection Observer API for scroll-triggered animations
 - Custom keyframe animations for morphing effects
@@ -125,17 +137,20 @@ public/                   # Static assets (images, favicon, etc.)
 ### Development Patterns
 
 #### Performance Considerations
+
 - All animations use transform3d and will-change for GPU acceleration
 - Images are optimized through @nuxt/image module
 - Custom scrollbar implementation for consistent cross-browser experience
 - Reduced motion accessibility support built-in
 
 #### SEO and Meta Management
+
 - Comprehensive meta tags with Open Graph and Twitter Card support
 - Canonical URLs configuration
 - Structured data ready through Nuxt's head management
 
 #### State Management
+
 - No external state management (Vuex/Pinia) - uses component-level reactive state
 - Physics simulation state managed within BlobBackground component
 - Smooth scroll behavior implemented via native CSS and JavaScript APIs
@@ -143,6 +158,7 @@ public/                   # Static assets (images, favicon, etc.)
 ## Content Management
 
 The project uses Nuxt Content for markdown processing:
+
 - Content stored in `content/` directory
 - Schema validation through content.config.ts
 - Currently minimal content structure (expandable for blog/portfolio entries)

@@ -20,11 +20,11 @@ stack: [Figma, Nuxt, Tailwind, Hotjar, Loom, Jira, Excalidraw, Obsidian]
 
 **Over 75% of users preferred to use intgration portal over the sidebar.**
 
-* Majority of users were not aware of the integrations available to them.
+- Majority of users were not aware of the integrations available to them.
 
-* Integrations were hidden in profile panel, not part of users’ natural workflows.  
+- Integrations were hidden in profile panel, not part of users’ natural workflows.
 
-* Existing UI (sidebar, call pill, conversation history) provided no integration visibility or context.
+- Existing UI (sidebar, call pill, conversation history) provided no integration visibility or context.
 
 <img src="/case-studies/dialpad-ucaas/integrations-before.png" alt="Integrations before" />
 
@@ -36,38 +36,42 @@ stack: [Figma, Nuxt, Tailwind, Hotjar, Loom, Jira, Excalidraw, Obsidian]
 
 <div class="flex flex-col gap-4 tracking-wide">
 
-* Integration adoption grew to **32% of active users**.
+- Integration adoption grew to **32% of active users**.
 
-* Daily active integration usage increased **2.5x**.
+- Daily active integration usage increased **2.5x**.
 
-* Improvements to sidebar, conversation history, and call pill increased user satisfaction.
+- Improvements to sidebar, conversation history, and call pill increased user satisfaction.
 
-* Design system was updated to include integrations.
+- Design system was updated to include integrations.
 
-* Marketing materials were updated to include new integrations.
+- Marketing materials were updated to include new integrations.
 
 ### Sidebar Redesign
-* Created a **dedicated integrations panels** in sidebar.
 
-* Quick access to apps without navigating deep settings.
+- Created a **dedicated integrations panels** in sidebar.
 
-* We piloted the new sidebar for Salesforce with a small group of users to get feedback and iterate on the design.
+- Quick access to apps without navigating deep settings.
+
+- We piloted the new sidebar for Salesforce with a small group of users to get feedback and iterate on the design.
 
 <img src="/illustrations/image.png" alt="Integrations after" class="mb-6"/>
 
 ### Call Pill Update
-* Added **integration actions directly into the call pill**, making it easy to log calls or push data to CRM in real-time.
+
+- Added **integration actions directly into the call pill**, making it easy to log calls or push data to CRM in real-time.
 
 <img src="/case-studies/dialpad-ucaas/call-pill.png" alt="Call pill" class="mb-6"/>
 
 ### Conversation History Update
-- Surface **contextual integration data in conversation threads**, reducing the need to switch tools. 
+
+- Surface **contextual integration data in conversation threads**, reducing the need to switch tools.
 
 <img src="/case-studies/dialpad-ucaas/conversation-history.png" alt="Conversation history" class="mb-6"/>
 
 ### Research & Validation
-- Ran user tests with enterprise and SMB customers.  
-- Iterated on discoverability cues (icons, badges, onboarding tours).  
+
+- Ran user tests with enterprise and SMB customers.
+- Iterated on discoverability cues (icons, badges, onboarding tours).
 
 </div>
 
@@ -81,17 +85,17 @@ stack: [Figma, Nuxt, Tailwind, Hotjar, Loom, Jira, Excalidraw, Obsidian]
 
 <img src="/case-studies/dialpad-ucaas/component-structure.png" alt="Integration component structure" />
 
-<img src="/case-studies/dialpad-ucaas/call-pill-ideation.png" alt="Call pill ideation" /> 
+<img src="/case-studies/dialpad-ucaas/call-pill-ideation.png" alt="Call pill ideation" />
 
 ### Interviews
 
-- Users reported integrations were “finally where they need them.”  
-- Admins gained confidence from improved setup flows & visibility.  
+- Users reported integrations were “finally where they need them.”
+- Admins gained confidence from improved setup flows & visibility.
 
 ### Competitive Audit
 
 - Benchmarked Zoom & RingCentral contextual surfaces.
-- Dialpad caught up by surfacing integrations in sidebar and call pill.  
+- Dialpad caught up by surfacing integrations in sidebar and call pill.
 </div>
 
 <SectionHeader title="" highlight="Conclusion" subtitle="">
@@ -100,14 +104,14 @@ stack: [Figma, Nuxt, Tailwind, Hotjar, Loom, Jira, Excalidraw, Obsidian]
 
 <div class="flex flex-col gap-4 mb-4">
 
-The new sidebar, call pill, and conversation history updates **transformed integrations from hidden features into daily workflow enablers.**  
+The new sidebar, call pill, and conversation history updates **transformed integrations from hidden features into daily workflow enablers.**
 
-Clearer discoverability and contextual actions directly contributed to higher adoption, trust, and satisfaction.  
+Clearer discoverability and contextual actions directly contributed to higher adoption, trust, and satisfaction.
 
-Next step: explore **AI-powered recommendations for integrations** based on user role & activity.  
+Next step: explore **AI-powered recommendations for integrations** based on user role & activity.
 
 </div>
 
-<SectionHeader title="" highlight="" subtitle="Thank you ❤"> 
+<SectionHeader title="" highlight="" subtitle="Thank you ❤">
 
 </SectionHeader>
