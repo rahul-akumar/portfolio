@@ -89,13 +89,13 @@ if (import.meta.client) {
       <!-- Right Visual Element -->
       <div class="flex flex-col gap-4 md:w-md mt-8 lg:mt-0 ">
         <div
-          v-tilt="{ max: 14, scale: 1.01, shine: true, parallaxSelector: '.tilt-parallax', parallaxStrength: 0, parallaxZ: 28, perspective: 900 }" class="rounded-4xl overflow-hidden hover:shadow-2xl"
-          :class="[shadowClass]"
+          v-tilt="{ max: 14, scale: 1.01, shine: true, parallaxSelector: '.tilt-parallax', parallaxStrength: 0, parallaxZ: 28, perspective: 900 }"
+          class="group rounded-4xl overflow-hidden hover:shadow-2xl transform-gpu"
         >
           <img
             :src="imageSrc || '/illustrations/integrations.svg'"
             :alt="`${project.title} project cover image`"
-            class="object-cover"
+            class="object-cover group-hover:scale-[1.01] transition-transform"
             loading="lazy"
           >
         </div>

@@ -30,7 +30,8 @@ if (import.meta.client) {
 
 <template>
   <div
-    v-tilt="{ max: 14, scale: 1.01, shine: true, parallaxSelector: '.tilt-parallax', parallaxStrength: 0, parallaxZ: 28, perspective: 900 }" class="group tool-card relative border border-white/10 backdrop-blur-3xl rounded-4xl p-6 sm:p-8 h-full transform-gpu"
+    v-tilt="{ max: 14, scale: 1.01, shine: true, parallaxSelector: '.tilt-parallax', parallaxStrength: 0, parallaxZ: 28, perspective: 900 }"
+    class="group tool-card relative border border-white/10 backdrop-blur-3xl rounded-4xl p-6 sm:p-8 h-full transform-gpu"
     :class="[
       gradientClasses,
     ]"
