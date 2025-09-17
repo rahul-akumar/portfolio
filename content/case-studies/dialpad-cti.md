@@ -16,13 +16,14 @@ stack: [Figma, Hotjar, Loom, Jira, Excalidraw, Obsidian]
 
 <div class="flex flex-col">
 
-**Sales and support reps struggled with the existing CTI.**  
+**Sales and support reps struggled with the existing CTI.**
 <br>
-* Inconsistent UI across web, desktop, and CRM plugins. 
 
-* Cluttered controls led to missed or incorrect actions.  
+- Inconsistent UI across web, desktop, and CRM plugins.
 
-* No contextual entry points for integrations (CRM logging, notes, etc.).  
+- Cluttered controls led to missed or incorrect actions.
+
+- No contextual entry points for integrations (CRM logging, notes, etc.).
 
 <img src="/case-studies/dialpad-cti/cti-before.png" alt="CTI before redesign" class="mb-6"/>
 
@@ -34,33 +35,37 @@ stack: [Figma, Hotjar, Loom, Jira, Excalidraw, Obsidian]
 
 <div class="flex flex-col gap-4">
 
-* CTI adoption increased from **40% → 76% of target users**.  
-* Average call handling time reduced by **22%**.  
-* Task completion success rate improved by **+31%**.  
+- CTI adoption increased from **40% → 76% of target users**.
+- Average call handling time reduced by **22%**.
+- Task completion success rate improved by **+31%**.
 
 ### New CTI Widget
-* **Lightweight, dockable widget** usable inside CRM, browser, or desktop.  
-* Consistent design system for call actions, regardless of platform.  
+
+- **Lightweight, dockable widget** usable inside CRM, browser, or desktop.
+- Consistent design system for call actions, regardless of platform.
 
 <img src="/case-studies/dialpad-cti/cti-incoming-call.png" alt="CTI redesigned widget" class="mb-6"/>
 
 ### Contextual Call Controls
-* Added **inline CRM actions** (log call, create task, update record) directly into CTI.  
-* Reduced need to switch between apps during calls.  
+
+- Added **inline CRM actions** (log call, create task, update record) directly into CTI.
+- Reduced need to switch between apps during calls.
 
 <img src="/case-studies/dialpad-cti/cti-log-call.png" alt="CTI call logging" class="mb-6"/>
 
 ### Workflow Improvements
-* Unified **search & dial bar** across all platforms.  
-* Added quick actions (mute, transfer, record) with larger touch targets.  
+
+- Unified **search & dial bar** across all platforms.
+- Added quick actions (mute, transfer, record) with larger touch targets.
 
 <img src="/case-studies/dialpad-cti/cti-numpad.png" alt="CTI numpad" class="mb-6"/>
 
 <img src="/case-studies/dialpad-cti/cti-sf-1.png" alt="CTI Salesforce" class="mb-6"/>
 
 ### Research & Validation
-* Ran usability tests with **15 sales reps and 10 support agents**.  
-* Iterated on designs across 4 sprints, refining control placement & responsiveness.  
+
+- Ran usability tests with **15 sales reps and 10 support agents**.
+- Iterated on designs across 4 sprints, refining control placement & responsiveness.
 
 </div>
 
@@ -87,12 +92,14 @@ stack: [Figma, Hotjar, Loom, Jira, Excalidraw, Obsidian]
 <img src="/case-studies/dialpad-cti/cti-ideation-3.png" alt="CTI call logging iterations" class="mb-6"/>
 
 ### Interviews
-* Sales reps wanted **faster CRM logging with fewer clicks**.  
-* Support teams asked for **predictable controls across web & desktop**.  
+
+- Sales reps wanted **faster CRM logging with fewer clicks**.
+- Support teams asked for **predictable controls across web & desktop**.
 
 ### Competitive Audit
-* Benchmarked Salesforce CTI, Aircall and RingCentral plugins.  
-* Dialpad caught up with a **unified, modernized CTI widget**.  
+
+- Benchmarked Salesforce CTI, Aircall and RingCentral plugins.
+- Dialpad caught up with a **unified, modernized CTI widget**.
 
 </div>
 
@@ -102,14 +109,14 @@ stack: [Figma, Hotjar, Loom, Jira, Excalidraw, Obsidian]
 
 <div class="flex flex-col gap-4">
 
-The redesigned CTI **streamlined call handling workflows** and made daily tasks significantly faster.  
+The redesigned CTI **streamlined call handling workflows** and made daily tasks significantly faster.
 
-By focusing on **consistency, contextual actions, and reduced cognitive load**, we achieved higher adoption, faster task completion, and stronger satisfaction across sales and support teams.  
+By focusing on **consistency, contextual actions, and reduced cognitive load**, we achieved higher adoption, faster task completion, and stronger satisfaction across sales and support teams.
 
-Next step: integrate **AI-powered call assistance** (real-time transcription, smart follow-ups, sentiment tracking).  
+Next step: integrate **AI-powered call assistance** (real-time transcription, smart follow-ups, sentiment tracking).
 
 </div>
 
-<SectionHeader title="" highlight="" subtitle="Thank you ❤"> 
+<SectionHeader title="" highlight="" subtitle="Thank you ❤">
 
 </SectionHeader>

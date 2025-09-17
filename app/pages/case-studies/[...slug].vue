@@ -1,3 +1,46 @@
+<script setup>
+const route = useRoute();
+
+// Normalize any accidental duplicate segment in the URL
+if (import.meta.client) {
+  watchEffect(() => {
+    const cur = route.params.slug;
+    const asString = Array.isArray(cur) ? cur.join("/") : (cur || "");
+    if (asString.startsWith("case-studies/")) {
+      const normalized = asString.replace(/^case-studies\//, "");
+      navigateTo(`/case-studies/${normalized}`, { replace: true });
+    }
+  });
+}
+
+const { data: doc } = await useAsyncData(
+  () => route.path,
+  () => queryCollection("caseStudies").path(route.path).first(),
+);
+
+if (!doc.value) {
+  throw createError({ statusCode: 404, statusMessage: "Case study not found" });
+}
+
+useSeoMeta({
+  title: doc.value?.title ? `${doc.value.title} — Case study` : "Case study",
+  description: doc.value?.description,
+  ogTitle: doc.value?.title,
+  ogDescription: doc.value?.description,
+  ogType: "article",
+});
+
+const formattedDate = computed(() => {
+  const raw = doc.value?.date;
+  if (!raw)
+    return "";
+  const d = new Date(raw);
+  if (Number.isNaN(d.getTime()))
+    return "";
+  return new Intl.DateTimeFormat(undefined, { year: "numeric", month: "long", day: "2-digit" }).format(d);
+});
+</script>
+
 <template>
   <div class="h-full bg-black text-white">
     <div class="fixed inset-0 pointer-events-none">
@@ -11,14 +54,18 @@
             <h1 class="text-4xl sm:text-5xl lg:text-5xl font-semibold leading-tight mb-4">
               <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-fuchsia-300 to-amber-400">{{ doc.title }}</span>
             </h1>
-            <p v-if="doc.description" class="text-white/70 text-base leading-loose max-w-3xl">{{ doc.description }}</p>
-            <div class="mt-4 text-white/50 text-sm" v-if="formattedDate">{{ formattedDate }}</div>
+            <p v-if="doc.description" class="text-white/70 text-base leading-loose max-w-3xl">
+              {{ doc.description }}
+            </p>
+            <div v-if="formattedDate" class="mt-4 text-white/50 text-sm">
+              {{ formattedDate }}
+            </div>
           </header>
 
           <div v-if="doc?.cover" class="">
             <ProseImg :src="doc.cover" alt="" class="w-full lg:h-80 rounded-4xl shadow-lg object-contain" />
           </div>
-          
+
           <div v-if="doc?.stack?.length" class="flex flex-col gap-0 w-full">
             <StackBar :stack="doc.stack" />
           </div>
@@ -26,67 +73,32 @@
           <section v-if="doc?.problem || doc?.solution || doc?.metrics" class="hidden">
             <div class="flex flex-col gap-8">
               <div v-if="doc?.problem" class="p-8 bg-black/25 backdrop-blur-3xl rounded-4xl">
-                <h3 class="text-white font-semibold text-3xl mb-2">Problem</h3>
-                <p class="text-white/70 whitespace-pre-line">{{ doc.problem }}</p>
+                <h3 class="text-white font-semibold text-3xl mb-2">
+                  Problem
+                </h3>
+                <p class="text-white/70 whitespace-pre-line">
+                  {{ doc.problem }}
+                </p>
               </div>
             </div>
           </section>
 
           <div v-if="doc" class="content-body">
-            <ContentRenderer :value="doc" :components="{ img: 'ProseImg' }"/>
+            <ContentRenderer :value="doc" :components="{ img: 'ProseImg' }" />
           </div>
 
-          <div v-else class="text-center text-white/70 py-20">Loading…</div>
+          <div v-else class="text-center text-white/70 py-20">
+            Loading…
+          </div>
         </article>
       </main>
     </div>
   </div>
 </template>
 
-<script setup>
-const route = useRoute()
-
-// Normalize any accidental duplicate segment in the URL
-if (process.client) {
-  watchEffect(() => {
-    const cur = route.params.slug
-    const asString = Array.isArray(cur) ? cur.join('/') : (cur || '')
-    if (asString.startsWith('case-studies/')) {
-      const normalized = asString.replace(/^case-studies\//, '')
-      navigateTo(`/case-studies/${normalized}`, { replace: true })
-    }
-  })
-}
-
-const { data: doc } = await useAsyncData(
-  () => route.path,
-  () => queryCollection('caseStudies').path(route.path).first()
-)
-
-if (!doc.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Case study not found' })
-}
-
-useSeoMeta({
-  title: doc.value?.title ? `${doc.value.title} — Case study` : 'Case study',
-  description: doc.value?.description,
-  ogTitle: doc.value?.title,
-  ogDescription: doc.value?.description,
-  ogType: 'article'
-})
-
-const formattedDate = computed(() => {
-  const raw = doc.value?.date
-  if (!raw) return ''
-  const d = new Date(raw)
-  if (Number.isNaN(d.getTime())) return ''
-  return new Intl.DateTimeFormat(undefined, { year: 'numeric', month: 'long', day: '2-digit' }).format(d)
-})
-</script>
-
 <style scoped>
 span {
-font-family: 'Lora', serif;
+  font-family: "Lora", serif;
 }
 
 .content-body :deep(h1) {
@@ -139,4 +151,3 @@ font-family: 'Lora', serif;
   overflow: auto;
 }
 </style>
-

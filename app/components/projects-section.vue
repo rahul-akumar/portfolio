@@ -1,58 +1,5 @@
-<template>
-  <section id="case-studies" class="py-20 px-6 sm:px-8 min-h-screen relative scroll-mt-24">
-    <div class="max-w-6xl mx-auto">
-      <!-- Section Header -->
-      <SectionHeader 
-        container-classes="mb-16"
-        title="Featured" 
-        highlight="Case studies"
-        subtitle="Projects that showcase my skills in creative problem-solving, design and execution."
-      />
-
-      <!-- Projects Grid with Scroll Stack Effect -->
-      <div class="projects-container">
-        <div 
-          class="projects-grid flex flex-col gap-8 md:gap-12"
-          :class="{
-            'flex-cols-1': projects.length === 1,
-            'grid-cols-1 md:grid-cols-2': projects.length === 2,
-            'grid-cols-1 md:grid-cols-2 lg:grid-cols-3': projects.length >= 3
-          }"
-        >
-          <div
-            v-for="(project, index) in projects"
-            :key="project.id || index"
-            :data-project-index="index"
-            class="project-stack-item"
-            :style="{
-              '--delay': `${index * 0.1}s`,
-              '--stack-offset': `${index * 4}px`
-            }"
-          >
-            <ProjectCard 
-              :project="project" 
-              :index="index"
-              :gradient-classes="project.gradient"
-              :image-src="project.imageSrc"
-              :shadow-class="project.shadowClass"
-            />
-          </div>
-        </div>
-
-        
-      </div>
-    </div>
-
-    <!-- Background decoration -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-      <div class="absolute top-20 left-10 w-72 h-72 bg-purple-500/5 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-20 right-10 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl"></div>
-    </div>
-  </section>
-</template>
-
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { computed, onMounted, ref } from "vue";
 
 // Sample project data - replace with your actual projects
 const allProjects = ref([
@@ -72,13 +19,13 @@ const allProjects = ref([
     metrics: {
       engagement: {
         label: "Adoption",
-        value: "+ 42%"
+        value: "+ 42%",
       },
       satisfaction: {
         label: "NPS",
-        value: "+18"
-      }
-    }
+        value: "+18",
+      },
+    },
   },
   {
     id: 2,
@@ -96,13 +43,13 @@ const allProjects = ref([
     metrics: {
       engagement: {
         label: "Adoption",
-        value: "+76%"
+        value: "+76%",
       },
       satisfaction: {
         label: "Task Completion",
-        value: "+31%"
-      }
-    }
+        value: "+31%",
+      },
+    },
   },
   {
     id: 3,
@@ -120,45 +67,96 @@ const allProjects = ref([
     metrics: {
       engagement: {
         label: "Discoverability",
-        value: "+20%"
+        value: "+20%",
       },
       satisfaction: {
         label: "Adoption",
-        value: "+42%"
-      }
-    }
-  }
-])
+        value: "+42%",
+      },
+    },
+  },
+]);
 
-const projects = computed(() => allProjects.value)
+const projects = computed(() => allProjects.value);
 
 // Initialize project animations
 onMounted(() => {
-  if (process.client) {
+  if (import.meta.client) {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate-stack-in')
-            observer.unobserve(entry.target)
+            entry.target.classList.add("animate-stack-in");
+            observer.unobserve(entry.target);
           }
-        })
+        });
       },
-      { 
+      {
         threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
-      }
-    )
+        rootMargin: "0px 0px -100px 0px",
+      },
+    );
 
     // Observe all project cards
     setTimeout(() => {
-      document.querySelectorAll('.project-stack-item').forEach((item) => {
-        observer.observe(item)
-      })
-    }, 100)
+      document.querySelectorAll(".project-stack-item").forEach((item) => {
+        observer.observe(item);
+      });
+    }, 100);
   }
-})
+});
 </script>
+
+<template>
+  <section id="case-studies" class="py-20 px-6 sm:px-8 min-h-screen relative scroll-mt-24">
+    <div class="max-w-6xl mx-auto">
+      <!-- Section Header -->
+      <SectionHeader
+        container-classes="mb-16"
+        title="Featured"
+        highlight="Case studies"
+        subtitle="Projects that showcase my skills in creative problem-solving, design and execution."
+      />
+
+      <!-- Projects Grid with Scroll Stack Effect -->
+      <div class="projects-container">
+        <div
+          class="projects-grid flex flex-col gap-8 md:gap-12"
+          :class="{
+            'flex-cols-1': projects.length === 1,
+            'grid-cols-1 md:grid-cols-2': projects.length === 2,
+            'grid-cols-1 md:grid-cols-2 lg:grid-cols-3': projects.length >= 3,
+          }"
+        >
+          <div
+            v-for="(project, index) in projects"
+            :key="project.id || index"
+            :data-project-index="index"
+            class="project-stack-item"
+            :style="{
+              '--delay': `${index * 0.1}s`,
+              '--stack-offset': `${index * 4}px`,
+            }"
+          >
+            <ProjectCard
+              :project="project"
+              :index="index"
+              :gradient-classes="project.gradient"
+              :image-src="project.imageSrc"
+              :shadow-class="project.shadowClass"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Background decoration -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-purple-500/5 rounded-full blur-3xl" />
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl" />
+    </div>
+  </section>
+</template>
 
 <style scoped>
 .projects-container {
@@ -197,7 +195,7 @@ onMounted(() => {
   .project-stack-item {
     transform: translateY(40px);
   }
-  
+
   .project-stack-item.animate-stack-in {
     transform: translateY(0);
   }
@@ -207,5 +205,4 @@ onMounted(() => {
 html {
   scroll-behavior: smooth;
 }
-
 </style>

@@ -9,6 +9,6 @@ cover: /illustrations/integ-install.svg
 tags: [ui, ux, design, integrations, onboarding]
 ---
 
-<SectionHeader title="Coming" highlight="soon" subtitle=""> 
+<SectionHeader title="Coming" highlight="soon" subtitle="">
 
 </SectionHeader>

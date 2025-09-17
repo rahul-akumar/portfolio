@@ -4,20 +4,20 @@ import { computed } from "vue";
 const props = defineProps({
   text: {
     type: String,
-    required: true
+    required: true,
   },
   disabled: {
     type: Boolean,
-    default: false
+    default: false,
   },
   speed: {
     type: Number,
-    default: 5
+    default: 5,
   },
   className: {
     type: String,
-    default: ""
-  }
+    default: "",
+  },
 });
 
 const animationDuration = computed(() => `${props.speed}s`);
