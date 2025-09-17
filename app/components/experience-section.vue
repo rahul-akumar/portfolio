@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 
 const experiences = ref([
   {
@@ -83,6 +83,28 @@ const experiences = ref([
     gradient: "bg-radial-[at_25%_50%] from-orange-400/25 to-green-900/10",
   },
 ]);
+
+const isVisible = ref(false);
+const containerRef = ref(null);
+
+if (import.meta.client) {
+  onMounted(() => {
+    const el = containerRef.value;
+    if (!el)
+      return;
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0]?.isIntersecting) {
+        isVisible.value = true;
+        observer.unobserve(el);
+      }
+    }, {
+      threshold: 0.1,
+    });
+
+    observer.observe(el);
+  });
+}
 </script>
 
 <template>
@@ -96,7 +118,9 @@ const experiences = ref([
       />
 
       <div
-        class="flex flex-col sm:px-12 px-6 py-0 sm:py-4 bg-gradient-to-br from-cyan-800/25 via-lime-500/10 to-fuchsia-800/25 rounded-4xl border border-white/10 backdrop-blur-3xl"
+        ref="containerRef"
+        class="flex group flex-col sm:px-12 px-6 py-0 sm:py-4 bg-gradient-to-br from-cyan-800/25 via-lime-500/10 to-fuchsia-800/25 rounded-4xl border border-white/10 backdrop-blur-3xl"
+        :class="[{ 'animate-fade-in-up': isVisible }]"
       >
         <ExperienceCard
           v-for="(exp, index) in experiences"
@@ -116,4 +140,17 @@ const experiences = ref([
 </template>
 
 <style scoped>
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
 </style>

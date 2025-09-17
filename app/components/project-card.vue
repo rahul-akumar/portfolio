@@ -61,7 +61,8 @@ if (import.meta.client) {
 
 <template>
   <div
-    class="group project-card relative border border-white/10 backdrop-blur-3xl rounded-4xl p-8 sm:p-12" :class="[gradientClasses, { 'animate-fade-in-up': isVisible }]"
+    class="group project-card relative border border-white/10 backdrop-blur-3xl rounded-4xl p-8 sm:p-12"
+    :class="[gradientClasses, { 'animate-fade-in-up': isVisible }]"
   >
     <div class="flex flex-col sm:flex-row justify-between">
       <!-- Left Content -->
@@ -146,11 +147,6 @@ if (import.meta.client) {
 
 .animate-fade-in-up {
   animation: fade-in-up 0.8s ease-out forwards;
-}
-
-.project-card {
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
 }
 
 /* Line clamp utility for description */
