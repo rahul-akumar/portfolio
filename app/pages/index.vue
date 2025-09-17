@@ -18,11 +18,11 @@
       </main>
 
       <footer id="footer" class="relative z-10 w-full py-12 px-8">
-        <div class="mx-auto flex flex-col sm:flex-row gap-4 sm:gap-0 justify-between max-w-6xl">
-          <p class="text-white/50 text-sm text-center">
+        <div class="mx-auto flex flex-col-reverse sm:flex-row gap-4 sm:gap-0 justify-between max-w-6xl">
+          <p class="text-white/50 text-sm text-left sm:text-center">
             © Rahul Kumar 2025
           </p>
-          <div class="flex gap-12 sm:px-8 md:px-0 mx-auto sm:mx-0">
+          <div class="flex flex-col sm:flex-row sm:gap-12 gap-8 sm:px-8 md:px-0 sm:mx-0">
             <a href="https://www.linkedin.com/in/rahul-akumar" target="_blank" rel="noopener noreferrer" class="text-white/75 hover:text-white transition-colors duration-200 text-sm">LinkedIn</a>
             <a href="https://behance.net/rahul_kumar" target="_blank" rel="noopener noreferrer" class="text-white/75 hover:text-white transition-colors duration-200 text-sm">Behance</a>
             <a href="mailto:rahul-akumar@protonmail.com" class="text-white/75 hover:text-white transition-colors duration-200 text-sm">Mail</a>

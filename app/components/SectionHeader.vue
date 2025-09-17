@@ -3,7 +3,7 @@
     <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
       {{ title }} <span :class="['bg-clip-text text-transparent tracking-wide', gradientClasses]">{{ highlight }}</span>
     </h2>
-    <p v-if="subtitle" class="text-white/70 text-md max-w-2xl mx-auto">
+    <p v-if="subtitle" class="text-white/70 text-sm max-w-2xl mx-auto">
       {{ subtitle }}
     </p>
   </div>

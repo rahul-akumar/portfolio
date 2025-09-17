@@ -1,7 +1,7 @@
 <template>
-  <nav ref="navEl" class="relative sticky mx-auto top-6 w-sm sm:w-md md:w-3xl lg:w-5xl z-50 backdrop-blur-lg bg-gradient-to-r from-white/10 via-emerald-500/10 to-fuchsia-600/5 border border-white/10 rounded-full">
-    <div class="pl-8 pr-4">
-      <div class="flex items-center justify-between py-3">
+  <nav ref="navEl" class="relative sticky mx-auto top-6 w-fit sm:w-md md:w-fit lg:w-4xl z-50 backdrop-blur-lg bg-gradient-to-r from-white/10 via-emerald-500/10 to-fuchsia-600/5 border border-white/10 rounded-full">
+    <div class="pl-6 pr-4">
+      <div class="flex items-center sm:justify-between gap-32 sm:gap-0 py-3">
         <!-- Logo/Brand -->
         <div class="flex items-center">
           <a href="/#hero" @click.prevent="go('#hero')" class="text-white font-bold text-lg hover:text-white/80 transition-colors">

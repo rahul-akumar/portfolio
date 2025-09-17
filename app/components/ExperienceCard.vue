@@ -1,32 +1,28 @@
 <template>
   <div 
-    :class="['group relative border-b border-white/15 last:border-b-0 py-8 w-full', { 'animate-fade-in-up': isVisible }]"
+    :class="['group relative border-b border-white/15 last:border-b-0 sm:py-8 py-8 w-full', { 'animate-fade-in-up': isVisible }]"
     :data-experience-index="index"
   >
     <div class="flex">
-      <div class="flex flex-col sm:flex-row min-w-0 w-full justify-between">
+      <div class="flex flex-col sm:flex-row min-w-0 w-full gap-3 sm:justify-between">
         <div class="flex flex-col sm:flex-row justify-between w-full">
           <h3 class="text-2xl lg:text-3xl font-medium text-white leading-relaxed">
-          {{ experience.role }}
-        </h3>
-          <div class="flex items-center gap-3 text-white/60 text-xs uppercase tracking-widest">
+            {{ experience.role }}
+          </h3>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3 text-white/60 text-xs uppercase tracking-widest">
           <NuxtLink :to="experience.companyUrl" target="_blank" class="truncate"> <span class="hover:underline underline-offset-3 hover:text-white">{{ experience.company }}</span></NuxtLink>
-          <span class="text-white/25">•</span>
+          <span class="text-white/25 sm:block hidden">•</span>
           <span class="truncate">{{ formattedDateRange }}</span>
           <template v-if="experience.location">
-            <span class="text-white/25">•</span>
+            <span class="text-white/25 sm:block hidden">•</span>
             <span class="truncate normal-case">{{ experience.location }}</span>
           </template>
         </div>
-
-
       </div>
-
         <!--<ul v-if="Array.isArray(experience.highlights) && experience.highlights.length" class="list-disc list-outside text-white/75 space-y-2 mb-2 pl-4">
           <li v-for="(point, i) in experience.highlights" :key="i">{{ point }}</li>
         </ul>-->
-
-      </div>
     </div>
   </div>
 </template>

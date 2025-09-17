@@ -28,7 +28,7 @@
         </div>
       </div>
 
-      <p class="text-white/75 text-sm sm:text-base leading-relaxed">
+      <p class="text-white/75 text-sm leading-relaxed">
         {{ tool.description }}
       </p>
 

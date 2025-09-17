@@ -1,6 +1,6 @@
 <template>
   <div 
-    :class="['group project-card relative border border-white/10 backdrop-blur-3xl rounded-4xl p-12', gradientClasses, { 'animate-fade-in-up': isVisible }]"
+    :class="['group project-card relative border border-white/10 backdrop-blur-3xl rounded-4xl p-8 sm:p-12', gradientClasses, { 'animate-fade-in-up': isVisible }]"
   >
     <div class="flex flex-col sm:flex-row justify-between">
       <!-- Left Content -->
