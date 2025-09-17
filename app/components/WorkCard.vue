@@ -15,7 +15,7 @@
           {{ project.title }}
         </h3>
 
-        <p class="text-white/75 text-base leading-loose mb-6 line-clamp-3">
+        <p class="text-white/75 text-sm leading-loose mb-6 line-clamp-3">
           {{ project.description }}
         </p>
 

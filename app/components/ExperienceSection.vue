@@ -1,5 +1,5 @@
 <template>
-  <section id="experience" class="py-20 px-6 sm:px-8 relative scroll-mt-24">
+  <section id="experience" class="py-20 px-6 sm:px-12 relative scroll-mt-24">
     <div class="max-w-6xl mx-auto">
       <SectionHeader 
         title="Professional" 
@@ -9,7 +9,7 @@
       />
 
       <div 
-        class="flex flex-col px-12 py-4 bg-gradient-to-br from-cyan-800/25 via-lime-500/10 to-fuchsia-800/25 rounded-4xl border border-white/10 backdrop-blur-3xl"
+        class="flex flex-col sm:px-12 px-6 py-0 sm:py-4 bg-gradient-to-br from-cyan-800/25 via-lime-500/10 to-fuchsia-800/25 rounded-4xl border border-white/10 backdrop-blur-3xl"
         >
         <ExperienceCard
           v-for="(exp, index) in experiences"
