@@ -37,8 +37,8 @@ if (import.meta.client) {
     ]"
   >
     <div class="flex h-full flex-col justify-between gap-6" :class="[{ 'animate-fade-in-up': isVisible }]">
-      <div class="flex items-start gap-4">
-        <div class="tilt-parallax relative flex size-12 sm:size-14 items-center justify-center rounded-2xl bg-black/40 border border-white/10 overflow-hidden shadow-[0_10px_30px_-10px_rgba(0,0,0,0.8)]">
+      <div class="flex flex-wrap items-start gap-4">
+        <div class="tilt-parallax relative flex size-14 items-center justify-center rounded-2xl bg-black/40 border border-white/10 overflow-hidden shadow-[0_10px_30px_-10px_rgba(0,0,0,0.8)]">
           <img v-if="tool.iconUrl" :src="tool.iconUrl" :alt="`${tool.name} logo`" class="w-8 h-8 sm:w-9 sm:h-9 object-contain">
           <Icon
             v-else-if="tool.icon && tool.icon.includes(':')"
@@ -49,7 +49,7 @@ if (import.meta.client) {
         </div>
 
         <div class="flex min-w-0 flex-col">
-          <h3 class="text-xl sm:text-2xl font-semibold text-white leading-relaxed truncate">
+          <h3 class="text-xl sm:text-2xl font-semibold text-white leading-relaxed">
             <a :href="tool.link" target="_blank" class="hover:underline underline-offset-4">
               {{ tool.name }}
             </a>

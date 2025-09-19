@@ -148,7 +148,7 @@ const tools = ref([
       />
 
       <!-- Bento Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 auto-rows-[1fr]">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-6 md:gap-8 auto-rows-[1fr]">
         <div
           v-for="(tool, index) in tools"
           :key="tool.name + index"
