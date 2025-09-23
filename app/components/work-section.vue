@@ -5,12 +5,12 @@ const projects = ref([
   {
     id: "webintosh",
     title: "Webintosh",
-    description: "A playful web-based OS shell where I add new mini apps and experiments. Windowing, dock, command palette, and more.",
+    description: "A web-based OS shell where I add new mini apps and experiments.",
     category: "Operating System",
     date: "2025-06-10",
     liveUrl: "https://webintosh.vercel.app/",
     githubUrl: "https://github.com/rahul-akumar/webintosh",
-    gradient: "bg-radial-[at_75%_50%] from-sky-900/40 to-gray-900/20",
+    gradient: "bg-radial-[at_25%_50%] from-cyan-800/40 to-gray-900/20",
     imageSrc: "/cover-1.png",
     metrics: {
       engagement: { label: "Apps", value: "10+" },
@@ -20,16 +20,31 @@ const projects = ref([
   {
     id: "rego",
     title: "Rego",
-    description: "A consistent design system for Vue components focused on pragmatic defaults and accessibility.",
+    description: "A design system for Vue components focused on consistency and accessibility.",
     category: "Design System",
     date: "2025-05-05",
     liveUrl: "https://regoui.vercel.app/",
     githubUrl: "https://github.com/rahul-akumar/rego",
-    gradient: "bg-radial-[at_-75%_50%] from-emerald-800/40 to-gray-900/20",
+    gradient: "bg-radial-[at_-75%_50%] from-emerald-700/40 to-fuchsia-900/20",
     imageSrc: "/cover-1.png",
     metrics: {
       engagement: { label: "Components", value: "30+" },
       satisfaction: { label: "Coverage", value: "95%" },
+    },
+  },
+  {
+    id: "abyss",
+    title: "Abyss Veil",
+    description: "WebGPU based rendering engine with custom shaders for real-time, browser-based cosmic visuals.",
+    category: "Rendering Engine",
+    date: "2025-09-01",
+    liveUrl: "https://abyss-veil.vercel.app/",
+    githubUrl: "https://github.com/rahul-akumar/abyss",
+    gradient: "bg-radial-[at_50%_50%] from-fuchsia-800/40 to-violet-950/20",
+    imageSrc: "/cover-1.png",
+    metrics: {
+      engagement: { label: "Notes", value: "100+" },
+      satisfaction: { label: "Usage", value: "100%" },
     },
   },
 ]);
@@ -46,7 +61,7 @@ const projects = ref([
       />
 
       <div class="projects-container">
-        <div class="projects-grid flex flex-col md:flex-row gap-8 md:gap-12">
+        <div class="projects-grid flex flex-col md:flex-row gap-8">
           <WorkCard
             v-for="(project, index) in projects"
             :key="project.id || index"

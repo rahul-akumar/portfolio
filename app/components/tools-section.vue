@@ -124,15 +124,15 @@ const tools = ref([
     link: "https://www.loom.com/",
   },
   {
-    name: "Spotify",
-    icon: "logos:spotify-icon",
+    name: "Miro",
+    icon: "logos:miro-icon",
     iconEmoji: "🎧",
-    category: "Music",
-    description: "Spotify is a music streaming service.",
-    tags: ["Music", "Streaming"],
-    gradient: "bg-radial-[at_80%_50%] from-green-400/35 to-black/10",
+    category: "Collaborative Tool",
+    description: "Miro is a collaborative whiteboard tool for creating diagrams and mind maps.",
+    tags: ["Collaborative", "Whiteboard"],
+    gradient: "bg-radial-[at_80%_50%] from-amber-400/35 to-orange-900/10",
     span: "md:col-span-3",
-    link: "https://www.spotify.com/",
+    link: "https://www.miro.com/",
   },
 ]);
 </script>
