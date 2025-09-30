@@ -53,7 +53,7 @@ onMounted(() => {
           <div class="flex flex-col sm:flex-row sm:gap-12 gap-8 sm:px-8 md:px-0 sm:mx-0">
             <a href="https://www.linkedin.com/in/rahul-akumar" target="_blank" rel="noopener noreferrer" class="text-white/75 hover:text-white transition-colors duration-200 text-sm">LinkedIn</a>
             <a href="https://behance.net/rahul_kumar" target="_blank" rel="noopener noreferrer" class="text-white/75 hover:text-white transition-colors duration-200 text-sm">Behance</a>
-            <a href="mailto:rahul-akumar@protonmail.com" class="text-white/75 hover:text-white transition-colors duration-200 text-sm">Mail</a>
+            <a href="mailto:rahulakumar93@gmail.com" class="text-white/75 hover:text-white transition-colors duration-200 text-sm">Mail</a>
             <a href="/rahul-resume.pdf" download class="text-white/75 hover:text-white transition-colors duration-200 text-sm">Resume</a>
           </div>
         </div>

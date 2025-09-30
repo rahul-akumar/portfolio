@@ -1,5 +1,5 @@
 ---
-title: Improve integration installation experience
+title: Call bar visual update
 description: Redesigning the integration installation flow in Dialpad to reduce setup friction, improve admin confidence, and drive faster adoption of connected tools.
 problem: Integration setup was long, error-prone, and hidden behind technical jargon, leading to low completion rates and frustrated admins.
 solution: We simplified the installation flow with step-by-step guidance, progress indicators, validation checks, and clearer role-based permissions.

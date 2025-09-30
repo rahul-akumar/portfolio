@@ -5,7 +5,7 @@ const projects = ref([
   {
     id: "webintosh",
     title: "Webintosh",
-    description: "A web-based OS shell where I add new mini apps and experiments.",
+    description: "An OS shell where I add new games, apps, and experiments.",
     category: "Operating System",
     date: "2025-06-10",
     liveUrl: "https://webintosh.vercel.app/",
@@ -20,7 +20,7 @@ const projects = ref([
   {
     id: "rego",
     title: "Rego",
-    description: "A design system for Vue components focused on consistency and accessibility.",
+    description: "Customizable design system where I add beautiful and accessible components.",
     category: "Design System",
     date: "2025-05-05",
     liveUrl: "https://regoui.vercel.app/",
@@ -35,7 +35,7 @@ const projects = ref([
   {
     id: "abyss",
     title: "Abyss Veil",
-    description: "WebGPU based rendering engine with custom shaders for real-time, browser-based cosmic visuals.",
+    description: "WebGPU based rendering engine with custom shaders.",
     category: "Rendering Engine",
     date: "2025-09-01",
     liveUrl: "https://abyss-veil.vercel.app/",
