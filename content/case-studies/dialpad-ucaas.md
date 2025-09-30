@@ -16,7 +16,7 @@ stack: [Figma, Nuxt, Tailwind, Hotjar, Loom, Jira, Excalidraw, Obsidian]
 
 <div class="flex flex-col gap-4 tracking-wide">
 
-**Less than 25% of active users engaged with integrations in the sidebar.**
+**Less than 25% of active users engaged with integrations inside Dialpad ecosystem.**
 
 **Over 75% of users preferred to use intgration portal over the sidebar.**
 
@@ -34,15 +34,25 @@ stack: [Figma, Nuxt, Tailwind, Hotjar, Loom, Jira, Excalidraw, Obsidian]
 
 </SectionHeader>
 
+<button class="flex-inline px-6 py-2 mb-4">
+  <a href="https://dialpad-beacon.vercel.app/#/inbox" target="_blank" rel="noopener noreferrer" class="">
+    Live demo →
+  </a>
+</button>
+
+<CsBtnPill>
+
+</CsBtnPill>
+
 <div class="flex flex-col gap-4 tracking-wide">
 
-- Integration adoption grew to **32% of active users**.
+- Integration adoption inside Dialpad ecosystem grew to **32% of active users**.
 
-- Daily active integration usage increased **2.5x**.
+- Daily active integration usage increased **2x**.
 
-- Improvements to sidebar, conversation history, and call pill increased user satisfaction.
+- Improvements to sidebar, conversation history, and call pill increased integration discovery and engagement.
 
-- Design system was updated to include integrations.
+- Major updates to design system to incorporate new integration functions.
 
 - Marketing materials were updated to include new integrations.
 
