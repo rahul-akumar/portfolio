@@ -44,7 +44,7 @@ if (import.meta.client) {
     <div class="flex flex-col gap-8 items-start">
       <div class="flex-1 min-w-0">
         <div class="flex items-center gap-3 mb-3">
-          <span class="text-xs uppercase tracking-wide text-white/60 tracking-widest">{{ project.category }}</span>
+          <span class="text-xs uppercase text-white/60 tracking-widest">{{ project.category }}</span>
           <span class="text-white/30">•</span>
           <span class="text-xs text-white/60 uppercase">{{ formattedDate }}</span>
         </div>

@@ -48,7 +48,7 @@ const allProjects = ref([
     imageSrc: "/illustrations/integ-install.svg",
     gradient: "bg-radial-[at_80%_60%] from-amber-400/30 to-pink-900/20",
     shadowClass: "hover:shadow-amber-950/35",
-    link: "/case-studies/dialpad-integ-intsall",
+    link: "/case-studies/dialpad-call-bar",
     metrics: {
       engagement: {
         label: "Discoverability",
