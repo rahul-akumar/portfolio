@@ -24,7 +24,7 @@ stack: [Figma, Nuxt, Tailwind, Hotjar, Loom, Jira]
 - Keyboard access and focus states were not reliable across states (ringing, on-call, hold).
 - Density and spacing caused accidental clicks on closely placed destructive or high-impact actions.
 
-<img src="/case-studies/dialpad-call-bar/call-bar-before.JPG" alt="Callbar before redesign" class="mb-6"/>
+<img src="/case-studies/dialpad-call-bar/call-bar-before.jpg" alt="Callbar before redesign" class="mb-6"/>
 
 </div>
 
@@ -38,13 +38,13 @@ stack: [Figma, Nuxt, Tailwind, Hotjar, Loom, Jira]
 - Decreased time-to-action for transfer and add-participant by **21%**.
 - Increased usage of advanced actions (record, device switch) by **15%**.
 
-<img src="/case-studies/dialpad-call-bar/call-bar-after.PNG" alt="Callbar after redesign 1/3" class="mb-6"/>
+<img src="/case-studies/dialpad-call-bar/call-bar-after.png" alt="Callbar after redesign" class="mb-6"/>
 
-<img src="/case-studies/dialpad-call-bar/call-bar-after-2.PNG" alt="Callbar after redesign 2/3" class="mb-6"/>
+<img src="/case-studies/dialpad-call-bar/call-bar-after-2.png" alt="Callbar after redesign, Ai on" class="mb-6"/>
 
-<img src="/case-studies/dialpad-call-bar/call-bar-after-3.PNG" alt="Callbar after redesign 3/3" class="mb-6"/>
+<img src="/case-studies/dialpad-call-bar/call-bar-after-3.png" alt="Callbar after redesign, recording on" class="mb-6"/>
 
-<img src="/case-studies/dialpad-call-bar/call-bar-after-4.PNG" alt="Callbar supervisor listening in" class="mb-6"/>
+<img src="/case-studies/dialpad-call-bar/call-bar-after-4.png" alt="Callbar supervisor listening in" class="mb-6"/>
 
 ### Contextual & Error States
 
@@ -69,9 +69,9 @@ stack: [Figma, Nuxt, Tailwind, Hotjar, Loom, Jira]
 
 <div class="flex flex-col gap-6">
 
-<img src="/case-studies/dialpad-call-bar/call-bar-variants.PNG" alt="Callbar variants" class="mb-6"/>
+<img src="/case-studies/dialpad-call-bar/call-bar-variants.png" alt="Callbar variants" class="mb-6"/>
 
-<img src="/case-studies/dialpad-call-bar/call-bar-actions.PNG" alt="Callbar actions" class="mb-6 w-full"/>
+<img src="/case-studies/dialpad-call-bar/call-bar-actions.png" alt="Callbar actions" class="mb-6 w-full"/>
 
 ### Audit & Heuristics
 
