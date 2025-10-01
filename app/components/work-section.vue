@@ -88,8 +88,7 @@ const projects = ref([
 .project-stack-item {
   opacity: 0;
   transform: translateY(60px);
-  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  transition-delay: var(--delay, 0s);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .project-stack-item.animate-stack-in {

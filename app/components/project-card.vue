@@ -62,7 +62,7 @@ if (import.meta.client) {
 <template>
   <div
     class="group project-card relative border border-white/10 backdrop-blur-3xl rounded-4xl p-8 sm:p-12"
-    :class="[gradientClasses, { 'animate-fade-in-up': isVisible }]"
+    :class="[gradientClasses, { 'animate-fade-in-up': isVisible, 'pre-animate': !isVisible }]"
   >
     <div class="flex flex-col sm:flex-row justify-between">
       <!-- Left Content -->
@@ -146,7 +146,16 @@ if (import.meta.client) {
 }
 
 .animate-fade-in-up {
-  animation: fade-in-up 0.8s ease-out forwards;
+  animation: fade-in-up 0.8s ease-out both;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+.pre-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 /* Line clamp utility for description */

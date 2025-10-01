@@ -38,7 +38,7 @@ if (import.meta.client) {
 
 <template>
   <div
-    class="group relative border border-white/10 rounded-4xl p-8 w-full backdrop-blur-3xl" :class="[gradientClasses, { 'animate-fade-in-up': isVisible }]"
+    class="group relative border border-white/10 rounded-4xl p-8 w-full backdrop-blur-3xl" :class="[gradientClasses, { 'animate-fade-in-up': isVisible, 'pre-animate': !isVisible }]"
     :data-work-index="index"
   >
     <div class="flex flex-col gap-8 items-start">
@@ -90,7 +90,16 @@ if (import.meta.client) {
   }
 }
 .animate-fade-in-up {
-  animation: fade-in-up 0.8s ease-out forwards;
+  animation: fade-in-up 0.8s ease-out both;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+.pre-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 .line-clamp-3 {

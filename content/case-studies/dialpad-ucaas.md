@@ -95,7 +95,7 @@ stack: [Figma, Nuxt, Tailwind, Hotjar, Loom, Jira, Excalidraw, Obsidian]
 
 <img src="/case-studies/dialpad-ucaas/component-structure.png" alt="Integration component structure" />
 
-<img src="/case-studies/dialpad-ucaas/call-pill-ideation.png" alt="Call pill ideation" />
+<img src="/case-studies/dialpad-ucaas/call-pill-ideation.png" alt="Call pill ideation" class="w-full"/>
 
 ### Interviews
 

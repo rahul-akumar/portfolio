@@ -91,7 +91,7 @@ if (import.meta.client) {
       <div class="flex items-center sm:justify-between gap-32 sm:gap-0 py-3">
         <!-- Logo/Brand -->
         <div class="flex items-center">
-          <a href="/#hero" class="text-white font-bold text-lg hover:text-white/80 transition-colors" @click.prevent="go('#hero')">
+          <a href="/#hero" class="text-white font-medium text-lg tracking-wide hover:text-white/80 transition-colors" @click.prevent="go('#hero')">
             Rahul
           </a>
         </div>
