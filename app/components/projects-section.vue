@@ -52,11 +52,11 @@ const allProjects = ref([
     metrics: {
       engagement: {
         label: "Discoverability",
-        value: "+20%",
+        value: "+15%",
       },
       satisfaction: {
-        label: "Adoption",
-        value: "+42%",
+        label: "Time to action",
+        value: "+21%",
       },
     },
   },

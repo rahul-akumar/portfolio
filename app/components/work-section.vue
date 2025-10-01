@@ -10,7 +10,7 @@ const projects = ref([
     date: "2025-06-10",
     liveUrl: "https://webintosh.vercel.app/",
     githubUrl: "https://github.com/rahul-akumar/webintosh",
-    gradient: "bg-radial-[at_25%_50%] from-cyan-800/40 to-gray-900/20",
+    gradient: "bg-radial-[at_25%_50%] from-cyan-500/40 to-cyan-950/20",
     imageSrc: "/cover-1.png",
     metrics: {
       engagement: { label: "Apps", value: "10+" },
@@ -25,7 +25,7 @@ const projects = ref([
     date: "2025-05-05",
     liveUrl: "https://regoui.vercel.app/",
     githubUrl: "https://github.com/rahul-akumar/rego",
-    gradient: "bg-radial-[at_-75%_50%] from-emerald-700/40 to-fuchsia-900/20",
+    gradient: "bg-radial-[at_-75%_50%] from-emerald-800/40 to-fuchsia-500/10",
     imageSrc: "/cover-1.png",
     metrics: {
       engagement: { label: "Components", value: "30+" },
@@ -40,7 +40,7 @@ const projects = ref([
     date: "2025-09-01",
     liveUrl: "https://abyss-veil.vercel.app/",
     githubUrl: "https://github.com/rahul-akumar/abyss",
-    gradient: "bg-radial-[at_50%_50%] from-fuchsia-800/40 to-violet-950/20",
+    gradient: "bg-radial-[at_50%_50%] from-fuchsia-500/40 to-violet-900/0",
     imageSrc: "/cover-1.png",
     metrics: {
       engagement: { label: "Notes", value: "100+" },

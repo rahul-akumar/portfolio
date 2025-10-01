@@ -91,6 +91,12 @@ stack: [Figma, Hotjar, Loom, Jira, Excalidraw, Obsidian]
 
 <img src="/case-studies/dialpad-cti/cti-ideation-3.png" alt="CTI call logging iterations" class="mb-6"/>
 
+<img src="/case-studies/dialpad-cti/cti-ideation-4.png" alt="Call controls" class="mb-6"/>
+
+<img src="/case-studies/dialpad-cti/cti-ideation-5.png" alt="Incoming call" class="mb-6"/>
+
+<img src="/case-studies/dialpad-cti/cti-ideation-6.png" alt="Calendar sheet" class="mb-6"/>
+
 ### Interviews
 
 - Sales reps wanted **faster CRM logging with fewer clicks**.
@@ -117,6 +123,6 @@ Next step: integrate **AI-powered call assistance** (real-time transcription, sm
 
 </div>
 
-<SectionHeader title="" highlight="" subtitle="Thank you ❤">
+<SectionHeader title="" highlight="" subtitle="Made with ❤, thank you for reading.">
 
 </SectionHeader>

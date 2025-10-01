@@ -46,6 +46,8 @@ stack: [Figma, Nuxt, Tailwind, Hotjar, Loom, Jira]
 
 <img src="/case-studies/dialpad-call-bar/call-bar-after-4.png" alt="Callbar supervisor listening in" class="mb-6"/>
 
+<img src="/case-studies/dialpad-call-bar/group-call.png" alt="Group call" class="mb-6"/>
+
 ### Contextual & Error States
 
 - Defined explicit visual states for ringing, on-call, hold, transferring, recording, device muted/unavailable.
@@ -73,6 +75,12 @@ stack: [Figma, Nuxt, Tailwind, Hotjar, Loom, Jira]
 
 <img src="/case-studies/dialpad-call-bar/call-bar-actions.png" alt="Callbar actions" class="mb-6 w-full"/>
 
+<img src="/case-studies/dialpad-call-bar/call-bar-popover.png" alt="Callbar pop over" class="mb-6"/>
+
+<img src="/case-studies/dialpad-call-bar/call-bar-mic-wave.png" alt="Callbar mic activity" class="mb-6"/>
+
+<img src="/case-studies/dialpad-call-bar/incoming-call.png" alt="Incoming call" class="mb-6"/>
+
 ### Audit & Heuristics
 
 - Inventory of existing controls, labels, icons, and states; identified redundancy and conflicts.
@@ -87,6 +95,14 @@ stack: [Figma, Nuxt, Tailwind, Hotjar, Loom, Jira]
 
 - Iterated on iconography set and label patterns; tested compact vs spacious variants.
 - Defined state tokens (hover, active, focus, danger) and elevation for feedback.
+
+<img src="/case-studies/dialpad-call-bar/callbar-de.png" alt="Language support German" class="mb-6"/>
+
+<img src="/case-studies/dialpad-call-bar/callbar-es.png" alt="Language support Spanish" class="mb-6"/>
+
+<img src="/case-studies/dialpad-call-bar/callbar-fr.png" alt="Language support French" class="mb-6"/>
+
+<img src="/case-studies/dialpad-call-bar/callbar-jp.png" alt="Language support Japanese" class="mb-6"/>
 
 ### Prototyping & Testing
 
@@ -112,6 +128,6 @@ Next step: expand the pattern to video controls and explore **role-based presets
 
 </div>
 
-<SectionHeader title="" highlight="" subtitle="Thank you ❤">
+<SectionHeader title="" highlight="" subtitle="Made with ❤, thank you for reading.">
 
 </SectionHeader>

@@ -35,7 +35,7 @@ stack: [Figma, Nuxt, Tailwind, Hotjar, Loom, Jira, Excalidraw, Obsidian]
 </SectionHeader>
 
 <button class="flex-inline px-6 py-2 mb-4">
-  <a href="https://dialpad-beacon.vercel.app/#/inbox" target="_blank" rel="noopener noreferrer" class="">
+  <a href="https://dialpad-beacon.vercel.app/#/inbox" target="_blank" rel="noopener noreferrer" class="text-sm">
     Live demo →
   </a>
 </button>
@@ -122,6 +122,6 @@ Next step: explore **AI-powered recommendations for integrations** based on user
 
 </div>
 
-<SectionHeader title="" highlight="" subtitle="Thank you ❤">
+<SectionHeader title="" highlight="" subtitle="Made with ❤, thank you for reading.">
 
 </SectionHeader>
