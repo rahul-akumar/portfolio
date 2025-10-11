@@ -1,6 +1,6 @@
 <script setup>
 useHead({
-  title: "Rahul — 🦄 Product designer",
+  title: "Rahul — Design Engineer",
   meta: [
     { name: "description", content: "Rahul Kumar product designer portfolio." },
     { name: "keywords", content: "designer, product designer, software designer, portfolio, vue, nuxt, frontend, web design, web development, Rahul Kumar" },
