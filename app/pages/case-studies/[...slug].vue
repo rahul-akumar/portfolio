@@ -101,28 +101,50 @@ span {
   font-family: "Lora", serif;
 }
 
+.content-body {
+  width: 100%;
+  text-align: left;
+}
+
 .content-body :deep(h1) {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  background: radial-gradient(circle, #38bdf8, #f0abfc, #fbbf24);
+  font-family: "Lora", serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  width: fit-content;
+  background: linear-gradient(to right, #38bdf8, #f0abfc, #fbbf24);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.content-body :deep(h2) {
-  margin-top: 2.5rem;
-  margin-bottom: 2rem;
+/* h2 - Major sections (numbered items like "1. Users did not know...") */
+.content-body :deep(h2:not([class])) {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
   text-align: left;
 }
 
+/* h3 - Subsections (like "Sidebar Redesign") */
 .content-body :deep(h3) {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
 }
 
+/* Paragraphs - better breathing room */
 .content-body :deep(p) {
-  color: rgba(255, 255, 255, 0.8);
-  margin-top: 0.5rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
 }
 
 .content-body :deep(a) {
@@ -134,8 +156,9 @@ span {
   margin: 0rem 0 1rem 0rem;
   list-style: disc inside;
 }
+/* Lists - tighter item spacing */
 .content-body :deep(li) {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .content-body :deep(code) {
@@ -149,5 +172,9 @@ span {
   padding: 1rem;
   border-radius: 0.5rem;
   overflow: auto;
+}
+
+.content-body :deep(img) {
+  margin-bottom: 2rem;
 }
 </style>

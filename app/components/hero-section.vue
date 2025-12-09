@@ -38,7 +38,7 @@ if (import.meta.client) {
       <!-- Main heading with shiny text effect -->
       <div class="mb-8">
         <ShinyText
-          text="Crafting products people love — and orgs can’t work without."
+          text="Designing evolving products that stand the test of time, scale, and complexity."
           :speed="3"
           :disabled="false"
           class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-relaxed"

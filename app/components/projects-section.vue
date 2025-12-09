@@ -5,8 +5,8 @@ import { computed, onMounted, ref } from "vue";
 const allProjects = ref([
   {
     id: 1,
-    title: "Improving integration adoption in Dialpad ecosystem",
-    description: "Redesigning Dialpad’s sidebar, call pill, and conversation history to surface integrations contextually and increase daily adoption.",
+    title: "Increasing integration adoption in Dialpad ecosystem",
+    description: "A first principles redesign of how integrations surface inside Dialpad by aligning them to user workflows across discovery, in-flow action, and post-call review.",
     imageSrc: "/illustrations/integrations.svg",
     gradient: "bg-radial-[at_75%_50%] from-fuchsia-400/50 to-emerald-900/20",
     shadowClass: "hover:shadow-fuchsia-950/50",
@@ -14,7 +14,7 @@ const allProjects = ref([
     metrics: {
       engagement: {
         label: "Adoption",
-        value: "+ 32%",
+        value: "+ 38%",
       },
       satisfaction: {
         label: "NPS",
