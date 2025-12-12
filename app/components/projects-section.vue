@@ -10,7 +10,8 @@ const allProjects = ref([
     imageSrc: "/illustrations/integrations.svg",
     gradient: "bg-radial-[at_75%_50%] from-fuchsia-400/50 to-emerald-900/20",
     shadowClass: "hover:shadow-fuchsia-950/50",
-    link: "/case-studies/dialpad-ucaas",
+    link: "/showcase/dialpad-ucaas",
+    caseStudyLink: "/case-studies/dialpad-ucaas",
     metrics: {
       engagement: {
         label: "Adoption",
@@ -29,7 +30,8 @@ const allProjects = ref([
     imageSrc: "/illustrations/cti.svg",
     gradient: "bg-radial-[at_70%_40%] from-sky-400/30 to-indigo-950/20",
     shadowClass: "hover:shadow-indigo-950/35",
-    link: "/case-studies/dialpad-cti",
+    link: "/showcase/dialpad-cti",
+    caseStudyLink: "/case-studies/dialpad-cti",
     metrics: {
       engagement: {
         label: "Adoption",
@@ -48,7 +50,8 @@ const allProjects = ref([
     imageSrc: "/illustrations/integ-install.svg",
     gradient: "bg-radial-[at_80%_60%] from-amber-400/30 to-pink-900/20",
     shadowClass: "hover:shadow-amber-950/35",
-    link: "/case-studies/dialpad-call-bar",
+    link: "/showcase/dialpad-call-bar",
+    caseStudyLink: "/case-studies/dialpad-call-bar",
     metrics: {
       engagement: {
         label: "Discoverability",
@@ -93,13 +96,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <section id="case-studies" class="py-20 px-6 sm:px-8 min-h-screen relative scroll-mt-24">
+  <section id="showcase" class="py-20 px-6 sm:px-8 min-h-screen relative scroll-mt-24">
     <div class="max-w-6xl mx-auto">
       <!-- Section Header -->
       <SectionHeader
         container-classes="mb-16"
-        title="Featured"
-        highlight="Case studies"
+        title="Project"
+        highlight="Showcase"
         subtitle="Projects that showcase my skills in creative problem-solving, design and execution."
       />
 

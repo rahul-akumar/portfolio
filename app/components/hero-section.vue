@@ -38,7 +38,7 @@ if (import.meta.client) {
       <!-- Main heading with shiny text effect -->
       <div class="mb-8">
         <ShinyText
-          text="Designing B2B SaaS products for 11+ years that stand the test of time, scale, and complexity."
+          text="I design fine-tuned B2B SaaS products that stand the test of time, scale, and complexity."
           :speed="3"
           :disabled="false"
           class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight"
@@ -52,7 +52,7 @@ if (import.meta.client) {
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
         <button
           class="group inline-flex items-center bg-black/75 hover:bg-black/50 backdrop-blur-sm text-white px-8 py-4 rounded-full text-base font-medium transition-all duration-300 border border-white/10 hover:border-white/20 hover:bg-black/50 hover:cursor-pointer"
-          @click="scrollToSection('case-studies')"
+          @click="scrollToSection('showcase')"
         >
           <span class="mr-2">View case studies</span>
           <Icon name="mdi:arrow-down" class="w-6 h-6" />

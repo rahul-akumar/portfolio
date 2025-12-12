@@ -100,11 +100,11 @@ if (import.meta.client) {
         <div class="hidden md:block">
           <div class="ml-10 flex items-baseline space-x-8">
             <a
-              href="/#case-studies"
+              href="/#showcase"
               class="text-white/70 hover:text-white transition-colors duration-200 text-sm font-medium"
-              @click.prevent="go('#case-studies')"
+              @click.prevent="go('#showcase')"
             >
-              Case studies
+              Showcase
             </a>
             <a
               href="/#experience"
@@ -176,11 +176,11 @@ if (import.meta.client) {
         <div class="rounded-3xl border border-white/10 bg-black/40 backdrop-blur-md shadow-lg overflow-hidden">
           <div class="px-6 py-3 space-y-1">
             <a
-              href="/#case-studies"
+              href="/#showcase"
               class="block text-white/70 hover:text-white transition-colors duration-200 py-2 text-base font-medium"
-              @click.prevent="go('#case-studies', true)"
+              @click.prevent="go('#showcase', true)"
             >
-              <span>Case studies</span>
+              <span>Showcase</span>
             </a>
             <a
               href="/#experience"

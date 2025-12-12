@@ -77,14 +77,30 @@ if (import.meta.client) {
           {{ project.description }}
         </p>
 
-        <!-- View Case Study Button -->
-        <NuxtLink v-if="project.link" :to="project.link" class="w-fit inline-flex items-center gap-2 bg-black/75 backdrop-blur-sm text-white px-6 py-3 rounded-full text-sm font-medium transition-all duration-200 border border-white/20 hover:border-white/30 hover:bg-black/50">
-          {{ buttonLabel }}
-          <Icon name="mdi:arrow-right" class="w-6 h-6" />
-        </NuxtLink>
-        <button v-else class="w-fit bg-black/75 backdrop-blur-sm text-white px-6 py-3 rounded-full text-sm font-medium transition-all duration-200 border border-white/20 hover:border-white/30 hover:bg-black/50">
-          {{ buttonLabel }}
-        </button>
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap gap-3">
+          <!-- Read Showcase Button (Quick read) -->
+          <NuxtLink
+            v-if="project.link"
+            :to="project.link"
+            class="inline-flex items-center gap-2 bg-black/75 backdrop-blur-sm text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 border border-white/20 hover:border-white/30 hover:bg-black/50"
+          >
+            <Icon name="mdi:clock-outline" class="w-4 h-4" />
+            <span>View showcase</span>
+            <span class="text-white/50 text-xs">&lt; 5 min</span>
+          </NuxtLink>
+
+          <!-- Read Case Study Button (Deep dive) -->
+          <NuxtLink
+            v-if="project.caseStudyLink"
+            :to="project.caseStudyLink"
+            class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 border border-white/10 hover:border-white/20 hover:bg-white/15"
+          >
+            <Icon name="mdi:book-open-page-variant-outline" class="w-4 h-4" />
+            <span>Read case study</span>
+            <span class="text-white/50 text-xs">10-15 min</span>
+          </NuxtLink>
+        </div>
       </div>
 
       <!-- Right Visual Element -->

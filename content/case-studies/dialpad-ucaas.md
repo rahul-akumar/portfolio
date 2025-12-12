@@ -1,13 +1,69 @@
 ---
-title: Increasing integration adoption across Dialpad ecosystem
+title: Increasing adoption & improving engagement of integrations across Dialpad ecosystem
 description: A first principles redesign of how integrations surface inside Dialpad by aligning them to user workflows across discovery, in-flow action, and post-call review.
-problem: Integrations existed in the product but not in the workflow. They were invisible during moments of need and disconnected from core communication tasks. This created low adoption, duplicated work, and inconsistent CRM data.
-solution: Introduced a workflow-aligned model for integrations across the sidebar, live call surfaces, banners, and conversation history. Created a rules-based system that determines when and how integrations appear based on user context.
-metrics: Increased integration adoption from 25% → 38% of active orgs, reduced setup friction by 35%, and boosted NPS for integrations by +18.
 date: 2025-06-01
 cover: /illustrations/integrations.svg
 tags: [ui, ux, design, integrations]
 stack: [Figma, Nuxt, Tailwind, Hotjar, Loom, Jira, Excalidraw, Obsidian]
+
+# Showcase fields
+showcase:
+  problem:
+    - Integrations existed in the product but not in the workflow
+    - They were invisible during moments of need and disconnected from core communication tasks
+    - Low adoption, duplicated work, and inconsistent CRM data
+    - Product architecture treated integrations as settings, not as workflow participants
+  solution:
+    - Introduced a workflow-aligned model across sidebar, live call surfaces, banners, and conversation history
+    - Created a rules-based system that determines when and how integrations appear based on user context
+    - Rebuilt sidebar for discovery with clear entry points for CRM, helpdesk, and productivity tools
+    - Added one-tap CRM logging and syncing directly in the call pill
+    - Displayed synced records and metadata inside conversation threads
+  impact:
+    - Integration adoption increased from 25% → 38% of active orgs
+    - Setup friction reduced by 35%
+    - NPS for integrations boosted by +18
+    - Support tickets reduced by 22%
+    - Daily in-product integration actions doubled
+  role:
+    - Owned end-to-end design from research and strategy through to system design
+    - Conducted user interviews and competitive audits
+    - Created prototypes and ran usability testing
+    - Defined design system components and integration guidelines
+    - Stepped in for the PM when he was on paternal leave for 3 weeks. I cancelled my 2 week vacation to make sure we delivered (no pun intended) promised features for our largest enterprise account.
+  designDecisions:
+    - Chose workflow-aligned surfaces over a centralized integrations hub to meet users where they work
+    - Prioritized contextual triggers over manual discovery to reduce cognitive load
+    - Built a rules-based banner system instead of static prompts for scalable awareness
+    - Designed modular components that engineering could extend for future integrations
+    - Used progressive disclosure to avoid overwhelming users during onboarding
+  images:
+    - src: /case-studies/dialpad-ucaas/integrations-before.png
+      alt: Integrations before redesign
+    - src: /illustrations/image.png
+      alt: Integrations after redesign
+    - src: /case-studies/dialpad-ucaas/call-pill.png
+      alt: Call pill with CRM actions
+    - src: /case-studies/dialpad-ucaas/conversation-history.png
+      alt: Conversation history with integration context
+    - src: /case-studies/dialpad-ucaas/system-banner.png
+      alt: System banner for integration awareness
+    - src: /case-studies/dialpad-ucaas/iterations.png
+      alt: Integration design iterations
+    - src: /case-studies/dialpad-ucaas/component-structure.png
+      alt: Integration component structure
+    - src: /case-studies/dialpad-ucaas/call-pill-ideation.png
+      alt: Call pill ideation
+    - src: /case-studies/dialpad-ucaas/banner-problem.png
+      alt: Banner problem definition
+    - src: /case-studies/dialpad-ucaas/banner-root.png
+      alt: Banner root cause analysis
+    - src: /case-studies/dialpad-ucaas/banner-opp-map.png
+      alt: Banner opportunity mapping
+    - src: /case-studies/dialpad-ucaas/banner-sys-sol.png
+      alt: Banner system level solution
+    - src: /case-studies/dialpad-ucaas/banner-test.png
+      alt: Banner usability testing
 ---
 
 # Problem

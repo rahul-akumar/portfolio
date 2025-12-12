@@ -24,6 +24,17 @@ export default defineContentConfig({
         cover: z.string().optional(),
         tags: z.array(z.string()).optional(),
         stack: z.array(z.string()).optional(),
+        showcase: z.object({
+          problem: z.array(z.string()),
+          solution: z.array(z.string()),
+          impact: z.array(z.string()),
+          role: z.array(z.string()),
+          designDecisions: z.array(z.string()).optional(),
+          images: z.array(z.object({
+            src: z.string(),
+            alt: z.string(),
+          })),
+        }).optional(),
       }),
     }),
   },
