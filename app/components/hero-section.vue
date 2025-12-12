@@ -38,10 +38,10 @@ if (import.meta.client) {
       <!-- Main heading with shiny text effect -->
       <div class="mb-8">
         <ShinyText
-          text="Designing evolving products that stand the test of time, scale, and complexity."
+          text="Designing B2B SaaS products for 11+ years that stand the test of time, scale, and complexity."
           :speed="3"
           :disabled="false"
-          class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-relaxed"
+          class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight"
         />
       </div>
 
