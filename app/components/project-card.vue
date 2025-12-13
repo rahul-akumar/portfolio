@@ -92,9 +92,9 @@ if (import.meta.client) {
               <NuxtLink
                 :ref="setTriggerRef"
                 v-bind="triggerAttrs"
-                v-on="triggerEvents"
                 :to="project.link"
                 class="inline-flex items-center gap-2 bg-black/75 backdrop-blur-sm text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 border border-white/20 hover:border-white/30 hover:bg-black/50"
+                v-on="triggerEvents"
               >
                 <Icon name="mdi:clock-outline" class="w-4 h-4" />
                 <span>View showcase</span>
@@ -111,9 +111,9 @@ if (import.meta.client) {
               <NuxtLink
                 :ref="setTriggerRef"
                 v-bind="triggerAttrs"
-                v-on="triggerEvents"
                 :to="project.caseStudyLink"
                 class="inline-flex items-center gap-2 bg-black/30 backdrop-blur-sm text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 border border-white/10 hover:border-white/20 hover:bg-white/15"
+                v-on="triggerEvents"
               >
                 <Icon name="mdi:book-open-page-variant-outline" class="w-4 h-4" />
                 <span>Read case study</span>
