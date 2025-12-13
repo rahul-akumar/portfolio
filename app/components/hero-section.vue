@@ -54,7 +54,7 @@ if (import.meta.client) {
           class="group inline-flex items-center bg-black/75 hover:bg-black/50 backdrop-blur-sm text-white px-8 py-4 rounded-full text-base font-medium transition-all duration-300 border border-white/10 hover:border-white/20 hover:bg-black/50 hover:cursor-pointer"
           @click="scrollToSection('showcase')"
         >
-          <span class="mr-2">View case studies</span>
+          <span class="mr-2">View projects</span>
           <Icon name="mdi:arrow-down" class="w-6 h-6" />
         </button>
       </div>

@@ -26,11 +26,14 @@ showcase:
     - Support tickets reduced by 22%
     - Daily in-product integration actions doubled
   role:
-    - Owned end-to-end design from research and strategy through to system design
-    - Conducted user interviews and competitive audits
+    - Owned end-to-end design from research and strategy through to system
+    - Analyzed 400+ jira tickets using AI to figure the core of user issues.
+    - Conducted 22 user interviews and competitive audits
     - Created prototypes and ran usability testing
     - Defined design system components and integration guidelines
-    - Stepped in for the PM when he was on paternal leave for 3 weeks. I cancelled my 2 week vacation to make sure we delivered (no pun intended) promised features for our largest enterprise account.
+    - Covered the PM role during his three-week parental leave and postponed my own two-week vacation to ensure we shipped the committed features for our largest enterprise customer.
+    - Jumped in with engineering to write the interaction-animation code when bandwidth was limited.
+    - Supported marketing by creating high-fidelity product screens used across videos and other promotional assets.
   designDecisions:
     - Chose workflow-aligned surfaces over a centralized integrations hub to meet users where they work
     - Prioritized contextual triggers over manual discovery to reduce cognitive load

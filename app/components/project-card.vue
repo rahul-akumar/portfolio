@@ -33,6 +33,13 @@ const props = defineProps({
 
 const isVisible = ref(false);
 
+function formatReadMins(raw) {
+  const mins = Number(raw);
+  if (!Number.isFinite(mins) || mins <= 0)
+    return "";
+  return `${mins} min${mins === 1 ? "" : "s"}`;
+}
+
 // Intersection Observer for animation
 if (import.meta.client) {
   onMounted(() => {
@@ -68,12 +75,12 @@ if (import.meta.client) {
       <!-- Left Content -->
       <div class="flex flex-col gap-2 md:w-lg">
         <!-- Project Title -->
-        <h3 class="text-2xl lg:text-3xl font-medium text-white mb-4 leading-relaxed">
+        <h3 class="text-2xl lg:text-3xl font-medium text-white mb-4 leading-normal">
           {{ project.title }}
         </h3>
 
         <!-- Project Description -->
-        <p class="text-white/80 text-sm lg:text-base leading-loose mb-8 max-w-lg">
+        <p class="text-white/80 text-sm lg:text-base leading-relaxed mb-8 max-w-lg">
           {{ project.description }}
         </p>
 
@@ -87,18 +94,22 @@ if (import.meta.client) {
           >
             <Icon name="mdi:clock-outline" class="w-4 h-4" />
             <span>View showcase</span>
-            <span class="text-white/50 text-xs">&lt; 5 min</span>
+            <span v-if="formatReadMins(project.showcaseReadMins)" class="text-white/50 text-xs">
+              {{ formatReadMins(project.showcaseReadMins) }}
+            </span>
           </NuxtLink>
 
           <!-- Read Case Study Button (Deep dive) -->
           <NuxtLink
             v-if="project.caseStudyLink"
             :to="project.caseStudyLink"
-            class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 border border-white/10 hover:border-white/20 hover:bg-white/15"
+            class="inline-flex items-center gap-2 bg-black/30 backdrop-blur-sm text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 border border-white/10 hover:border-white/20 hover:bg-white/15"
           >
             <Icon name="mdi:book-open-page-variant-outline" class="w-4 h-4" />
             <span>Read case study</span>
-            <span class="text-white/50 text-xs">10-15 min</span>
+            <span v-if="formatReadMins(project.caseStudyReadMins)" class="text-white/50 text-xs">
+              {{ formatReadMins(project.caseStudyReadMins) }}
+            </span>
           </NuxtLink>
         </div>
       </div>

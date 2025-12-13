@@ -50,7 +50,7 @@ const showcase = computed(() => doc.value?.showcase);
         <article class="w-full p-8 sm:w-xl md:w-2xl lg:w-3xl items-center flex flex-col gap-12 mt-20 mx-auto sm:px-8">
           <!-- Header -->
           <header v-if="doc" class="flex flex-col gap-4 w-full">
-            <h1 class="text-4xl sm:text-5xl lg:text-5xl font-semibold leading-tight">
+            <h1 class="text-4xl sm:text-4xl lg:text-4xl font-semibold leading-tight">
               <span class="gradient-text">{{ doc.title }}</span>
             </h1>
             <p v-if="doc.description" class="text-white/70 text-base leading-loose max-w-3xl">
@@ -62,7 +62,9 @@ const showcase = computed(() => doc.value?.showcase);
           <div v-if="showcase" class="w-full flex flex-col gap-10">
             <!-- Problem -->
             <div v-if="showcase.problem?.length" class="p-6 rounded-2xl bg-white/5 border border-white/10">
-              <h3 class="text-sm font-medium text-white/50 uppercase tracking-wider mb-4">Problem</h3>
+              <h3 class="text-sm font-medium text-white/50 uppercase tracking-wider mb-4">
+                Problem
+              </h3>
               <ul class="flex flex-col gap-3">
                 <li v-for="(point, index) in showcase.problem" :key="index" class="flex gap-3">
                   <span class="text-white/30 leading-relaxed shrink-0">•</span>
@@ -73,7 +75,9 @@ const showcase = computed(() => doc.value?.showcase);
 
             <!-- Solution -->
             <div v-if="showcase.solution?.length" class="p-6 rounded-2xl bg-white/5 border border-white/10">
-              <h3 class="text-sm font-medium text-white/50 uppercase tracking-wider mb-4">Solution</h3>
+              <h3 class="text-sm font-medium text-white/50 uppercase tracking-wider mb-4">
+                Solution
+              </h3>
               <ul class="flex flex-col gap-3">
                 <li v-for="(point, index) in showcase.solution" :key="index" class="flex gap-3">
                   <span class="text-white/30 leading-relaxed shrink-0">•</span>
@@ -84,7 +88,9 @@ const showcase = computed(() => doc.value?.showcase);
 
             <!-- Impact -->
             <div v-if="showcase.impact?.length" class="p-6 rounded-2xl bg-white/5 border border-white/10">
-              <h3 class="text-sm font-medium text-white/50 uppercase tracking-wider mb-4">Impact</h3>
+              <h3 class="text-sm font-medium text-white/50 uppercase tracking-wider mb-4">
+                Impact
+              </h3>
               <ul class="flex flex-col gap-3">
                 <li v-for="(point, index) in showcase.impact" :key="index" class="flex gap-3">
                   <span class="text-white/30 leading-relaxed shrink-0">•</span>
@@ -95,7 +101,9 @@ const showcase = computed(() => doc.value?.showcase);
 
             <!-- Role -->
             <div v-if="showcase.role?.length" class="p-6 rounded-2xl bg-white/5 border border-white/10">
-              <h3 class="text-sm font-medium text-white/50 uppercase tracking-wider mb-4">Role</h3>
+              <h3 class="text-sm font-medium text-white/50 uppercase tracking-wider mb-4">
+                Role
+              </h3>
               <ul class="flex flex-col gap-3">
                 <li v-for="(point, index) in showcase.role" :key="index" class="flex gap-3">
                   <span class="text-white/30 leading-relaxed shrink-0">•</span>
@@ -106,7 +114,9 @@ const showcase = computed(() => doc.value?.showcase);
 
             <!-- Design Decisions -->
             <div v-if="showcase.designDecisions?.length" class="p-6 rounded-2xl bg-white/5 border border-white/10">
-              <h3 class="text-sm font-medium text-white/50 uppercase tracking-wider mb-4">Design Decisions</h3>
+              <h3 class="text-sm font-medium text-white/50 uppercase tracking-wider mb-4">
+                Design Decisions
+              </h3>
               <ul class="flex flex-col gap-3">
                 <li v-for="(point, index) in showcase.designDecisions" :key="index" class="flex gap-3">
                   <span class="text-white/30 leading-relaxed shrink-0">•</span>
@@ -117,7 +127,9 @@ const showcase = computed(() => doc.value?.showcase);
 
             <!-- Images Gallery -->
             <div v-if="showcase.images?.length" class="flex flex-col gap-6">
-              <h3 class="text-lg font-medium text-white/70">Design Highlights</h3>
+              <h3 class="text-lg font-medium text-white/70">
+                Design Highlights
+              </h3>
               <div class="flex flex-col gap-6">
                 <div
                   v-for="(image, index) in showcase.images"

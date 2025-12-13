@@ -12,6 +12,8 @@ const allProjects = ref([
     shadowClass: "hover:shadow-fuchsia-950/50",
     link: "/showcase/dialpad-ucaas",
     caseStudyLink: "/case-studies/dialpad-ucaas",
+    showcaseReadMins: 4,
+    caseStudyReadMins: 12,
     metrics: {
       engagement: {
         label: "Adoption",
@@ -32,6 +34,8 @@ const allProjects = ref([
     shadowClass: "hover:shadow-indigo-950/35",
     link: "/showcase/dialpad-cti",
     caseStudyLink: "/case-studies/dialpad-cti",
+    showcaseReadMins: 6,
+    caseStudyReadMins: 15,
     metrics: {
       engagement: {
         label: "Adoption",
@@ -52,6 +56,8 @@ const allProjects = ref([
     shadowClass: "hover:shadow-amber-950/35",
     link: "/showcase/dialpad-call-bar",
     caseStudyLink: "/case-studies/dialpad-call-bar",
+    showcaseReadMins: 3,
+    caseStudyReadMins: 10,
     metrics: {
       engagement: {
         label: "Discoverability",

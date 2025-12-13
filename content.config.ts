@@ -33,7 +33,7 @@ export default defineContentConfig({
           images: z.array(z.object({
             src: z.string(),
             alt: z.string(),
-          })),
+          })).optional(),
         }).optional(),
       }),
     }),
