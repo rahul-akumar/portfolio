@@ -1,13 +1,66 @@
 ---
 title: Dialpad CTI Redesign
 description: Redesigning Dialpad’s CTI (Computer Telephony Integration) experience to improve usability, reduce workflow friction, and make calling tools more intuitive for sales and support teams.
-problem: The legacy CTI was cluttered, inconsistent across apps, and lacked contextual actions, slowing down call handling and reducing adoption by sales/support teams.
-solution: We introduced a modern, lightweight CTI widget with streamlined call controls, contextual CRM actions, and a scalable component system.
-metrics: Reduced average call handling time by 22%, increased CTI adoption from 40% → 76% of target users, and improved task completion success rate by +31% in usability tests.
 date: 2025-04-15
 cover: /illustrations/cti.svg
 tags: [ui, ux, design, CTI, telephony, crm]
 stack: [Figma, Hotjar, Loom, Jira, Excalidraw, Obsidian]
+
+# Showcase fields
+showcase:
+  problem:
+    - The legacy CTI was cluttered and inconsistent CRM & ticketing
+    - High-frequency controls were hard to scan, causing missed or incorrect actions
+    - There were no contextual entry points for CRM actions (logging, notes, tasks) during calls
+    - AI features (Assist, Playbooks, RTAs, Transcriptions) are not fully available in CTI, limiting their impact.
+    - Limited screen real estate and iframe constraints make designing a scalable, navigable experience challenging.
+  solution:
+    - Designed a lightweight, dockable CTI widget that works consistently across integrations
+    - Streamlined call controls with clearer hierarchy and larger touch targets for speed and accuracy
+    - Added inline CRM actions (log call, create task, update record) directly inside the CTI
+    - Unified the search & dial experience to reduce navigation and context switching
+    - Built a scalable component system to keep the CTI consistent as features expanded
+  impact:
+    - CTI adoption increased from 40% → 76% of target users
+    - Average call handling time reduced by 22%
+    - Task completion success rate improved by +31% in usability tests
+  role:
+    - Owned end-to-end product design from audit through execution and validation
+    - Audited legacy CTI patterns across platforms and prioritized the highest-friction flows
+    - Defined interaction hierarchy and state behavior for calling controls and CRM actions
+    - Prototyped key flows (incoming call, logging, dial/search) to test speed and clarity
+    - Ran usability tests with 15 sales reps and 10 support agents and iterated over 4 sprints
+    - Partnered with engineering to ensure the design system scaled across web, desktop, and CRM plugins
+  images:
+    - src: /case-studies/dialpad-cti/cti-before.png
+      alt: Legacy CTI experience (before redesign)
+    - src: /case-studies/dialpad-cti/cti-incoming-call.png
+      alt: Redesigned CTI widget for incoming calls
+    - src: /case-studies/dialpad-cti/cti-log-call.png
+      alt: Inline CRM call logging inside the CTI
+    - src: /case-studies/dialpad-cti/cti-numpad.png
+      alt: Unified dial pad and call controls
+    - src: /case-studies/dialpad-cti/cti-sf-1.png
+      alt: Consistent CTI experience embedded in Salesforce
+    - src: /case-studies/dialpad-cti/cti-ideation-1.png
+      alt: CTI design iteration explorations (1)
+    - src: /case-studies/dialpad-cti/cti-ideation-2.png
+      alt: CTI flow iteration explorations (2)
+    - src: /case-studies/dialpad-cti/cti-ideation-3.png
+      alt: CTI call logging iteration explorations (3)
+    - src: /case-studies/dialpad-cti/cti-ideation-4.png
+      alt: CTI call controls iteration explorations (4)
+    - src: /case-studies/dialpad-cti/cti-ideation-5.png
+      alt: CTI incoming call iteration explorations (5)
+    - src: /case-studies/dialpad-cti/cti-ideation-6.png
+      alt: CTI calendar sheet iteration explorations (6)
+    - src: /case-studies/dialpad-cti/audit-1.png
+      alt: CTI audit findings (1)
+    - src: /case-studies/dialpad-cti/audit-2.png
+      alt: CTI audit findings (2)
+    - src: /case-studies/dialpad-cti/audit-3.png
+      alt: CTI audit findings (3)
+
 ---
 
 <SectionHeader title="" highlight="Problem" subtitle="">

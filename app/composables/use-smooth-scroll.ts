@@ -41,7 +41,7 @@ export function useSmoothScroll() {
     if (prefersReducedMotion()) {
       element.scrollIntoView({ behavior: "auto", block: "start" });
       if (updateHash && (element as HTMLElement).id) {
-        history.replaceState(null, "", `#${(element as HTMLElement).id}`);
+        history.replaceState(history.state, "", `#${(element as HTMLElement).id}`);
       }
       return;
     }
@@ -52,7 +52,7 @@ export function useSmoothScroll() {
 
     if (Math.abs(distance) < 1) {
       if (updateHash && (element as HTMLElement).id) {
-        history.replaceState(null, "", `#${(element as HTMLElement).id}`);
+        history.replaceState(history.state, "", `#${(element as HTMLElement).id}`);
       }
       return;
     }
@@ -68,7 +68,7 @@ export function useSmoothScroll() {
         requestAnimationFrame(step);
       }
       else if (updateHash && (element as HTMLElement).id) {
-        history.replaceState(null, "", `#${(element as HTMLElement).id}`);
+        history.replaceState(history.state, "", `#${(element as HTMLElement).id}`);
       }
     };
 
