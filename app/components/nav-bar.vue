@@ -86,7 +86,7 @@ if (import.meta.client) {
 </script>
 
 <template>
-  <nav ref="navEl" class="relative sticky mx-auto top-6 w-fit sm:w-md md:w-fit lg:w-4xl z-50 backdrop-blur-lg bg-gradient-to-r from-white/10 via-emerald-500/10 to-fuchsia-600/5 border border-white/10 rounded-full">
+  <nav ref="navEl" class="relative sticky mx-auto top-6 w-fit sm:w-md md:w-fit lg:w-4xl z-50 backdrop-blur-lg bg-black/55 shadow-[0_10px_30px_rgba(0,0,0,0.35)] bg-gradient-to-r from-white/10 via-emerald-500/10 to-fuchsia-600/5 border border-white/15 rounded-full">
     <div class="pl-6 pr-4">
       <div class="flex items-center sm:justify-between gap-32 sm:gap-0 py-3">
         <!-- Logo/Brand -->
