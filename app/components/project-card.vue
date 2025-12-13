@@ -87,30 +87,42 @@ if (import.meta.client) {
         <!-- Action Buttons -->
         <div class="flex flex-wrap gap-3">
           <!-- Read Showcase Button (Quick read) -->
-          <NuxtLink
-            v-if="project.link"
-            :to="project.link"
-            class="inline-flex items-center gap-2 bg-black/75 backdrop-blur-sm text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 border border-white/20 hover:border-white/30 hover:bg-black/50"
-          >
-            <Icon name="mdi:clock-outline" class="w-4 h-4" />
-            <span>View showcase</span>
-            <span v-if="formatReadMins(project.showcaseReadMins)" class="text-white/50 text-xs">
-              {{ formatReadMins(project.showcaseReadMins) }}
-            </span>
-          </NuxtLink>
+          <Tooltip v-if="project.link" text="For recruiters and hiring managers" placement="auto">
+            <template #default="{ triggerAttrs, triggerEvents, setTriggerRef }">
+              <NuxtLink
+                :ref="setTriggerRef"
+                v-bind="triggerAttrs"
+                v-on="triggerEvents"
+                :to="project.link"
+                class="inline-flex items-center gap-2 bg-black/75 backdrop-blur-sm text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 border border-white/20 hover:border-white/30 hover:bg-black/50"
+              >
+                <Icon name="mdi:clock-outline" class="w-4 h-4" />
+                <span>View showcase</span>
+                <span v-if="formatReadMins(project.showcaseReadMins)" class="text-white/50 text-xs">
+                  {{ formatReadMins(project.showcaseReadMins) }}
+                </span>
+              </NuxtLink>
+            </template>
+          </Tooltip>
 
           <!-- Read Case Study Button (Deep dive) -->
-          <NuxtLink
-            v-if="project.caseStudyLink"
-            :to="project.caseStudyLink"
-            class="inline-flex items-center gap-2 bg-black/30 backdrop-blur-sm text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 border border-white/10 hover:border-white/20 hover:bg-white/15"
-          >
-            <Icon name="mdi:book-open-page-variant-outline" class="w-4 h-4" />
-            <span>Read case study</span>
-            <span v-if="formatReadMins(project.caseStudyReadMins)" class="text-white/50 text-xs">
-              {{ formatReadMins(project.caseStudyReadMins) }}
-            </span>
-          </NuxtLink>
+          <Tooltip v-if="project.caseStudyLink" text="For people who want to know more" placement="auto">
+            <template #default="{ triggerAttrs, triggerEvents, setTriggerRef }">
+              <NuxtLink
+                :ref="setTriggerRef"
+                v-bind="triggerAttrs"
+                v-on="triggerEvents"
+                :to="project.caseStudyLink"
+                class="inline-flex items-center gap-2 bg-black/30 backdrop-blur-sm text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 border border-white/10 hover:border-white/20 hover:bg-white/15"
+              >
+                <Icon name="mdi:book-open-page-variant-outline" class="w-4 h-4" />
+                <span>Read case study</span>
+                <span v-if="formatReadMins(project.caseStudyReadMins)" class="text-white/50 text-xs">
+                  {{ formatReadMins(project.caseStudyReadMins) }}
+                </span>
+              </NuxtLink>
+            </template>
+          </Tooltip>
         </div>
       </div>
 
